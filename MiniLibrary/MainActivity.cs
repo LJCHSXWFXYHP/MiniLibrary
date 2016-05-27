@@ -21,35 +21,30 @@ namespace MiniLibrary
 
             // Get our button from the layout resource,
             // and attach an event to it
-            Button register = FindViewById<Button>(Resource.Id.mainBtnRegister);
-            Button login = FindViewById<Button>(Resource.Id.mainBtnLogin);
-            Button forget = FindViewById<Button>(Resource.Id.mainBtnForget);
-            EditText number = FindViewById<EditText>(Resource.Id.mainEditNumber);
-            EditText psw = FindViewById<EditText>(Resource.Id.mainEditPassword);
-            LinearLayout mainLayout = FindViewById<LinearLayout>(Resource.Id.mainLayout);
+            Button bt1 = FindViewById<Button>(Resource.Id.btnMain1);
+            Button bt2 = FindViewById<Button>(Resource.Id.btnMain2);
+            Button bt3 = FindViewById<Button>(Resource.Id.btnMain3);
+            Button bt4 = FindViewById<Button>(Resource.Id.btnMain4);
 
-            register.Click += delegate
+            bt1.Click += delegate
             {
-                Intent ActRegister = new Intent(this, typeof(Register));
-                StartActivity(ActRegister);
+                Intent ActLogin = new Intent(this, typeof(Login));
+                StartActivity(ActLogin);
             };
-            login.Click += delegate
+            bt2.Click += delegate
             {
-                if (number.Text == "")
-                {
-                    Toast.MakeText(this, "请输入手机号", ToastLength.Short).Show();
-                }
-                if (psw.Text == "")
-                {
-                    Toast.MakeText(this, "请输入密码", ToastLength.Short).Show();
-                }
-
+                Intent ActLogin = new Intent(this, typeof(BookDetails));
+                StartActivity(ActLogin);
             };
-            mainLayout.Click += delegate
+            bt3.Click += delegate
             {
-                Android.Views.InputMethods.InputMethodManager imm = (Android.Views.InputMethods.InputMethodManager)GetSystemService(Context.InputMethodService);
-                imm.HideSoftInputFromWindow(number.WindowToken, 0);
-                imm.HideSoftInputFromWindow(psw.WindowToken, 0);
+                Intent ActLogin = new Intent(this, typeof(FirstAdmin));
+                StartActivity(ActLogin);
+            };
+            bt4.Click += delegate
+            {
+                Intent ActLogin = new Intent(this, typeof(SecondAdmin));
+                StartActivity(ActLogin);
             };
         }
     }

@@ -27,7 +27,7 @@ namespace MiniLibrary
 
             back.Click += delegate
             {
-                Intent ActMain = new Intent(this, typeof(MainActivity));
+                Intent ActMain = new Intent(this, typeof(Login));
                 StartActivity(ActMain);
             };
         }
@@ -36,7 +36,7 @@ namespace MiniLibrary
             
             if (keyCode == Keycode.Back)
             {
-                Intent ActRegsc = new Intent(this, typeof(MainActivity));
+                Intent ActRegsc = new Intent(this, typeof(Login));
                 StartActivity(ActRegsc);
                 return true;
             }

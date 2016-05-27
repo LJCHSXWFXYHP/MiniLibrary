@@ -1,80 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:p1="http://schemas.android.com/apk/res/android"
-    p1:minWidth="25px"
-    p1:minHeight="25px"
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
     p1:layout_width="match_parent"
     p1:layout_height="match_parent"
-    p1:id="@+id/scrollView1">
-    <LinearLayout
-        p1:orientation="vertical"
+    p1:id="@+id/linearLayout1">
+    <Button
+        p1:text="登陆、注册、主页、个人中心等（林静晨）"
         p1:layout_width="match_parent"
-        p1:layout_height="match_parent"
-        p1:gravity="center_horizontal"
-        p1:id="@+id/mainLayout">
-        <LinearLayout
-            p1:orientation="vertical"
-            p1:layout_width="match_parent"
-            p1:layout_height="wrap_content"
-            p1:id="@+id/linearLayout1"
-            p1:gravity="center_horizontal">
-            <LinearLayout
-                p1:orientation="vertical"
-                p1:minWidth="25px"
-                p1:minHeight="25px"
-                p1:layout_width="match_parent"
-                p1:layout_height="311.7dp"
-                p1:id="@+id/linearLayout3"
-                p1:layout_marginBottom="15.0dp">
-                <ImageView
-                    p1:src="@android:drawable/ic_menu_gallery"
-                    p1:layout_width="match_parent"
-                    p1:layout_height="291.3dp"
-                    p1:id="@+id/Title" />
-            </LinearLayout>
-            <EditText
-                p1:inputType="phone"
-                p1:layout_height="50dp"
-                p1:id="@+id/mainEditNumber"
-                p1:hint="请输入手机号"
-                p1:layout_width="300dp"
-                p1:numeric="integer"
-                p1:singleLine="true"
-                p1:phoneNumber="true"
-                p1:focusable="true" />
-            <EditText
-                p1:inputType="textPassword"
-                p1:layout_width="300dp"
-                p1:layout_height="50dp"
-                p1:id="@+id/mainEditPassword"
-                p1:hint="请输入密码" />
-        </LinearLayout>
-        <Button
-            p1:text="登陆"
-            p1:layout_width="300dp"
-            p1:layout_height="50dp"
-            p1:id="@+id/mainBtnLogin"
-            p1:fadingEdge="none" />
-        <Button
-            p1:text="QQ一键登录"
-            p1:layout_width="300dp"
-            p1:layout_height="50dp"
-            p1:id="@+id/mainBtnQQLogin" />
-        <LinearLayout
-            p1:orientation="horizontal"
-            p1:layout_width="match_parent"
-            p1:layout_height="wrap_content"
-            p1:id="@+id/linearLayout2"
-            p1:gravity="center_horizontal">
-            <Button
-                p1:text="注册"
-                p1:layout_width="150dp"
-                p1:layout_height="50dp"
-                p1:id="@+id/mainBtnRegister" />
-            <Button
-                p1:text="忘记密码"
-                p1:layout_width="150dp"
-                p1:layout_height="50dp"
-                p1:id="@+id/mainBtnForget" />
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+        p1:layout_height="wrap_content"
+        p1:id="@+id/btnMain1" />
+    <Button
+        p1:text="书本详情、借书、还书等（王福超）"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/btnMain2" />
+    <Button
+        p1:text="一级管理员（黄世贤）"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/btnMain3" />
+    <Button
+        p1:text="二级管理员（杨昊澎）"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/btnMain4" />
+</LinearLayout>

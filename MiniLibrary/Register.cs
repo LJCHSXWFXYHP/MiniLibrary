@@ -36,6 +36,11 @@ namespace MiniLibrary
                 {
                     Toast.MakeText(this, "请输入完整的注册信息！", ToastLength.Short).Show();
                 }
+                else if ((psw.Text != confirm.Text))
+                {
+                    Toast.MakeText(this, "两次输入的密码不一致！", ToastLength.Short).Show();
+
+                }
                 else
                 {
                     Intent ActRegsuccess = new Intent(this, typeof(RegisterSuccess));
