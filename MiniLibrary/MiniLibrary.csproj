@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Register.cs" />
+    <Compile Include="RegisterSuccess.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +60,9 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\Register.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\RegisterSuccess.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

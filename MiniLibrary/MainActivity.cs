@@ -8,7 +8,7 @@ using Android.OS;
 
 namespace MiniLibrary
 {
-    [Activity(Label = "Library", MainLauncher = true, Icon = "@drawable/icon", WindowSoftInputMode = SoftInput.StateHidden|SoftInput.AdjustUnspecified,Theme = "@android:style/Theme.Holo.Light.NoActionBar")]
+    [Activity(Label = "Library", MainLauncher = true, Icon = "@drawable/icon", WindowSoftInputMode = SoftInput.StateHidden|SoftInput.AdjustUnspecified,Theme = "@android:style/Theme.Holo.Light.NoActionBar",ScreenOrientation =Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
 
@@ -26,7 +26,7 @@ namespace MiniLibrary
             Button forget = FindViewById<Button>(Resource.Id.mainBtnForget);
             EditText number = FindViewById<EditText>(Resource.Id.mainEditNumber);
             EditText psw = FindViewById<EditText>(Resource.Id.mainEditPassword);
-            
+            LinearLayout mainLayout = FindViewById<LinearLayout>(Resource.Id.mainLayout);
 
             register.Click += delegate
             {
@@ -44,6 +44,12 @@ namespace MiniLibrary
                     Toast.MakeText(this, "请输入密码", ToastLength.Short).Show();
                 }
 
+            };
+            mainLayout.Click += delegate
+            {
+                Android.Views.InputMethods.InputMethodManager imm = (Android.Views.InputMethods.InputMethodManager)GetSystemService(Context.InputMethodService);
+                imm.HideSoftInputFromWindow(number.WindowToken, 0);
+                imm.HideSoftInputFromWindow(psw.WindowToken, 0);
             };
         }
     }

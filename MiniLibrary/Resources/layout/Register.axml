@@ -9,7 +9,7 @@
         p1:orientation="vertical"
         p1:layout_width="match_parent"
         p1:layout_height="match_parent"
-        p1:id="@+id/linearLayout1"
+        p1:id="@+id/regLayout"
         p1:gravity="center_horizontal">
         <LinearLayout
             p1:orientation="vertical"

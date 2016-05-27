@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace MiniLibrary
 {
-    [Activity(Label = "Register", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar")]
+    [Activity(Label = "Register", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar",ScreenOrientation =Android.Content.PM.ScreenOrientation.Portrait)]
     public class Register : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -28,12 +28,18 @@ namespace MiniLibrary
             EditText code = FindViewById<EditText>(Resource.Id.regEditCode);
             EditText psw = FindViewById<EditText>(Resource.Id.regEditPassword);
             EditText confirm = FindViewById<EditText>(Resource.Id.regEditConfirm);
+            LinearLayout regLayout = FindViewById<LinearLayout>(Resource.Id.regLayout);
 
             register.Click += delegate
             {
                 if ((number.Text == "") || (code.Text == "") || (psw.Text == "") || (confirm.Text == ""))
                 {
                     Toast.MakeText(this, "请输入完整的注册信息！", ToastLength.Short).Show();
+                }
+                else
+                {
+                    Intent ActRegsuccess = new Intent(this, typeof(RegisterSuccess));
+                    StartActivity(ActRegsuccess);
                 }
 
             };
@@ -43,6 +49,15 @@ namespace MiniLibrary
                 mc.Start();
                 
             };
+            regLayout.Click += delegate
+            {
+                Android.Views.InputMethods.InputMethodManager imm = (Android.Views.InputMethods.InputMethodManager)GetSystemService(Context.InputMethodService);
+                imm.HideSoftInputFromWindow(number.WindowToken, 0);
+                imm.HideSoftInputFromWindow(code.WindowToken, 0);
+                imm.HideSoftInputFromWindow(psw.WindowToken, 0);
+                imm.HideSoftInputFromWindow(confirm.WindowToken, 0);
+            };
+            
         }
         public class MyCount : CountDownTimer
         {
