@@ -32,32 +32,33 @@
                     p1:id="@+id/Title" />
             </LinearLayout>
             <EditText
-                p1:inputType="text"
+                p1:inputType="phone"
                 p1:layout_height="50dp"
-                p1:id="@+id/editNumber"
+                p1:id="@+id/mainEditNumber"
                 p1:hint="请输入手机号"
                 p1:layout_width="300dp"
                 p1:numeric="integer"
                 p1:singleLine="true"
-                p1:phoneNumber="true" />
+                p1:phoneNumber="true"
+                p1:focusable="true" />
             <EditText
                 p1:inputType="textPassword"
                 p1:layout_width="300dp"
                 p1:layout_height="50dp"
-                p1:id="@+id/editPassword"
+                p1:id="@+id/mainEditPassword"
                 p1:hint="请输入密码" />
         </LinearLayout>
         <Button
             p1:text="登陆"
             p1:layout_width="300dp"
             p1:layout_height="50dp"
-            p1:id="@+id/btnLogin"
+            p1:id="@+id/mainBtnLogin"
             p1:fadingEdge="none" />
         <Button
             p1:text="QQ一键登录"
             p1:layout_width="300dp"
             p1:layout_height="50dp"
-            p1:id="@+id/btnQQLogin" />
+            p1:id="@+id/mainBtnQQLogin" />
         <LinearLayout
             p1:orientation="horizontal"
             p1:layout_width="match_parent"
@@ -68,12 +69,12 @@
                 p1:text="注册"
                 p1:layout_width="150dp"
                 p1:layout_height="50dp"
-                p1:id="@+id/btnRegister" />
+                p1:id="@+id/mainBtnRegister" />
             <Button
                 p1:text="忘记密码"
                 p1:layout_width="150dp"
                 p1:layout_height="50dp"
-                p1:id="@+id/btnForget" />
+                p1:id="@+id/mainBtnForget" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

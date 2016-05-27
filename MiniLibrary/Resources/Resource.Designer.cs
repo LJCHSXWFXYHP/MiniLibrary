@@ -63,27 +63,6 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050004
 			public const int Title = 2131034116;
 			
-			// aapt resource value: 0x7f05000b
-			public const int btnForget = 2131034123;
-			
-			// aapt resource value: 0x7f050007
-			public const int btnLogin = 2131034119;
-			
-			// aapt resource value: 0x7f050008
-			public const int btnQQLogin = 2131034120;
-			
-			// aapt resource value: 0x7f05000a
-			public const int btnRegister = 2131034122;
-			
-			// aapt resource value: 0x7f05000f
-			public const int button2 = 2131034127;
-			
-			// aapt resource value: 0x7f050005
-			public const int editNumber = 2131034117;
-			
-			// aapt resource value: 0x7f050006
-			public const int editPassword = 2131034118;
-			
 			// aapt resource value: 0x7f05000c
 			public const int imageView1 = 2131034124;
 			
@@ -102,11 +81,41 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f05000e
 			public const int linearLayout5 = 2131034126;
 			
-			// aapt resource value: 0x7f05000d
-			public const int number = 2131034125;
+			// aapt resource value: 0x7f05000b
+			public const int mainBtnForget = 2131034123;
+			
+			// aapt resource value: 0x7f050007
+			public const int mainBtnLogin = 2131034119;
+			
+			// aapt resource value: 0x7f050008
+			public const int mainBtnQQLogin = 2131034120;
+			
+			// aapt resource value: 0x7f05000a
+			public const int mainBtnRegister = 2131034122;
+			
+			// aapt resource value: 0x7f050005
+			public const int mainEditNumber = 2131034117;
+			
+			// aapt resource value: 0x7f050006
+			public const int mainEditPassword = 2131034118;
+			
+			// aapt resource value: 0x7f050013
+			public const int regBtnRegister = 2131034131;
 			
 			// aapt resource value: 0x7f050010
-			public const int password = 2131034128;
+			public const int regBtnSendcode = 2131034128;
+			
+			// aapt resource value: 0x7f05000f
+			public const int regEditCode = 2131034127;
+			
+			// aapt resource value: 0x7f050012
+			public const int regEditConfirm = 2131034130;
+			
+			// aapt resource value: 0x7f05000d
+			public const int regEditNumber = 2131034125;
+			
+			// aapt resource value: 0x7f050011
+			public const int regEditPassword = 2131034129;
 			
 			// aapt resource value: 0x7f050000
 			public const int scrollView1 = 2131034112;
