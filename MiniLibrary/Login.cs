@@ -21,6 +21,7 @@ namespace MiniLibrary
 
             // Create your application here
             SetContentView(Resource.Layout.Login);
+
             Button register = FindViewById<Button>(Resource.Id.logBtnRegister);
             Button login = FindViewById<Button>(Resource.Id.logBtnLogin);
             Button forget = FindViewById<Button>(Resource.Id.logBtnForget);
@@ -39,9 +40,14 @@ namespace MiniLibrary
                 {
                     Toast.MakeText(this, "«Î ‰»Î ÷ª˙∫≈", ToastLength.Short).Show();
                 }
-                if (psw.Text == "")
+                else if (psw.Text == "")
                 {
                     Toast.MakeText(this, "«Î ‰»Î√‹¬Î", ToastLength.Short).Show();
+                }
+                else
+                {
+                    Intent ActIndex = new Intent(this, typeof(Index));
+                    StartActivity(ActIndex);
                 }
 
             };

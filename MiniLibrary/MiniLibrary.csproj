@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BookDetails.cs" />
     <Compile Include="FirstAdmin.cs" />
+    <Compile Include="Index.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Register.cs" />
@@ -60,7 +61,6 @@
     <Compile Include="SecondAdmin.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\Register.axml">
@@ -70,6 +70,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Login.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Index.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
