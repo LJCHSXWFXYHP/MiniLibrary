@@ -8,10 +8,9 @@ using Android.OS;
 
 namespace MiniLibrary
 {
-    [Activity(Label = "MiniLibrary", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Library", MainLauncher = true, Icon = "@drawable/icon", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
-        int count = 1;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -22,11 +21,31 @@ namespace MiniLibrary
 
             // Get our button from the layout resource,
             // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
+            Button bt1 = FindViewById<Button>(Resource.Id.btnMain1);
+            Button bt2 = FindViewById<Button>(Resource.Id.btnMain2);
+            Button bt3 = FindViewById<Button>(Resource.Id.btnMain3);
+            Button bt4 = FindViewById<Button>(Resource.Id.btnMain4);
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            bt1.Click += delegate
+            {
+                Intent ActLogin = new Intent(this, typeof(Login));
+                StartActivity(ActLogin);
+            };
+            bt2.Click += delegate
+            {
+                Intent ActLogin = new Intent(this, typeof(BookDetails));
+                StartActivity(ActLogin);
+            };
+            bt3.Click += delegate
+            {
+                Intent ActLogin = new Intent(this, typeof(FirstAdmin));
+                StartActivity(ActLogin);
+            };
+            bt4.Click += delegate
+            {
+                Intent ActLogin = new Intent(this, typeof(SecondAdmin));
+                StartActivity(ActLogin);
+            };
         }
     }
 }
-
-//
