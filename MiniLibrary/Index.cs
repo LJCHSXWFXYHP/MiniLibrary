@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V4.View;
 
 
 namespace MiniLibrary
@@ -41,6 +42,8 @@ namespace MiniLibrary
             tab.AddTab(spec1);
             tab.AddTab(spec2);
             tab.AddTab(spec3);
+
+            
         }
     }
 }
