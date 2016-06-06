@@ -17,23 +17,21 @@ namespace MiniLibrary
     [Activity(Label = "Index", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Index : Activity
     {
-        private List<ImageView> imList;
-        private TextView tv_Description;
-        private LinearLayout llPointGroup;
-        private int previousEnablePosition = 0;
-        private bool isStop = false;        
-        private ViewPager viewpager;
+
+        private ImageButton Type1;
+        private ImageButton Type2;
+        private ImageButton Type3;
+        private ImageButton Type4;
+        private ImageButton Type5;
+        private ImageButton Type6;
+        private LinearLayout TabIndexLayout;
+        private EditText searchEdit;
 
         private List<BookBasketListInfo> BookInfo;
         private ListView BookList;
 
+        private LinearLayout PersonalSetting;
         
-        protected override void OnDestroy()
-        {
-            isStop = true;
-            base.OnDestroy();
-            
-        }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -61,22 +59,64 @@ namespace MiniLibrary
             tab.AddTab(spec3);
 
             TabBookBasket();
-            
+            TabIndex();
+            TabPrivate();
+
+
+
+        }
+
+        private void TabIndex()
+        {
+            Type1 = FindViewById<ImageButton>(Resource.Id.type1);
+            Type2 = FindViewById<ImageButton>(Resource.Id.type2);
+            Type3 = FindViewById<ImageButton>(Resource.Id.type3);
+            Type4 = FindViewById<ImageButton>(Resource.Id.type4);
+            Type5 = FindViewById<ImageButton>(Resource.Id.type5);
+            Type6 = FindViewById<ImageButton>(Resource.Id.type6);
+            TabIndexLayout = FindViewById<LinearLayout>(Resource.Id.TabIndexLayout);
+            searchEdit = FindViewById<EditText>(Resource.Id.TabIndexEditSearch);
+
+            Type1.Click += delegate
+            {
+                Intent ActList = new Intent(this, typeof(BookListView));
+                StartActivity(ActList);
+            };
+            TabIndexLayout.Click += delegate
+            {
+                Android.Views.InputMethods.InputMethodManager imm = (Android.Views.InputMethods.InputMethodManager)GetSystemService(Context.InputMethodService);
+                imm.HideSoftInputFromWindow(searchEdit.WindowToken, 0);
+            };
         }
 
         private void TabBookBasket()
         {
             BookList = FindViewById<ListView>(Resource.Id.TabBookBasketList);
             BookInfo = new List<BookBasketListInfo>();
-            BookInfo.Add(new BookBasketListInfo { Title = "百年孤独", Image = "http://cover1.bookday.cn/73/52/9787544253994.jpg" });
-            BookInfo.Add(new BookBasketListInfo { Title = "123",Image= "http://cover1.bookday.cn/73/52/9787544253994.jpg" });
+            BookInfo.Add(new BookBasketListInfo { Title = "百年孤独", Image = "http://cover1.bookday.cn/73/52/9787544253994.jpg" ,BookNumber="111"});
+            BookInfo.Add(new BookBasketListInfo { Title = "123",Image= "http://cover1.bookday.cn/73/52/9787544253994.jpg",BookNumber="222" });
             BookList.Adapter = new BookBasketListAdapter(this, BookInfo);
 
         }
 
         private void TabPrivate()
         {
-            
+            PersonalSetting = FindViewById<LinearLayout>(Resource.Id.TablayoutPersonSetting);
+            PersonalSetting.Click += delegate
+            {
+                Intent ActPersonSetting = new Intent(this, typeof(PersonalSetting));
+                StartActivity(ActPersonSetting);
+            };
+        }
+
+        public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
+        {
+
+            if (keyCode == Keycode.Back)
+            {
+                return true;
+            }
+            return false;
         }
 
     }

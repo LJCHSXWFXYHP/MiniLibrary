@@ -2,13 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <SearchView
-        android:minWidth="25px"
-        android:minHeight="25px"
+    android:layout_height="match_parent"
+    android:id="@+id/TabIndexLayout">
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="40.5dp"
-        android:id="@+id/searchView1" />
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView1" />
+        <EditText
+            android:inputType="text"
+            android:layout_width="347.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/TabIndexEditSearch" />
+    </LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="fill_parent"
@@ -49,7 +60,7 @@
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/imageButton1"
+                android:id="@+id/type1"
                 android:layout_marginRight="50dp" />
             <TextView
                 android:text="图书分类1"
@@ -67,7 +78,7 @@
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/imageButton2"
+                android:id="@+id/type2"
                 android:layout_marginRight="50dp" />
             <TextView
                 android:layout_width="75dp"
@@ -85,7 +96,7 @@
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/imageButton3" />
+                android:id="@+id/type3" />
             <TextView
                 android:text="图书分类3"
                 android:layout_width="75dp"
@@ -109,7 +120,7 @@
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/imageButton1"
+                android:id="@+id/type4"
                 android:layout_marginRight="50dp" />
             <TextView
                 android:text="图书分类4"
@@ -127,7 +138,7 @@
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/imageButton2"
+                android:id="@+id/type5"
                 android:layout_marginRight="50dp" />
             <TextView
                 android:layout_width="75dp"
@@ -145,7 +156,7 @@
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/imageButton3" />
+                android:id="@+id/type6" />
             <TextView
                 android:text="图书分类6"
                 android:layout_width="75dp"

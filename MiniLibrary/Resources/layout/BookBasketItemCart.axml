@@ -6,7 +6,7 @@
     <TextView
         p1:text="图书名称"
         p1:layout_width="160.0dp"
-        p1:layout_height="100dp"
+        p1:layout_height="60dp"
         p1:layout_toRightOf="@+id/listImbtnbook"
         p1:id="@+id/ListTextBook"
         p1:textSize="50px"
@@ -42,4 +42,12 @@
         p1:layout_toRightOf="@+id/ListTextBook"
         p1:id="@+id/ListBtnDelete"
         p1:layout_below="@+id/ListImbtnAdd" />
+    <TextView
+        p1:text="书号"
+        p1:layout_width="160.0dp"
+        p1:layout_height="40dp"
+        p1:layout_toRightOf="@id/listImbtnbook"
+        p1:id="@+id/ListTextBookNumber"
+        p1:layout_below="@id/ListTextBook"
+        p1:gravity="center" />
 </RelativeLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/SettingPswLayout">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout6">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="49.5dp"
+                android:id="@+id/linearLayout2"
+                android:background="#FF33B5E5"
+                android:gravity="right" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:id="@+id/linearLayout3"
+                android:background="#FF33B5E5">
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:id="@+id/imageView1"
+                    android:layout_marginLeft="25.0dp"
+                    android:layout_marginRight="25dp" />
+                <TextView
+                    android:text="用户名"
+                    android:layout_width="160.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView1"
+                    android:gravity="center"
+                    android:textSize="40px" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="5.0dp"
+                android:id="@+id/linearLayout5"
+                android:background="#33000000" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="70.0dp"
+                android:id="@+id/SettingDataEdit"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:gravity="center">
+                <EditText
+                    android:inputType="textPassword"
+                    android:id="@+id/SettingEditPassword"
+                    android:hint="请设置密码"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout7"
+        android:gravity="center">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="70.0dp"
+            android:id="@+id/SettingDataEdit"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:gravity="center">
+            <EditText
+                android:inputType="textPassword"
+                android:id="@+id/SettingEditConfirm"
+                android:hint="请再次输入密码"
+                android:layout_width="300dp"
+                android:layout_height="50dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="70.0dp"
+            android:id="@+id/SettingPasswardEdit"
+            android:gravity="center">
+            <EditText
+                android:inputType="phone"
+                android:id="@+id/SettingPswEditCode"
+                android:hint="请输入验证码"
+                android:numeric="integer"
+                android:singleLine="true"
+                android:layout_width="175dp"
+                android:layout_height="50dp"
+                android:phoneNumber="true" />
+            <Button
+                android:text="发送验证码"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:id="@+id/SettingPswBtnSendcode" />
+        </LinearLayout>
+        <Button
+            android:text="确认修改"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:id="@+id/SettingbtnSubmitPsw"
+            android:fadingEdge="none" />
+    </LinearLayout>
+</LinearLayout>

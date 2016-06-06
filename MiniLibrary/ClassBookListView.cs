@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Net;
 using Android.Graphics;
 using Android.Views;
@@ -7,22 +7,22 @@ using Android.App;
 using System;
 using MiniLibrary;
 
-namespace BookBasketList
+namespace BookListView
 {
-    public class BookBasketListInfo
+    public class BookListViewInfo
     {
         public string Image { get; set; }
         public string Title { get; set; }
-        public string Number { get; set; }
+        public string BookNumber { get; set; }
     }
 
-    class BookBasketListAdapter : BaseAdapter<BookBasketListInfo>
+    class BookListViewAdapter : BaseAdapter<BookListViewInfo>
     {
-        List<BookBasketListInfo> items;
+        List<BookListViewInfo> items;
 
         Activity context;
 
-        public BookBasketListAdapter(Activity context,List<BookBasketListInfo> items) : base()
+        public BookListViewAdapter(Activity context, List<BookListViewInfo> items) : base()
         {
             this.context = context;
             this.items = items;
@@ -33,7 +33,7 @@ namespace BookBasketList
             return position;
         }
 
-        public override BookBasketListInfo this[int position]
+        public override BookListViewInfo this[int position]
         {
             get
             {
@@ -54,18 +54,19 @@ namespace BookBasketList
             var view = convertView;
             if (view == null)
             {
-                view = context.LayoutInflater.Inflate(Resource.Layout.BookBasketItemCart,null);
+                view = context.LayoutInflater.Inflate(Resource.Layout.BookListViewItemCart, null);
             }
-            view.FindViewById<TextView>(Resource.Id.ListTextBook).Text = item.Title;
+            view.FindViewById<TextView>(Resource.Id.BklistTextBook).Text = item.Title;
+            view.FindViewById<TextView>(Resource.Id.BklistBookNumber).Text = item.BookNumber;
             var imageBitmap = GetImageBitmapFromUrl(item.Image);
-            view.FindViewById<ImageButton>(Resource.Id.listImbtnbook).SetImageBitmap(GetImageBitmapFromUrl(item.Image));
+            view.FindViewById<ImageView>(Resource.Id.BklistImBook).SetImageBitmap(GetImageBitmapFromUrl(item.Image));
             return view;
         }
         private Bitmap GetImageBitmapFromUrl(string url)
         {
             Bitmap imageBitmap = null;
 
-            using(var webClient=new WebClient())
+            using (var webClient = new WebClient())
             {
                 var imageBytes = webClient.DownloadData(url);
                 if (imageBitmap != null && imageBytes.Length > 0)

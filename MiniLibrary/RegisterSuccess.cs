@@ -23,13 +23,7 @@ namespace MiniLibrary
 
             // Create your application here
             SetContentView(Resource.Layout.RegisterSuccess);
-            Button back = FindViewById<Button>(Resource.Id.regscBack);
-
-            back.Click += delegate
-            {
-                Intent ActMain = new Intent(this, typeof(Login));
-                StartActivity(ActMain);
-            };
+            
         }
         public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
         {

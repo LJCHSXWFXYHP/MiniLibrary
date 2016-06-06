@@ -53,12 +53,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookBasketList.cs" />
+    <Compile Include="ClassBookBasketList.cs" />
     <Compile Include="BookDetails.cs" />
+    <Compile Include="BookListView.cs" />
+    <Compile Include="ClassBookListView.cs" />
+    <Compile Include="DataEdit.cs" />
     <Compile Include="FirstAdmin.cs" />
     <Compile Include="Index.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="PasswordEdit.cs" />
+    <Compile Include="PersonalSetting.cs" />
     <Compile Include="Register.cs" />
     <Compile Include="RegisterSuccess.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -91,6 +96,21 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\BookBasketItemCart.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\BookListView.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\BookListViewItemCart.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PersonalSetting.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\DataEdit.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PasswardEdit.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
