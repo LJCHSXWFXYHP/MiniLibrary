@@ -105,6 +105,27 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f05001a
 			public const int btnMain4 = 2131034138;
 			
+			// aapt resource value: 0x7f050033
+			public const int button1 = 2131034163;
+			
+			// aapt resource value: 0x7f050036
+			public const int button2 = 2131034166;
+			
+			// aapt resource value: 0x7f050038
+			public const int button3 = 2131034168;
+			
+			// aapt resource value: 0x7f050039
+			public const int button4 = 2131034169;
+			
+			// aapt resource value: 0x7f05002d
+			public const int imageButton1 = 2131034157;
+			
+			// aapt resource value: 0x7f05002e
+			public const int imageButton2 = 2131034158;
+			
+			// aapt resource value: 0x7f050031
+			public const int imageButton3 = 2131034161;
+			
 			// aapt resource value: 0x7f05001c
 			public const int imageView1 = 2131034140;
 			
@@ -126,8 +147,20 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f05000e
 			public const int linearLayout3 = 2131034126;
 			
+			// aapt resource value: 0x7f050030
+			public const int linearLayout4 = 2131034160;
+			
 			// aapt resource value: 0x7f05001e
 			public const int linearLayout5 = 2131034142;
+			
+			// aapt resource value: 0x7f050034
+			public const int linearLayout6 = 2131034164;
+			
+			// aapt resource value: 0x7f050035
+			public const int linearLayout7 = 2131034165;
+			
+			// aapt resource value: 0x7f050037
+			public const int linearLayout8 = 2131034167;
 			
 			// aapt resource value: 0x7f050001
 			public const int listImbtnbook = 2131034113;
@@ -194,6 +227,12 @@ namespace MiniLibrary
 			
 			// aapt resource value: 0x7f050026
 			public const int textView1 = 2131034150;
+			
+			// aapt resource value: 0x7f05002f
+			public const int textView2 = 2131034159;
+			
+			// aapt resource value: 0x7f050032
+			public const int textView3 = 2131034162;
 			
 			// aapt resource value: 0x7f050024
 			public const int toolbar1 = 2131034148;
@@ -262,6 +301,9 @@ namespace MiniLibrary
 			
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int PrivateCenter = 2130968578;
 			
 			static String()
 			{

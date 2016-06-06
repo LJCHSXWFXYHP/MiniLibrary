@@ -26,6 +26,8 @@ namespace MiniLibrary
 
         private List<BookBasketListInfo> BookInfo;
         private ListView BookList;
+
+        
         protected override void OnDestroy()
         {
             isStop = true;
@@ -70,6 +72,11 @@ namespace MiniLibrary
             BookInfo.Add(new BookBasketListInfo { Title = "123",Image= "http://cover1.bookday.cn/73/52/9787544253994.jpg" });
             BookList.Adapter = new BookBasketListAdapter(this, BookInfo);
 
+        }
+
+        private void TabPrivate()
+        {
+            
         }
 
     }
