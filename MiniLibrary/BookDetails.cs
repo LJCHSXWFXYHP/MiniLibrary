@@ -20,6 +20,7 @@ namespace MiniLibrary
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            
         }
     }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/relativeLayout1">
+    <TextView
+        p1:text="图书名称"
+        p1:layout_width="160.0dp"
+        p1:layout_height="100dp"
+        p1:layout_toRightOf="@+id/listImbtnbook"
+        p1:id="@+id/ListTextBook"
+        p1:textSize="50px"
+        p1:gravity="center" />
+    <ImageButton
+        p1:src="@android:drawable/ic_menu_gallery"
+        p1:layout_width="40dp"
+        p1:layout_height="50dp"
+        p1:id="@+id/ListImbtnAdd"
+        p1:layout_toRightOf="@+id/ListTextBook" />
+    <ImageButton
+        p1:src="@android:drawable/ic_menu_gallery"
+        p1:layout_width="40dp"
+        p1:layout_height="50dp"
+        p1:id="@+id/ListImbtnSub"
+        p1:layout_toRightOf="@+id/ListTextNum" />
+    <TextView
+        p1:text="1"
+        p1:layout_width="20dp"
+        p1:layout_height="50dp"
+        p1:layout_toRightOf="@+id/ListImbtnAdd"
+        p1:id="@+id/ListTextNum"
+        p1:gravity="center" />
+    <ImageButton
+        p1:src="@android:drawable/ic_menu_gallery"
+        p1:layout_width="100dp"
+        p1:layout_height="100dp"
+        p1:id="@+id/listImbtnbook" />
+    <Button
+        p1:text="删除"
+        p1:layout_width="120dp"
+        p1:layout_height="50dp"
+        p1:layout_toRightOf="@+id/ListTextBook"
+        p1:id="@+id/ListBtnDelete"
+        p1:layout_below="@+id/ListImbtnAdd" />
+</RelativeLayout>
