@@ -18,7 +18,8 @@
             p1:layout_width="match_parent"
             p1:layout_height="311.7dp"
             p1:id="@+id/linearLayout3"
-            p1:layout_marginBottom="15.0dp">
+            p1:layout_marginBottom="15.0dp"
+            p1:background="#FF33B5E5">
             <ImageView
                 p1:src="@android:drawable/ic_menu_gallery"
                 p1:layout_width="match_parent"

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="49.5dp"
+            android:id="@+id/linearLayout2"
+            android:background="#FF33B5E5"
+            android:gravity="right">
+            <Button
+                android:text="设置"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/button1"
+                android:background="@null"
+                android:layout_marginRight="12.0dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:id="@+id/linearLayout3"
+            android:background="#FF33B5E5">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:id="@+id/imageView1"
+                android:layout_marginLeft="25.0dp"
+                android:layout_marginRight="25dp" />
+            <TextView
+                android:text="用户名"
+                android:layout_width="160.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:gravity="center"
+                android:textSize="40px" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="5.0dp"
+            android:id="@+id/linearLayout5"
+            android:background="#33000000" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="70.0dp"
+            android:id="@+id/SettingDataEdit">
+            <TextView
+                android:text="修改资料"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView2"
+                android:gravity="center"
+                android:textSize="50px"
+                android:layout_marginLeft="15.5dp"
+                android:layout_marginRight="165.0dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/linearLayout5"
+            android:background="#33000000" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="70.0dp"
+            android:id="@+id/SettingPasswardEdit">
+            <TextView
+                android:text="修改密码"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView2"
+                android:gravity="center"
+                android:textSize="50px"
+                android:layout_marginLeft="15.5dp"
+                android:layout_marginRight="165.0dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/linearLayout5"
+            android:background="#33000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="70.0dp"
+        android:id="@+id/linearLayout4">
+        <TextView
+            android:text="实名认证"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2"
+            android:gravity="center"
+            android:textSize="50px"
+            android:layout_marginLeft="15.5dp"
+            android:layout_marginRight="165.0dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/linearLayout5"
+        android:background="#33000000" />
+</LinearLayout>

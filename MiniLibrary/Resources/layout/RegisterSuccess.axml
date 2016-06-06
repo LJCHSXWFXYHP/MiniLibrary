@@ -4,25 +4,13 @@
     p1:layout_width="match_parent"
     p1:layout_height="match_parent"
     p1:id="@+id/linearLayout1">
-    <Toolbar
-        p1:minHeight="?android:attr/actionBarSize"
-        p1:background="?android:attr/colorPrimary"
-        p1:minWidth="25px"
-        p1:layout_width="match_parent"
-        p1:layout_height="wrap_content"
-        p1:id="@+id/toolbar1">
-        <Button
-            p1:text="Back"
-            p1:layout_width="wrap_content"
-            p1:layout_height="wrap_content"
-            p1:id="@+id/regscBack" />
-    </Toolbar>
     <ImageView
         p1:src="@android:drawable/ic_menu_gallery"
         p1:layout_width="match_parent"
         p1:layout_height="291.3dp"
         p1:id="@+id/Title"
-        p1:layout_marginBottom="80dp" />
+        p1:layout_marginBottom="80dp"
+        p1:background="#FF33B5E5" />
     <TextView
         p1:text="注册成功"
         p1:textAppearance="?android:attr/textAppearanceLarge"

@@ -18,15 +18,26 @@
             <LinearLayout
                 p1:layout_width="match_parent"
                 p1:layout_height="match_parent"
-                p1:id="@+id/layoutIndex" />
+                p1:id="@+id/layoutIndex"
+                p1:minWidth="25px"
+                p1:minHeight="25px">
+                <include
+                    layout="@layout/TabIndex" />
+            </LinearLayout>
             <LinearLayout
                 p1:layout_width="match_parent"
                 p1:layout_height="match_parent"
-                p1:id="@+id/layoutBookbasket" />
+                p1:id="@+id/layoutBookbasket">
+                <include
+                    layout="@layout/TabBookBasket" />
+            </LinearLayout>
             <LinearLayout
                 p1:layout_width="match_parent"
                 p1:layout_height="match_parent"
-                p1:id="@+id/layoutPrivate" />
+                p1:id="@+id/layoutPrivate">
+                <include
+                    layout="@layout/TabPrivate" />
+            </LinearLayout>
         </FrameLayout>
         <TabWidget
             p1:id="@android:id/tabs"
