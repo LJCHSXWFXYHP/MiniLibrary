@@ -113,7 +113,6 @@
     <AndroidResource Include="Resources\layout\PasswardEdit.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\BookDetails.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
