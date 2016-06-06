@@ -20,7 +20,7 @@
         p1:layout_height="wrap_content"
         p1:id="@+id/btnMain3" />
     <Button
-        p1:text="二级管理员（杨昊澎）"
+        p1:text="图书管理（杨昊澎）"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:id="@+id/btnMain4" />
