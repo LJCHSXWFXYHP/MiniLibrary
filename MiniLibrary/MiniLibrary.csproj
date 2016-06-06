@@ -53,8 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassBookBasketList.cs" />
     <Compile Include="BookDetails.cs" />
+    <Compile Include="ClassBookBasketList.cs" />
     <Compile Include="BookListView.cs" />
     <Compile Include="ClassBookListView.cs" />
     <Compile Include="DataEdit.cs" />
@@ -113,6 +113,7 @@
     <AndroidResource Include="Resources\layout\PasswardEdit.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\BookDetails.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
