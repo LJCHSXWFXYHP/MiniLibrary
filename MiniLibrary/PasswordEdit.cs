@@ -9,39 +9,36 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-
 namespace MiniLibrary
 {
-    [Activity(Label = "Register", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar",ScreenOrientation =Android.Content.PM.ScreenOrientation.Portrait)]
-    public class Register : Activity
+    [Activity(Label = "PasswordEdit", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class PasswordEdit : Activity
     {
-        private Button register;
-        private Button sendCode;
-        private EditText number;
         private EditText code;
         private EditText psw;
         private EditText confirm;
-        private LinearLayout regLayout;
+        private Button submit;
+        private Button sendCode;
+        private LinearLayout layout;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView(Resource.Layout.Register);
+            SetContentView(Resource.Layout.PasswardEdit);
 
-            register = FindViewById<Button>(Resource.Id.regBtnRegister);
-            sendCode = FindViewById<Button>(Resource.Id.regBtnSendcode);
-            number = FindViewById<EditText>(Resource.Id.regEditNumber);
-            code = FindViewById<EditText>(Resource.Id.regEditCode);
-            psw = FindViewById<EditText>(Resource.Id.regEditPassword);
-            confirm = FindViewById<EditText>(Resource.Id.regEditConfirm);
-            regLayout = FindViewById<LinearLayout>(Resource.Id.regLayout);
+            code = FindViewById<EditText>(Resource.Id.SettingPswEditCode);
+            psw = FindViewById<EditText>(Resource.Id.SettingEditPassword);
+            confirm = FindViewById<EditText>(Resource.Id.SettingEditConfirm);
+            submit = FindViewById<Button>(Resource.Id.SettingbtnSubmitPsw);
+            sendCode = FindViewById<Button>(Resource.Id.SettingPswBtnSendcode);
+            layout = FindViewById<LinearLayout>(Resource.Id.SettingPswLayout);
 
-            register.Click += delegate
+            submit.Click += delegate
             {
-                if ((number.Text == "") || (code.Text == "") || (psw.Text == "") || (confirm.Text == ""))
+                if ((code.Text == "") || (psw.Text == "") || (confirm.Text == ""))
                 {
-                    Toast.MakeText(this, "请输入完整的注册信息！", ToastLength.Short).Show();
+                    Toast.MakeText(this, "请输入完整的修改信息！", ToastLength.Short).Show();
                 }
                 else if ((psw.Text != confirm.Text))
                 {
@@ -50,26 +47,22 @@ namespace MiniLibrary
                 }
                 else
                 {
-                    Intent ActRegsuccess = new Intent(this, typeof(RegisterSuccess));
-                    StartActivity(ActRegsuccess);
+                    Toast.MakeText(this, "修改成功！", ToastLength.Short).Show();
                 }
-
             };
             sendCode.Click += delegate
             {
-                MyCount mc = new MyCount(this,60000, 1000);
+                MyCount mc = new MyCount(this, 60000, 1000);
                 mc.Start();
-                
+
             };
-            regLayout.Click += delegate
+            layout.Click += delegate
             {
                 Android.Views.InputMethods.InputMethodManager imm = (Android.Views.InputMethods.InputMethodManager)GetSystemService(Context.InputMethodService);
-                imm.HideSoftInputFromWindow(number.WindowToken, 0);
                 imm.HideSoftInputFromWindow(code.WindowToken, 0);
                 imm.HideSoftInputFromWindow(psw.WindowToken, 0);
                 imm.HideSoftInputFromWindow(confirm.WindowToken, 0);
             };
-            
         }
         public class MyCount : CountDownTimer
         {
@@ -79,7 +72,7 @@ namespace MiniLibrary
             public MyCount(Activity acticity, long millisInFuture, long countDownInterval) : base(millisInFuture, countDownInterval)
             {
                 this.context = acticity;
-                sendcode = context.FindViewById<Button>(Resource.Id.regBtnSendcode);
+                sendcode = context.FindViewById<Button>(Resource.Id.SettingPswBtnSendcode);
             }
             public override void OnTick(long millisUntilFinished)
             {
@@ -98,6 +91,6 @@ namespace MiniLibrary
             }
 
         }
-
     }
+    
 }

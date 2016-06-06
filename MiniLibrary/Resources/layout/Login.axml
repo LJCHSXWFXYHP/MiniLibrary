@@ -30,7 +30,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="311.7dp"
                     android:id="@+id/linearLayout3"
-                    android:layout_marginBottom="15.0dp">
+                    android:layout_marginBottom="15.0dp"
+                    android:background="#FF33B5E5">
                     <ImageView
                         android:src="@android:drawable/ic_menu_gallery"
                         android:layout_width="match_parent"
