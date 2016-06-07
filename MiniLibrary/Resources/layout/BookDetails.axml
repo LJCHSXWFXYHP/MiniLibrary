@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom">
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="560dp"
+        android:id="@+id/scrollView1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2"
+            android:minWidth="25px"
+            android:minHeight="25px">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="579.5dp"
+                android:id="@+id/linearLayout3"
+                android:layout_marginBottom="0.0dp">
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="212.0dp"
+                    android:id="@+id/imageView1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bookname"
+                    android:textSize="65px"
+                    android:text="百年孤独"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/writer"
+                    android:text="加西亚·马尔克斯"
+                    android:gravity="center" />
+                <TextView
+                    android:text="加西亚•马尔克斯（Gabriel García Márquez）1927年出生于哥伦比亚马格达莱纳海滨小镇阿拉卡塔卡。童年与外祖父母一起生活。1936年随父母迁居苏克雷。1947年考入波哥大国立大学。1948年因内战辍学，进入报界。五十年代开始发表文学作品。六十年代初移居墨西哥。1967年出版《百年孤独》。1982年获诺贝尔文学奖。"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    android:gravity="center" />
+                <TextView
+                    android:text="《百年孤独》是魔幻现实主义文学的代表作，描写了布恩迪亚家族七代人的传奇故事，以及加勒比海沿岸小镇马孔多的百年兴衰，反映了拉丁美洲一个世纪以来风云变幻的历史。作品融入神话传说、民间故事、宗教典故等神秘因素，巧妙地糅合了现实与虚幻，展现出一个瑰丽的想象世界，成为20世纪最重要的经典文学巨著之一。1982年加西亚•马尔克斯获得诺贝尔文学奖，奠定世界级文学大师的地位，很大程度上乃是凭借《百年孤独》的巨大影响。"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView5"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="58.5dp"
+        android:id="@+id/linearLayout1"
+        android:gravity="center">
+        <Button
+            android:text="借书"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/borrow"
+            android:width="120dp" />
+        <Button
+            android:text="加入书篮"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/collection"
+            android:width="120dp" />
+        <Button
+            android:text="预订"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/reserve"
+            android:width="120dp" />
+    </LinearLayout>
+</LinearLayout>
