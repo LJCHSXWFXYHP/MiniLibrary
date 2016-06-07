@@ -55,6 +55,5 @@ namespace MiniLibrary
             bitmap.SetPixels(pixels, 0, width, 0, 0, width, height);
             return bitmap;
         }
-
     }
 }
