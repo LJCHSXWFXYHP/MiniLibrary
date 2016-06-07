@@ -72,6 +72,9 @@ namespace MiniLibrary
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f05001a
+			public const int BarCode = 2131034138;
+			
 			// aapt resource value: 0x7f050019
 			public const int BklistBookNumber = 2131034137;
 			
@@ -84,8 +87,8 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050016
 			public const int BookList = 2131034134;
 			
-			// aapt resource value: 0x7f050046
-			public const int BookSubmit = 2131034182;
+			// aapt resource value: 0x7f050047
+			public const int BookSubmit = 2131034183;
 			
 			// aapt resource value: 0x7f050006
 			public const int ListBtnDelete = 2131034118;
@@ -105,59 +108,59 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050005
 			public const int ListTextNum = 2131034117;
 			
-			// aapt resource value: 0x7f05001e
-			public const int SettingDataEdit = 2131034142;
-			
-			// aapt resource value: 0x7f050037
-			public const int SettingEditConfirm = 2131034167;
-			
-			// aapt resource value: 0x7f05001f
-			public const int SettingEditNumber = 2131034143;
-			
-			// aapt resource value: 0x7f050036
-			public const int SettingEditPassword = 2131034166;
-			
-			// aapt resource value: 0x7f050022
-			public const int SettingNumberBtnSendcode = 2131034146;
-			
-			// aapt resource value: 0x7f050021
-			public const int SettingNumberEditCode = 2131034145;
-			
-			// aapt resource value: 0x7f05001b
-			public const int SettingNumberLayout = 2131034139;
-			
 			// aapt resource value: 0x7f050020
-			public const int SettingPasswardEdit = 2131034144;
+			public const int SettingDataEdit = 2131034144;
 			
 			// aapt resource value: 0x7f050039
-			public const int SettingPswBtnSendcode = 2131034169;
+			public const int SettingEditConfirm = 2131034169;
+			
+			// aapt resource value: 0x7f050021
+			public const int SettingEditNumber = 2131034145;
 			
 			// aapt resource value: 0x7f050038
-			public const int SettingPswEditCode = 2131034168;
-			
-			// aapt resource value: 0x7f050035
-			public const int SettingPswLayout = 2131034165;
+			public const int SettingEditPassword = 2131034168;
 			
 			// aapt resource value: 0x7f050024
-			public const int SettingbtnSubmitNumber = 2131034148;
+			public const int SettingNumberBtnSendcode = 2131034148;
+			
+			// aapt resource value: 0x7f050023
+			public const int SettingNumberEditCode = 2131034147;
+			
+			// aapt resource value: 0x7f05001d
+			public const int SettingNumberLayout = 2131034141;
+			
+			// aapt resource value: 0x7f050022
+			public const int SettingPasswardEdit = 2131034146;
+			
+			// aapt resource value: 0x7f05003b
+			public const int SettingPswBtnSendcode = 2131034171;
 			
 			// aapt resource value: 0x7f05003a
-			public const int SettingbtnSubmitPsw = 2131034170;
+			public const int SettingPswEditCode = 2131034170;
 			
-			// aapt resource value: 0x7f050045
-			public const int TabBookBasketList = 2131034181;
+			// aapt resource value: 0x7f050037
+			public const int SettingPswLayout = 2131034167;
+			
+			// aapt resource value: 0x7f050026
+			public const int SettingbtnSubmitNumber = 2131034150;
+			
+			// aapt resource value: 0x7f05003c
+			public const int SettingbtnSubmitPsw = 2131034172;
+			
+			// aapt resource value: 0x7f050046
+			public const int TabBookBasketList = 2131034182;
+			
+			// aapt resource value: 0x7f050049
+			public const int TabIndexEditSearch = 2131034185;
 			
 			// aapt resource value: 0x7f050048
-			public const int TabIndexEditSearch = 2131034184;
+			public const int TabIndexLayout = 2131034184;
 			
-			// aapt resource value: 0x7f050047
-			public const int TabIndexLayout = 2131034183;
+			// aapt resource value: 0x7f050053
+			public const int TablayoutPersonSetting = 2131034195;
 			
-			// aapt resource value: 0x7f050052
-			public const int TablayoutPersonSetting = 2131034194;
-			
-			// aapt resource value: 0x7f05002a
-			public const int Title = 2131034154;
+			// aapt resource value: 0x7f05002c
+			public const int Title = 2131034156;
 			
 			// aapt resource value: 0x7f05000c
 			public const int bookname = 2131034124;
@@ -165,26 +168,26 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050012
 			public const int borrow = 2131034130;
 			
-			// aapt resource value: 0x7f050031
-			public const int btnMain1 = 2131034161;
-			
-			// aapt resource value: 0x7f050032
-			public const int btnMain2 = 2131034162;
-			
 			// aapt resource value: 0x7f050033
-			public const int btnMain3 = 2131034163;
+			public const int btnMain1 = 2131034163;
 			
 			// aapt resource value: 0x7f050034
-			public const int btnMain4 = 2131034164;
+			public const int btnMain2 = 2131034164;
 			
-			// aapt resource value: 0x7f05003b
-			public const int button1 = 2131034171;
+			// aapt resource value: 0x7f050035
+			public const int btnMain3 = 2131034165;
+			
+			// aapt resource value: 0x7f050036
+			public const int btnMain4 = 2131034166;
+			
+			// aapt resource value: 0x7f05003d
+			public const int button1 = 2131034173;
 			
 			// aapt resource value: 0x7f050013
 			public const int collection = 2131034131;
 			
-			// aapt resource value: 0x7f050053
-			public const int contentFrame = 2131034195;
+			// aapt resource value: 0x7f050054
+			public const int contentFrame = 2131034196;
 			
 			// aapt resource value: 0x7f050015
 			public const int editText1 = 2131034133;
@@ -192,14 +195,14 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f05000b
 			public const int imageView1 = 2131034123;
 			
-			// aapt resource value: 0x7f050027
-			public const int layoutBookbasket = 2131034151;
-			
-			// aapt resource value: 0x7f050026
-			public const int layoutIndex = 2131034150;
+			// aapt resource value: 0x7f050029
+			public const int layoutBookbasket = 2131034153;
 			
 			// aapt resource value: 0x7f050028
-			public const int layoutPrivate = 2131034152;
+			public const int layoutIndex = 2131034152;
+			
+			// aapt resource value: 0x7f05002a
+			public const int layoutPrivate = 2131034154;
 			
 			// aapt resource value: 0x7f050011
 			public const int linearLayout1 = 2131034129;
@@ -210,65 +213,65 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f05000a
 			public const int linearLayout3 = 2131034122;
 			
-			// aapt resource value: 0x7f05003d
-			public const int linearLayout4 = 2131034173;
+			// aapt resource value: 0x7f05003e
+			public const int linearLayout4 = 2131034174;
 			
-			// aapt resource value: 0x7f05001d
-			public const int linearLayout5 = 2131034141;
+			// aapt resource value: 0x7f05001f
+			public const int linearLayout5 = 2131034143;
 			
-			// aapt resource value: 0x7f05001c
-			public const int linearLayout6 = 2131034140;
+			// aapt resource value: 0x7f05001e
+			public const int linearLayout6 = 2131034142;
 			
-			// aapt resource value: 0x7f050023
-			public const int linearLayout7 = 2131034147;
+			// aapt resource value: 0x7f050025
+			public const int linearLayout7 = 2131034149;
 			
 			// aapt resource value: 0x7f050001
 			public const int listImbtnbook = 2131034113;
 			
-			// aapt resource value: 0x7f05004b
-			public const int ll_point_group = 2131034187;
+			// aapt resource value: 0x7f05004c
+			public const int ll_point_group = 2131034188;
 			
-			// aapt resource value: 0x7f050030
-			public const int logBtnForget = 2131034160;
-			
-			// aapt resource value: 0x7f05002d
-			public const int logBtnLogin = 2131034157;
-			
-			// aapt resource value: 0x7f05002e
-			public const int logBtnQQLogin = 2131034158;
+			// aapt resource value: 0x7f050032
+			public const int logBtnForget = 2131034162;
 			
 			// aapt resource value: 0x7f05002f
-			public const int logBtnRegister = 2131034159;
+			public const int logBtnLogin = 2131034159;
+			
+			// aapt resource value: 0x7f050030
+			public const int logBtnQQLogin = 2131034160;
+			
+			// aapt resource value: 0x7f050031
+			public const int logBtnRegister = 2131034161;
+			
+			// aapt resource value: 0x7f05002d
+			public const int logEditNumber = 2131034157;
+			
+			// aapt resource value: 0x7f05002e
+			public const int logEditPassword = 2131034158;
 			
 			// aapt resource value: 0x7f05002b
-			public const int logEditNumber = 2131034155;
+			public const int logLayout = 2131034155;
 			
-			// aapt resource value: 0x7f05002c
-			public const int logEditPassword = 2131034156;
-			
-			// aapt resource value: 0x7f050029
-			public const int logLayout = 2131034153;
-			
-			// aapt resource value: 0x7f050044
-			public const int regBtnRegister = 2131034180;
-			
-			// aapt resource value: 0x7f050041
-			public const int regBtnSendcode = 2131034177;
-			
-			// aapt resource value: 0x7f050040
-			public const int regEditCode = 2131034176;
-			
-			// aapt resource value: 0x7f050043
-			public const int regEditConfirm = 2131034179;
-			
-			// aapt resource value: 0x7f05003f
-			public const int regEditNumber = 2131034175;
+			// aapt resource value: 0x7f050045
+			public const int regBtnRegister = 2131034181;
 			
 			// aapt resource value: 0x7f050042
-			public const int regEditPassword = 2131034178;
+			public const int regBtnSendcode = 2131034178;
 			
-			// aapt resource value: 0x7f05003e
-			public const int regLayout = 2131034174;
+			// aapt resource value: 0x7f050041
+			public const int regEditCode = 2131034177;
+			
+			// aapt resource value: 0x7f050044
+			public const int regEditConfirm = 2131034180;
+			
+			// aapt resource value: 0x7f050040
+			public const int regEditNumber = 2131034176;
+			
+			// aapt resource value: 0x7f050043
+			public const int regEditPassword = 2131034179;
+			
+			// aapt resource value: 0x7f05003f
+			public const int regLayout = 2131034175;
 			
 			// aapt resource value: 0x7f050000
 			public const int relativeLayout1 = 2131034112;
@@ -279,14 +282,14 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050008
 			public const int scrollView1 = 2131034120;
 			
-			// aapt resource value: 0x7f050025
-			public const int tabHost1 = 2131034149;
+			// aapt resource value: 0x7f050027
+			public const int tabHost1 = 2131034151;
 			
-			// aapt resource value: 0x7f05001a
-			public const int textView1 = 2131034138;
+			// aapt resource value: 0x7f05001b
+			public const int textView1 = 2131034139;
 			
-			// aapt resource value: 0x7f05003c
-			public const int textView2 = 2131034172;
+			// aapt resource value: 0x7f05001c
+			public const int textView2 = 2131034140;
 			
 			// aapt resource value: 0x7f05000e
 			public const int textView3 = 2131034126;
@@ -297,29 +300,29 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050010
 			public const int textView6 = 2131034128;
 			
-			// aapt resource value: 0x7f05004a
-			public const int tv_image_description = 2131034186;
-			
-			// aapt resource value: 0x7f05004c
-			public const int type1 = 2131034188;
+			// aapt resource value: 0x7f05004b
+			public const int tv_image_description = 2131034187;
 			
 			// aapt resource value: 0x7f05004d
-			public const int type2 = 2131034189;
+			public const int type1 = 2131034189;
 			
 			// aapt resource value: 0x7f05004e
-			public const int type3 = 2131034190;
+			public const int type2 = 2131034190;
 			
 			// aapt resource value: 0x7f05004f
-			public const int type4 = 2131034191;
+			public const int type3 = 2131034191;
 			
 			// aapt resource value: 0x7f050050
-			public const int type5 = 2131034192;
+			public const int type4 = 2131034192;
 			
 			// aapt resource value: 0x7f050051
-			public const int type6 = 2131034193;
+			public const int type5 = 2131034193;
 			
-			// aapt resource value: 0x7f050049
-			public const int viewpager = 2131034185;
+			// aapt resource value: 0x7f050052
+			public const int type6 = 2131034194;
+			
+			// aapt resource value: 0x7f05004a
+			public const int viewpager = 2131034186;
 			
 			// aapt resource value: 0x7f05000d
 			public const int writer = 2131034125;
