@@ -30,9 +30,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView1" />
     <TextView
-        android:text="二维码已经生成，经图书管理员扫描成功后即可借阅！"
+        android:text="二维码已经生成！"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
-        android:textSize="50px" />
+        android:textSize="50px"
+        android:gravity="center" />
+    <TextView
+        android:text="图书管理员扫描成功后即可进行借阅或者还书操作！"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:gravity="center"
+        android:textSize="50px"
+        android:layout_marginBottom="37.5dp" />
 </LinearLayout>

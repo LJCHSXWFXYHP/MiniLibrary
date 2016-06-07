@@ -75,8 +75,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookDetail.cs" />
     <Compile Include="BorrowReader.cs" />
-    <Compile Include="BookDetails.cs" />
     <Compile Include="ClassBookBasketList.cs" />
     <Compile Include="BookListView.cs" />
     <Compile Include="ClassBookListView.cs" />
@@ -136,10 +136,19 @@
     <AndroidResource Include="Resources\layout\PasswardEdit.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\BookDetails.axml">
+    <AndroidResource Include="Resources\layout\BorrowReader.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\BorrowReader.axml">
+    <AndroidResource Include="Resources\layout\BookDetail.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Writer.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Evaluate.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Briefintroduction.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
