@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:id="@+id/logLayout">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout1"
+                android:gravity="center_horizontal">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="311.7dp"
+                    android:id="@+id/linearLayout3"
+                    android:layout_marginBottom="15.0dp"
+                    android:background="#FF33B5E5">
+                    <ImageView
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="291.3dp"
+                        android:id="@+id/Title" />
+                </LinearLayout>
+                <EditText
+                    android:inputType="phone"
+                    android:layout_height="50dp"
+                    android:id="@+id/logEditNumber"
+                    android:hint="请输入手机号"
+                    android:layout_width="300dp"
+                    android:numeric="integer"
+                    android:singleLine="true"
+                    android:phoneNumber="true"
+                    android:focusable="true" />
+                <EditText
+                    android:inputType="textPassword"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/logEditPassword"
+                    android:hint="请输入密码" />
+            </LinearLayout>
+            <Button
+                android:text="登陆"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:id="@+id/logBtnLogin"
+                android:fadingEdge="none" />
+            <Button
+                android:text="QQ一键登录"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:id="@+id/logBtnQQLogin" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout2"
+                android:gravity="center_horizontal">
+                <Button
+                    android:text="注册"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/logBtnRegister" />
+                <Button
+                    android:text="忘记密码"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/logBtnForget" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

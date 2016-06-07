@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1">
+    <ImageView
+        p1:src="@android:drawable/ic_menu_gallery"
+        p1:layout_width="match_parent"
+        p1:layout_height="291.3dp"
+        p1:id="@+id/Title"
+        p1:layout_marginBottom="80dp"
+        p1:background="#FF33B5E5" />
+    <TextView
+        p1:text="注册成功"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="match_parent"
+        p1:layout_height="84.5dp"
+        p1:id="@+id/textView1"
+        p1:gravity="center"
+        p1:textSize="25dp" />
+</LinearLayout>

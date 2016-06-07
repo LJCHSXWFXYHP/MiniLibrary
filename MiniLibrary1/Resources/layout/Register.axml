@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/scrollView1">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:layout_width="match_parent"
+        p1:layout_height="match_parent"
+        p1:id="@+id/regLayout"
+        p1:gravity="center_horizontal">
+        <LinearLayout
+            p1:orientation="vertical"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="311.7dp"
+            p1:id="@+id/linearLayout3"
+            p1:layout_marginBottom="15.0dp"
+            p1:background="#FF33B5E5">
+            <ImageView
+                p1:src="@android:drawable/ic_menu_gallery"
+                p1:layout_width="match_parent"
+                p1:layout_height="291.3dp"
+                p1:id="@+id/imageView1"
+                p1:focusable="true"
+                p1:focusableInTouchMode="true" />
+        </LinearLayout>
+        <EditText
+            p1:inputType="phone"
+            p1:layout_height="50dp"
+            p1:id="@+id/regEditNumber"
+            p1:hint="请输入手机号"
+            p1:layout_width="300dp"
+            p1:numeric="integer"
+            p1:singleLine="true"
+            p1:phoneNumber="true" />
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/linearLayout5"
+            p1:gravity="center_horizontal">
+            <EditText
+                p1:inputType="phone"
+                p1:id="@+id/regEditCode"
+                p1:hint="请输入验证码"
+                p1:numeric="integer"
+                p1:singleLine="true"
+                p1:layout_width="175dp"
+                p1:layout_height="50dp"
+                p1:phoneNumber="true" />
+            <Button
+                p1:text="发送验证码"
+                p1:layout_width="125dp"
+                p1:layout_height="50dp"
+                p1:id="@+id/regBtnSendcode" />
+        </LinearLayout>
+        <EditText
+            p1:inputType="textPassword"
+            p1:layout_width="300dp"
+            p1:layout_height="50dp"
+            p1:id="@+id/regEditPassword"
+            p1:hint="请设置密码" />
+        <EditText
+            p1:inputType="textPassword"
+            p1:layout_width="300dp"
+            p1:layout_height="50dp"
+            p1:id="@+id/regEditConfirm"
+            p1:hint="请再次输入密码" />
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:layout_width="match_parent"
+            p1:layout_height="50dp"
+            p1:id="@+id/linearLayout2"
+            p1:gravity="center_horizontal">
+            <Button
+                p1:text="注册"
+                p1:layout_width="300dp"
+                p1:layout_height="match_parent"
+                p1:id="@+id/regBtnRegister" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#FFFFFFF1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="49.5dp"
+            android:id="@+id/linearLayout2"
+            android:background="#FF33B5E5"
+            android:gravity="right">
+            <Button
+                android:text="设置"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/button1"
+                android:background="@null"
+                android:layout_marginRight="12.0dp"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:id="@+id/linearLayout3"
+            android:background="#FF33B5E5">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:id="@+id/imageView1"
+                android:layout_marginLeft="25.0dp"
+                android:layout_marginRight="25dp" />
+            <TextView
+                android:text="用户名"
+                android:layout_width="160.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:gravity="center"
+                android:textSize="40px"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="5.0dp"
+            android:id="@+id/linearLayout5"
+            android:background="#33000000" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="56.0dp"
+            android:id="@+id/BorrowBooks">
+            <Button
+                android:text="借书"
+                android:background="#fffffff1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewBorrowB"
+                android:textSize="30px"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/linearLayout6"
+            android:background="#33000000" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="56.0dp"
+            android:id="@+id/ReturnTheBook">
+            <Button
+                android:text="还书"
+                android:background="#fffffff1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewReturnB"
+                android:gravity="center"
+                android:textSize="30px"
+                android:layout_marginLeft="15.5dp"
+                android:layout_marginRight="165.0dp"
+                android:textColor="#000000" />
+            <ImageView
+                android:src="@drawable/forwardsec"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView5"
+                android:paddingLeft="60dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/linearLayout7"
+            android:background="#33000000" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="56.0dp"
+            android:id="@+id/BookRenew">
+            <TextView
+                android:text="图书续借"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView4"
+                android:gravity="center"
+                android:textSize="30px"
+                android:layout_marginLeft="15.5dp"
+                android:layout_marginRight="165.0dp"
+                android:textColor="#000000" />
+            <ImageView
+                android:src="@drawable/forwardsec"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView3"
+                android:paddingLeft="30dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/linearLayout8"
+            android:background="#33000000" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="56.0dp"
+            android:id="@+id/ReaderInfoQuery ">
+            <TextView
+                android:text="读者信息查询"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView5"
+                android:gravity="center"
+                android:textSize="30px"
+                android:layout_marginLeft="15.5dp"
+                android:layout_marginRight="165.0dp"
+                android:textColor="#000000" />
+            <ImageView
+                android:src="@drawable/forwardsec"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView2" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/linearLayout9"
+            android:background="#33000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="56.0dp"
+        android:id="@+id/ModifyInformation ">
+        <TextView
+            android:text="修改个人信息"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView6"
+            android:gravity="center"
+            android:textSize="30px"
+            android:layout_marginLeft="15.5dp"
+            android:layout_marginRight="165.0dp"
+            android:textColor="#000000" />
+        <ImageView
+            android:src="@drawable/forwardsec"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView4" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/linearLayout10"
+        android:background="#33000000" />
+</LinearLayout>
