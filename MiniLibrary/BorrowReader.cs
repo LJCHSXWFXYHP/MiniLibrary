@@ -17,13 +17,14 @@ using ZXing.Common;
 
 namespace MiniLibrary
 {
-    [Activity(Label = "BorrowReader")]
+    [Activity(Label = "BorrowReader", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class BorrowReader : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             // Create your application here
+            SetContentView(Resource.Layout.BorrowReader);
             ImageView barcode = FindViewById<ImageView>(Resource.Id.BarCode);
             Bitmap bmp = GeneratorQrImage("232443545454");
             barcode.SetImageBitmap(bmp);
