@@ -39,7 +39,9 @@ namespace MiniLibrary
                 //确认按钮
                 Dialog.SetNeutralButton("确认", delegate
                 {
-                    Toast.MakeText(this, "借阅成功！", ToastLength.Short).Show();
+                    Toast.MakeText(this, "正在生成二维码，请稍后！", ToastLength.Short).Show();
+                    Intent ActLogin = new Intent(this, typeof(BorrowReader));
+                    StartActivity(ActLogin);
                 });
 
                 //取消按钮
