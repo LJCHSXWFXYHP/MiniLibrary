@@ -34,7 +34,7 @@ namespace MiniLibrary
             };
             bt2.Click += delegate
             {
-                Intent ActLogin = new Intent(this, typeof(BookDetails));
+                Intent ActLogin = new Intent(this, typeof(BookDetail));
                 StartActivity(ActLogin);
             };
             bt3.Click += delegate

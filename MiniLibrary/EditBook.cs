@@ -12,15 +12,15 @@ using Android.Widget;
 
 namespace MiniLibrary
 {
-    [Activity(Label = "BookDetails")]
-    public class BookDetails : Activity
+    [Activity(Label = "EditBook", Icon = "@drawable/icon", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class EditBook : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            
+            SetContentView(Resource.Layout.EditBook);
         }
     }
 }
