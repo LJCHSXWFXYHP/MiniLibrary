@@ -26,9 +26,6 @@ namespace MiniLibrary
 		
 		public static void UpdateIdValues()
 		{
-			global::ZXing.Mobile.Resource.Id.contentFrame = global::MiniLibrary.Resource.Id.contentFrame;
-			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::MiniLibrary.Resource.Layout.zxingscanneractivitylayout;
-			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::MiniLibrary.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
@@ -182,9 +179,6 @@ namespace MiniLibrary
 			
 			// aapt resource value: 0x7f050016
 			public const int collection1 = 2131034134;
-			
-			// aapt resource value: 0x7f050054
-			public const int contentFrame = 2131034196;
 			
 			// aapt resource value: 0x7f050019
 			public const int editText1 = 2131034137;
@@ -396,12 +390,6 @@ namespace MiniLibrary
 			
 			// aapt resource value: 0x7f030012
 			public const int Writer = 2130903058;
-			
-			// aapt resource value: 0x7f030013
-			public const int zxingscanneractivitylayout = 2130903059;
-			
-			// aapt resource value: 0x7f030014
-			public const int zxingscannerfragmentlayout = 2130903060;
 			
 			static Layout()
 			{
