@@ -12,14 +12,15 @@ using Android.Widget;
 
 namespace MiniLibrary
 {
-    [Activity(Label = "SecondAdmin")]
+    [Activity(Label = "Library", MainLauncher = true, Icon = "@drawable/icon", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SecondAdmin : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your application here
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.BookManage);
         }
     }
 }
