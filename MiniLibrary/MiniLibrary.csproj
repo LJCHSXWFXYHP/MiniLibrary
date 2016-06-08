@@ -20,25 +20,15 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>True</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <AndroidLinkSkip />
-    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
-    <BundleAssemblies>False</BundleAssemblies>
-    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-    <AndroidSupportedAbis>
-    </AndroidSupportedAbis>
-    <AndroidStoreUncompressedFileExtensions />
-    <MandroidI18n />
-    <Debugger>Xamarin</Debugger>
-    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -81,7 +71,14 @@
     <Compile Include="BookListView.cs" />
     <Compile Include="ClassBookListView.cs" />
     <Compile Include="DataEdit.cs" />
+    <Compile Include="EditBook.cs" />
+    <Compile Include="FirstADMainF.cs" />
     <Compile Include="FirstAdmin.cs" />
+    <Compile Include="FirstADScanF.cs" />
+    <Compile Include="FirstHomeF.cs" />
+    <Compile Include="FirstReaderInfoQ.cs" />
+    <Compile Include="FirstRenew.cs" />
+    <Compile Include="FirstSetUp.cs" />
     <Compile Include="Index.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainActivity.cs" />
@@ -136,21 +133,26 @@
     <AndroidResource Include="Resources\layout\PasswardEdit.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\BorrowReader.axml">
+    <AndroidResource Include="Resources\layout\BookManage.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\BookDetail.axml">
+    <AndroidResource Include="Resources\layout\EditBook.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Writer.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\Evaluate.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\Briefintroduction.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
+    <AndroidResource Include="Resources\layout\BookDetail.axml" />
+    <AndroidResource Include="Resources\layout\BorrowReader.axml" />
+    <AndroidResource Include="Resources\layout\Briefintroduction.axml" />
+    <AndroidResource Include="Resources\layout\Evaluate.axml" />
+    <AndroidResource Include="Resources\layout\Writer.axml" />
+    <AndroidResource Include="Resources\layout\FirstADcont_frame.axml" />
+    <AndroidResource Include="Resources\layout\FirstADHome.axml" />
+    <AndroidResource Include="Resources\layout\FirstADmin.axml" />
+    <AndroidResource Include="Resources\layout\FirstADScanner.axml" />
+    <AndroidResource Include="Resources\layout\FirstADTabInd.axml" />
+    <AndroidResource Include="Resources\layout\FirstADZxingOl.axml" />
+    <AndroidResource Include="Resources\layout\FirstListItemF.axml" />
+    <AndroidResource Include="Resources\layout\FirstReaderInfoQ.axml" />
+    <AndroidResource Include="Resources\layout\FirstRenew.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -172,6 +174,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\point_background.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\appbar.add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

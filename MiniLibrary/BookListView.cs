@@ -35,6 +35,13 @@ namespace MiniLibrary
             BookInfo.Add(new BookListViewInfo { Title = "123", Image = "http://cover1.bookday.cn/73/52/9787544253994.jpg", BookNumber = "222" });
 
             BookList.Adapter = new BookListViewAdapter(this, BookInfo);
+            BookList.ItemClick += BookList_ItemClick;
+        }
+
+        private void BookList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Intent actBookDetail=new Intent(this,typeof(BookDetail));
+            StartActivity((actBookDetail));
         }
     }
 }

@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace MiniLibrary
 {
-    [Activity(Label = "BookDetail",WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "BookDetail", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class BookDetail : Activity
     {
 
@@ -38,9 +38,9 @@ namespace MiniLibrary
             spec3.SetContent(Resource.Id.layoutEvaluate);
             spec3.SetIndicator("本书简评");
 
-           tab.AddTab(spec1);
-           tab.AddTab(spec2);
-           tab.AddTab(spec3);
+            tab.AddTab(spec1);
+            tab.AddTab(spec2);
+            tab.AddTab(spec3);
             // Create your application here
             Random rad = new Random();//实例化随机数产生器rad；
             int value = rad.Next(10, 99);
@@ -76,24 +76,24 @@ namespace MiniLibrary
 
                 borrowButton.Click += (s, e) =>
                 {
-                //对话框
-                var Dialog = new AlertDialog.Builder(this);
+                    //对话框
+                    var Dialog = new AlertDialog.Builder(this);
 
-                //对话框内容
-                Dialog.SetMessage("确认借阅此书?");
+                    //对话框内容
+                    Dialog.SetMessage("确认借阅此书?");
 
-                //确认按钮
-                Dialog.SetNeutralButton("确认", delegate
+                    //确认按钮
+                    Dialog.SetNeutralButton("确认", delegate
                     {
                         Intent ActLogin = new Intent(this, typeof(BorrowReader));
                         StartActivity(ActLogin);
                     });
 
-                //取消按钮
-                Dialog.SetNegativeButton("取消", delegate { });
+                    //取消按钮
+                    Dialog.SetNegativeButton("取消", delegate { });
 
-                //显示对话框
-                Dialog.Show();
+                    //显示对话框
+                    Dialog.Show();
                 };
             }
             collectionButton.Click += (s, e) =>
