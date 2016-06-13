@@ -59,7 +59,7 @@ namespace BookBasketList
             view.FindViewById<TextView>(Resource.Id.ListTextBook).Text = item.Title;
             view.FindViewById<TextView>(Resource.Id.ListTextBookNumber).Text = item.BookNumber;
             var imageBitmap = GetImageBitmapFromUrl(item.Image);
-            view.FindViewById<ImageButton>(Resource.Id.listImbtnbook).SetImageBitmap(GetImageBitmapFromUrl(item.Image));
+            view.FindViewById<ImageView>(Resource.Id.listImbtnbook).SetImageBitmap(GetImageBitmapFromUrl(item.Image));
             return view;
         }
         private Bitmap GetImageBitmapFromUrl(string url)
