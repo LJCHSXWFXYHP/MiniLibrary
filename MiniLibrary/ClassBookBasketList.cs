@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Net;
+using System.Threading.Tasks;
 using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using Android.App;
 using MiniLibrary;
+using Square.Picasso;
 
 namespace BookBasketList
 {
@@ -14,6 +17,7 @@ namespace BookBasketList
         public string Title { get; set; }
         public string Number { get; set; }
         public string BookNumber { get; set; }
+  
     }
 
     class BookBasketListAdapter : BaseAdapter<BookBasketListInfo>
@@ -58,23 +62,9 @@ namespace BookBasketList
             }
             view.FindViewById<TextView>(Resource.Id.ListTextBook).Text = item.Title;
             view.FindViewById<TextView>(Resource.Id.ListTextBookNumber).Text = item.BookNumber;
-            var imageBitmap = GetImageBitmapFromUrl(item.Image);
-            view.FindViewById<ImageView>(Resource.Id.listImbtnbook).SetImageBitmap(GetImageBitmapFromUrl(item.Image));
+            Picasso.With(context).Load(item.Image).Into(view.FindViewById<ImageView>(Resource.Id.listImbtnbook));
             return view;
         }
-        private Bitmap GetImageBitmapFromUrl(string url)
-        {
-            Bitmap imageBitmap = null;
 
-            using(var webClient=new WebClient())
-            {
-                var imageBytes = webClient.DownloadData(url);
-                if (imageBitmap != null && imageBytes.Length > 0)
-                {
-                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
-                }
-                return imageBitmap;
-            }
-        }
     }
 }
