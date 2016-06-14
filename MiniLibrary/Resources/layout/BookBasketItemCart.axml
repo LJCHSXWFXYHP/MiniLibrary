@@ -11,13 +11,13 @@
         p1:id="@+id/ListTextBook"
         p1:textSize="50px"
         p1:gravity="center" />
-    <ImageButton
+    <ImageView
         p1:src="@android:drawable/ic_menu_gallery"
         p1:layout_width="40dp"
         p1:layout_height="50dp"
         p1:id="@+id/ListImbtnAdd"
         p1:layout_toRightOf="@+id/ListTextBook" />
-    <ImageButton
+    <ImageView
         p1:src="@android:drawable/ic_menu_gallery"
         p1:layout_width="40dp"
         p1:layout_height="50dp"
@@ -30,7 +30,7 @@
         p1:layout_toRightOf="@+id/ListImbtnAdd"
         p1:id="@+id/ListTextNum"
         p1:gravity="center" />
-    <ImageButton
+    <ImageView
         p1:src="@android:drawable/ic_menu_gallery"
         p1:layout_width="100dp"
         p1:layout_height="100dp"

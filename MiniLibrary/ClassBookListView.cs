@@ -4,8 +4,8 @@ using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using Android.App;
-using System;
 using MiniLibrary;
+using Square.Picasso;
 
 namespace BookListView
 {
@@ -58,23 +58,8 @@ namespace BookListView
             }
             view.FindViewById<TextView>(Resource.Id.BklistTextBook).Text = item.Title;
             view.FindViewById<TextView>(Resource.Id.BklistBookNumber).Text = item.BookNumber;
-            var imageBitmap = GetImageBitmapFromUrl(item.Image);
-            view.FindViewById<ImageView>(Resource.Id.BklistImBook).SetImageBitmap(GetImageBitmapFromUrl(item.Image));
+            Picasso.With(context).Load(item.Image).Into(view.FindViewById<ImageView>(Resource.Id.BklistImBook));
             return view;
-        }
-        private Bitmap GetImageBitmapFromUrl(string url)
-        {
-            Bitmap imageBitmap = null;
-
-            using (var webClient = new WebClient())
-            {
-                var imageBytes = webClient.DownloadData(url);
-                if (imageBitmap != null && imageBytes.Length > 0)
-                {
-                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
-                }
-                return imageBitmap;
-            }
         }
     }
 }
