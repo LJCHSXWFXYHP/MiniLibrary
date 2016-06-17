@@ -11,7 +11,7 @@
         p1:minWidth="25px"
         p1:minHeight="25px"
         p1:layout_width="match_parent"
-        p1:layout_height="49.5dp"
+        p1:layout_height="50dp"
         p1:id="@+id/linearLayout2"
         p1:background="#FF33B5E5"
         p1:gravity="right">
@@ -40,7 +40,7 @@
             p1:text="用户名"
             p1:layout_width="160.0dp"
             p1:layout_height="match_parent"
-            p1:id="@+id/textView1"
+            p1:id="@+id/TabTextPhoneNum"
             p1:gravity="center"
             p1:textSize="40px" />
     </LinearLayout>

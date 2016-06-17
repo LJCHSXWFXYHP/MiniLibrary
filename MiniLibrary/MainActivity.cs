@@ -27,8 +27,6 @@ namespace MiniLibrary
             Button bt3 = FindViewById<Button>(Resource.Id.btnMain3);
             Button bt4 = FindViewById<Button>(Resource.Id.btnMain4);
 
-            
-
             bt1.Click += delegate
             {
                 Intent ActLogin = new Intent(this, typeof(Login));

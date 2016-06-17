@@ -51,13 +51,19 @@ namespace MiniLibrary
 			public const int Icon = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int point_background = 2130837505;
+			public const int IconScan = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int point_bg_enable = 2130837506;
+			public const int IconSearch = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int point_bg_normal = 2130837507;
+			public const int point_background = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int point_bg_enable = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int point_bg_normal = 2130837509;
 			
 			static Drawable()
 			{
@@ -150,14 +156,23 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050046
 			public const int TabBookBasketList = 2131034182;
 			
-			// aapt resource value: 0x7f050049
-			public const int TabIndexEditSearch = 2131034185;
+			// aapt resource value: 0x7f05004a
+			public const int TabIndexEditSearch = 2131034186;
 			
 			// aapt resource value: 0x7f050048
 			public const int TabIndexLayout = 2131034184;
 			
-			// aapt resource value: 0x7f050053
-			public const int TablayoutPersonSetting = 2131034195;
+			// aapt resource value: 0x7f050049
+			public const int TabIndeximScan = 2131034185;
+			
+			// aapt resource value: 0x7f05004b
+			public const int TabIndeximSearch = 2131034187;
+			
+			// aapt resource value: 0x7f050055
+			public const int TabTextPhoneNum = 2131034197;
+			
+			// aapt resource value: 0x7f050056
+			public const int TablayoutPersonSetting = 2131034198;
 			
 			// aapt resource value: 0x7f05002c
 			public const int Title = 2131034156;
@@ -186,8 +201,8 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050013
 			public const int collection = 2131034131;
 			
-			// aapt resource value: 0x7f050054
-			public const int contentFrame = 2131034196;
+			// aapt resource value: 0x7f050057
+			public const int contentFrame = 2131034199;
 			
 			// aapt resource value: 0x7f050015
 			public const int editText1 = 2131034133;
@@ -228,8 +243,8 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050001
 			public const int listImbtnbook = 2131034113;
 			
-			// aapt resource value: 0x7f05004c
-			public const int ll_point_group = 2131034188;
+			// aapt resource value: 0x7f05004e
+			public const int ll_point_group = 2131034190;
 			
 			// aapt resource value: 0x7f050032
 			public const int logBtnForget = 2131034162;
@@ -300,29 +315,29 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050010
 			public const int textView6 = 2131034128;
 			
-			// aapt resource value: 0x7f05004b
-			public const int tv_image_description = 2131034187;
-			
 			// aapt resource value: 0x7f05004d
-			public const int type1 = 2131034189;
-			
-			// aapt resource value: 0x7f05004e
-			public const int type2 = 2131034190;
+			public const int tv_image_description = 2131034189;
 			
 			// aapt resource value: 0x7f05004f
-			public const int type3 = 2131034191;
+			public const int type1 = 2131034191;
 			
 			// aapt resource value: 0x7f050050
-			public const int type4 = 2131034192;
+			public const int type2 = 2131034192;
 			
 			// aapt resource value: 0x7f050051
-			public const int type5 = 2131034193;
+			public const int type3 = 2131034193;
 			
 			// aapt resource value: 0x7f050052
-			public const int type6 = 2131034194;
+			public const int type4 = 2131034194;
 			
-			// aapt resource value: 0x7f05004a
-			public const int viewpager = 2131034186;
+			// aapt resource value: 0x7f050053
+			public const int type5 = 2131034195;
+			
+			// aapt resource value: 0x7f050054
+			public const int type6 = 2131034196;
+			
+			// aapt resource value: 0x7f05004c
+			public const int viewpager = 2131034188;
 			
 			// aapt resource value: 0x7f05000d
 			public const int writer = 2131034125;
@@ -409,6 +424,9 @@ namespace MiniLibrary
 			
 			// aapt resource value: 0x7f040001
 			public const int ApplicationName = 2130968577;
+			
+			// aapt resource value: 0x7f040003
+			public const int DbStr = 2130968579;
 			
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;

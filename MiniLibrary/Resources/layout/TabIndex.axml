@@ -3,22 +3,30 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/TabIndexLayout">
+    android:id="@+id/TabIndexLayout"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout5">
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout5"
+        android:background="#FF33B5E5">
         <ImageView
             android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:id="@+id/imageView1" />
+            android:id="@+id/TabIndeximScan" />
         <EditText
             android:inputType="text"
-            android:layout_width="347.5dp"
+            android:layout_width="260dp"
             android:layout_height="match_parent"
             android:id="@+id/TabIndexEditSearch" />
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/TabIndeximSearch" />
     </LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"

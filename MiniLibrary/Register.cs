@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Net;
+using System.IO;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -48,10 +49,22 @@ namespace MiniLibrary
                     Toast.MakeText(this, "两次输入的密码不一致！", ToastLength.Short).Show();
 
                 }
+                else if(code.Text!="123456")
+                {
+                    Toast.MakeText(this, "验证码错误！", ToastLength.Short).Show();
+                }
                 else
                 {
-                    Intent ActRegsuccess = new Intent(this, typeof(RegisterSuccess));
-                    StartActivity(ActRegsuccess);
+                    string res = RegisterData.Post("http://115.159.145.115/Register.php/", number.Text, psw.Text);
+                    if (res == "0")
+                    {
+                        Toast.MakeText(this, "该号码已被注册！", ToastLength.Short).Show();
+                    }
+                    else if (res == "1")
+                    {
+                        Intent ActSuccess = new Intent(this, typeof(RegisterSuccess));
+                        StartActivity(ActSuccess);
+                    }
                 }
 
             };
@@ -99,5 +112,29 @@ namespace MiniLibrary
 
         }
 
+        class RegisterData
+        {
+            public static string Post(string url, string PhoneNum, string Password)
+            {
+                string para = "PhoneNum=" + PhoneNum + "&Password=" + Password;
+                HttpWebRequest httpWeb = (HttpWebRequest)WebRequest.Create(url);
+                httpWeb.Timeout = 20000;
+                httpWeb.Method = "POST";
+                httpWeb.ContentType = "application/x-www-form-urlencoded";
+                byte[] bytePara = Encoding.ASCII.GetBytes(para);
+                using (Stream reqStream = httpWeb.GetRequestStream())
+                {
+                    reqStream.Write(bytePara, 0, para.Length);
+                }
+                HttpWebResponse httpWebResponse = (HttpWebResponse)httpWeb.GetResponse();
+                Stream stream = httpWebResponse.GetResponseStream();
+                StreamReader streamReader = new StreamReader(stream, Encoding.GetEncoding("utf-8"));
+                string result = streamReader.ReadToEnd();
+                stream.Close();
+
+                return result;
+
+            }
+        }
     }
 }

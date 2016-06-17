@@ -17,7 +17,8 @@ namespace MiniLibrary
     [Activity(Label = "Index", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Index : Activity
     {
-
+        private ImageView Scan;
+        private ImageView Search;
         private ImageButton Type1;
         private ImageButton Type2;
         private ImageButton Type3;
@@ -29,6 +30,7 @@ namespace MiniLibrary
 
         private List<BookBasketListInfo> BookInfo;
         private ListView BookList;
+        private TextView PhoneNum;
 
         private LinearLayout PersonalSetting;
         
@@ -68,6 +70,8 @@ namespace MiniLibrary
 
         private void TabIndex()
         {
+            Scan = FindViewById<ImageView>(Resource.Id.TabIndeximScan);
+            Search = FindViewById<ImageView>(Resource.Id.TabIndeximSearch);
             Type1 = FindViewById<ImageButton>(Resource.Id.type1);
             Type2 = FindViewById<ImageButton>(Resource.Id.type2);
             Type3 = FindViewById<ImageButton>(Resource.Id.type3);
@@ -76,6 +80,9 @@ namespace MiniLibrary
             Type6 = FindViewById<ImageButton>(Resource.Id.type6);
             TabIndexLayout = FindViewById<LinearLayout>(Resource.Id.TabIndexLayout);
             searchEdit = FindViewById<EditText>(Resource.Id.TabIndexEditSearch);
+
+            Scan.SetImageResource(Resource.Drawable.IconScan);
+            Search.SetImageResource(Resource.Drawable.IconSearch);
 
             Type1.Click += delegate
             {
@@ -101,7 +108,10 @@ namespace MiniLibrary
 
         private void TabPrivate()
         {
+            PhoneNum = FindViewById<TextView>(Resource.Id.TabTextPhoneNum);
             PersonalSetting = FindViewById<LinearLayout>(Resource.Id.TablayoutPersonSetting);
+            ISharedPreferences LoginSP = GetSharedPreferences("LoginData", FileCreationMode.Private);
+            PhoneNum.Text = LoginSP.GetString("PhoneNum", "");
             PersonalSetting.Click += delegate
             {
                 Intent ActPersonSetting = new Intent(this, typeof(PersonalSetting));
