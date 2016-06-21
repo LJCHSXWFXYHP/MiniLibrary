@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
+using System.Text.RegularExpressions;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+
 
 namespace MiniLibrary
 {
@@ -44,12 +46,15 @@ namespace MiniLibrary
                 {
                     Toast.MakeText(this, "请输入完整的注册信息！", ToastLength.Short).Show();
                 }
+                else if (number.Text.Length != 11 || !Regex.IsMatch(number.Text, @"^[+-]?\d*$"))
+                {
+                    Toast.MakeText(this, "手机号码格式不正确", ToastLength.Short).Show();
+                }
                 else if ((psw.Text != confirm.Text))
                 {
                     Toast.MakeText(this, "两次输入的密码不一致！", ToastLength.Short).Show();
-
                 }
-                else if(code.Text!="123456")
+                else if (code.Text != "123456")
                 {
                     Toast.MakeText(this, "验证码错误！", ToastLength.Short).Show();
                 }

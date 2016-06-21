@@ -1,16 +1,14 @@
 <?php
 //error_reporting(~E_ALL);
-	$myOldPhoneNum=$_POST['OldPhoneNum'];
-	$myNewPhoneNum=$_POST['PhoneNum'];
-	if($myNewPhoneNum=='') {echo 'null'; exit;}
-	if($myOldPhoneNum=='') {echo 'null'; exit;}
-	$sql_0="SELECT PhoneNum FROM UserInformation WHERE PhoneNum='".$myNewPhoneNum."'";
-	$sql="UPDATE UserInformation SET PhoneNum='".$myNewPhoneNum."' WHERE PhoneNum='".$myOldPhoneNum."'";
+	$myPhoneNum=$_POST['PhoneNum'];
+	$myNewPassWord=$_POST['Password'];
+	if($myPhoneNum=='') {echo 'null'; exit;}
+	$sql="UPDATE UserInformation SET Password='".$myNewPassWord."' WHERE PhoneNum='".$myPhoneNum."'";
 
 	$db_host   = 'localhost';  //数据库主机名称，一般都为localhost   
-	$db_user   = 'root';        //数据库用户帐号，根据个人情况而定   
+	$db_user   = 'root';       //数据库用户帐号，根据个人情况而定   
 	$db_passw = 'LJCljc123';   //数据库用户密码，根据个人情况而定   
-	$db_name  = 'MiniLibrary';         //数据库具体名称，以刚才创建的数据库为准  
+	$db_name  = 'MiniLibrary'; //数据库具体名称，以刚才创建的数据库为准  
 		  
 		  
 	//连接数据库   
@@ -26,13 +24,6 @@
 	  
 	  
 	//执行SQL语句(更新)   
-	$result=mysqli_query($conn,$sql_0);
-
-	$row=mysqli_fetch_assoc($result);
-	if($row['PhoneNum'] !='') {
-		echo 'Failed';
-		exit;
-	}
 	mysqli_query($conn,$sql) or die('-3'.mysql_error());
 	echo 'Success';
 	
