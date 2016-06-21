@@ -107,7 +107,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="70.0dp"
-        android:id="@+id/linearLayout4">
+        android:id="@+id/SettingRealNameEdit">
         <TextView
             android:text="实名认证"
             android:layout_width="wrap_content"

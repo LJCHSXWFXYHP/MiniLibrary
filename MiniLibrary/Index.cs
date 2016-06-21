@@ -11,12 +11,14 @@ using Android.Views;
 using Android.Widget;
 using Android.Support.V4.View;
 using BookBasketList;
+using Java.Lang;
 
 namespace MiniLibrary
 {
     [Activity(Label = "Index", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Index : Activity
     {
+        private ViewPager Advp;
         private ImageView Scan;
         private ImageView Search;
         private ImageButton Type1;
@@ -70,6 +72,7 @@ namespace MiniLibrary
 
         private void TabIndex()
         {
+            Advp = FindViewById<ViewPager>(Resource.Id.viewpager);
             Scan = FindViewById<ImageView>(Resource.Id.TabIndeximScan);
             Search = FindViewById<ImageView>(Resource.Id.TabIndeximSearch);
             Type1 = FindViewById<ImageButton>(Resource.Id.type1);
@@ -83,6 +86,20 @@ namespace MiniLibrary
 
             Scan.SetImageResource(Resource.Drawable.IconScan);
             Search.SetImageResource(Resource.Drawable.IconSearch);
+
+            View v1, v2, v3;
+            List<View> viewList;
+            ViewPagerAdapter AdvpAdapter;
+            var li = LayoutInflater.From(this);
+            v1 = li.Inflate(Resource.Layout.ViewPager_1, null);
+            v2 = li.Inflate(Resource.Layout.ViewPager_2, null);
+            v3 = li.Inflate(Resource.Layout.ViewPager_3, null);
+            viewList = new List<View>();
+            viewList.Add(v1);
+            viewList.Add(v2);
+            viewList.Add(v3);
+            AdvpAdapter = new ViewPagerAdapter(viewList);
+            Advp.Adapter = AdvpAdapter;
 
             Type1.Click += delegate
             {
@@ -127,6 +144,35 @@ namespace MiniLibrary
                 return true;
             }
             return false;
+        }
+
+        internal class ViewPagerAdapter : PagerAdapter
+        {
+            private readonly List<View> viewLists;
+            public override bool IsViewFromObject(View view, Java.Lang.Object objectValue)
+            {
+                return view == objectValue;
+            }
+            public ViewPagerAdapter(List<View> _viewList)
+            {
+                viewLists = _viewList;
+            }
+            public override int Count
+            {
+                get
+                {
+                    return viewLists.Count();
+                }
+            }
+            public override Java.Lang.Object InstantiateItem(ViewGroup container, int position)
+            {
+                container.AddView(viewLists[position]);
+                return viewLists[position];
+            }
+            public override void DestroyItem(ViewGroup container, int position, Java.Lang.Object objectValue)
+            {
+                container.RemoveView(viewLists[position]);
+            }
         }
 
     }

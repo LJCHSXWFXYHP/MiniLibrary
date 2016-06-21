@@ -8,17 +8,31 @@
         p1:orientation="horizontal"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/linearLayout2">
-        <ImageView
-            p1:src="@android:drawable/ic_menu_gallery"
+        p1:id="@+id/linearLayout2"
+        p1:minWidth="25px"
+        p1:minHeight="25px">
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:id="@+id/linearLayout5"
+            p1:background="#FF33B5E5"
             p1:layout_width="wrap_content"
-            p1:layout_height="match_parent"
-            p1:id="@+id/imageView1" />
-        <EditText
-            p1:inputType="text"
-            p1:layout_width="match_parent"
-            p1:layout_height="match_parent"
-            p1:id="@+id/editText1" />
+            p1:layout_height="match_parent">
+            <ImageView
+                p1:src="@android:drawable/ic_menu_gallery"
+                p1:layout_width="50dp"
+                p1:layout_height="match_parent"
+                p1:id="@+id/ListimScan" />
+            <EditText
+                p1:inputType="text"
+                p1:layout_width="260dp"
+                p1:layout_height="match_parent"
+                p1:id="@+id/ListEditSearch" />
+            <ImageView
+                p1:src="@android:drawable/ic_menu_gallery"
+                p1:layout_width="50dp"
+                p1:layout_height="match_parent"
+                p1:id="@+id/ListimSearch" />
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         p1:orientation="vertical"

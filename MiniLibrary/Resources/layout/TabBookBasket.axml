@@ -11,6 +11,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1">
         <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/linearLayout3"
+            android:background="#FF33B5E5" />
+        <LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"
             android:minHeight="25px"

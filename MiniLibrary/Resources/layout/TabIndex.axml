@@ -19,7 +19,7 @@
             android:id="@+id/TabIndeximScan" />
         <EditText
             android:inputType="text"
-            android:layout_width="260dp"
+            android:layout_width="260.0dp"
             android:layout_height="match_parent"
             android:id="@+id/TabIndexEditSearch" />
         <ImageView

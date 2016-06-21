@@ -72,6 +72,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -104,6 +105,8 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="PasswordEdit.cs" />
     <Compile Include="PersonalSetting.cs" />
+    <Compile Include="RealName.cs" />
+    <Compile Include="RealNameSuccess.cs" />
     <Compile Include="Register.cs" />
     <Compile Include="RegisterSuccess.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -159,6 +162,21 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\BorrowReader.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ViewPager_1.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ViewPager_2.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ViewPager_3.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\RealName.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\RealNameSuccess.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

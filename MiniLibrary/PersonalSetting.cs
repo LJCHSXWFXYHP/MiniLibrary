@@ -17,6 +17,7 @@ namespace MiniLibrary
     {
         private LinearLayout DataEdit;
         private LinearLayout PasswordEdit;
+        private LinearLayout RealNameEdit;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -25,7 +26,7 @@ namespace MiniLibrary
             SetContentView(Resource.Layout.PersonalSetting);
             DataEdit = FindViewById<LinearLayout>(Resource.Id.SettingDataEdit);
             PasswordEdit = FindViewById<LinearLayout>(Resource.Id.SettingPasswardEdit);
-
+            RealNameEdit = FindViewById<LinearLayout>(Resource.Id.SettingRealNameEdit);
             DataEdit.Click += delegate
             {
                 Intent ActDataEdit = new Intent(this, typeof(DataEdit));
@@ -35,6 +36,11 @@ namespace MiniLibrary
             {
                 Intent ActPasswordEdit = new Intent(this, typeof(PasswordEdit));
                 StartActivity(ActPasswordEdit);
+            };
+            RealNameEdit.Click += delegate
+            {
+                Intent ActRealName = new Intent(this, typeof(RealName));
+                StartActivity(ActRealName);
             };
         }
     }
