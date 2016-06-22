@@ -94,23 +94,14 @@ namespace MiniLibrary
         {
             public static string Post(string url, string Name, string ID, string PhoneNum)
             {
-                string para = "Name=" + Name + "&ID=" + ID +"&PhoneNum="+PhoneNum;
-                HttpWebRequest httpWeb = (HttpWebRequest)WebRequest.Create(url);
-                httpWeb.Timeout = 20000;
-                httpWeb.Method = "POST";
-                httpWeb.ContentType = "application/x-www-form-urlencoded";
-                byte[] bytePara = Encoding.ASCII.GetBytes(para);
-                using (Stream reqStream = httpWeb.GetRequestStream())
-                {
-                    reqStream.Write(bytePara, 0, para.Length);
-                }
-                HttpWebResponse httpWebResponse = (HttpWebResponse)httpWeb.GetResponse();
-                Stream stream = httpWebResponse.GetResponseStream();
-                StreamReader streamReader = new StreamReader(stream, Encoding.GetEncoding("utf-8"));
-                string result = streamReader.ReadToEnd();
-                stream.Close();
+                string postString = "Name=" + Name + "&ID=" + ID + "&PhoneNum=" + PhoneNum;
+                byte[] postData = Encoding.UTF8.GetBytes(postString);  
+                WebClient webClient = new WebClient();
+                webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+                byte[] responseData = webClient.UploadData(url, "POST", postData);
+                string srcString = Encoding.UTF8.GetString(responseData);
 
-                return result;
+                return srcString;
 
             }
         }
