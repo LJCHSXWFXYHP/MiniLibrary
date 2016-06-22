@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Net;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -101,6 +101,17 @@ namespace MiniLibrary
             AdvpAdapter = new ViewPagerAdapter(viewList);
             Advp.Adapter = AdvpAdapter;
 
+            Search.Click += delegate
+            {
+                if (searchEdit.Text != "")
+                {
+                    Intent ActBookList = new Intent(this, typeof(BookListView));
+                    Bundle bundle = new Bundle();
+                    ActBookList.PutExtra("SearchInfo", searchEdit.Text);
+                    ActBookList.PutExtras(bundle);
+                    StartActivity(ActBookList);                                             
+                }
+            };
             Type1.Click += delegate
             {
                 Intent ActList = new Intent(this, typeof(BookListView));
@@ -112,6 +123,7 @@ namespace MiniLibrary
                 imm.HideSoftInputFromWindow(searchEdit.WindowToken, 0);
             };
         }
+
 
         private void TabBookBasket()
         {
@@ -174,6 +186,8 @@ namespace MiniLibrary
                 container.RemoveView(viewLists[position]);
             }
         }
+
+
 
     }
 }

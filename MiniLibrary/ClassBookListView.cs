@@ -13,7 +13,8 @@ namespace BookListView
     {
         public string Image { get; set; }
         public string Title { get; set; }
-        public string BookNumber { get; set; }
+        public string Author { get; set; }
+        public string BookClassId { get; set; }
     }
 
     class BookListViewAdapter : BaseAdapter<BookListViewInfo>
@@ -57,7 +58,7 @@ namespace BookListView
                 view = context.LayoutInflater.Inflate(Resource.Layout.BookListViewItemCart, null);
             }
             view.FindViewById<TextView>(Resource.Id.BklistTextBook).Text = item.Title;
-            view.FindViewById<TextView>(Resource.Id.BklistBookNumber).Text = item.BookNumber;
+            view.FindViewById<TextView>(Resource.Id.BklistAuthor).Text = item.Author;
             Picasso.With(context).Load(item.Image).Into(view.FindViewById<ImageView>(Resource.Id.BklistImBook));
             return view;
         }
