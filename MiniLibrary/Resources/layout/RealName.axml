@@ -38,13 +38,6 @@
                     p1:layout_height="75dp"
                     p1:id="@+id/linearLayout3"
                     p1:background="#FF33B5E5">
-                    <ImageView
-                        p1:src="@android:drawable/ic_menu_gallery"
-                        p1:layout_width="75dp"
-                        p1:layout_height="75dp"
-                        p1:id="@+id/imageView1"
-                        p1:layout_marginLeft="25.0dp"
-                        p1:layout_marginRight="25dp" />
                     <TextView
                         p1:text="用户名"
                         p1:layout_width="160.0dp"

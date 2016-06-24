@@ -15,6 +15,9 @@ namespace BookListView
         public string Title { get; set; }
         public string Author { get; set; }
         public string BookClassId { get; set; }
+        public string BookId { get; set; }
+        public string ReturnFlag { get; set; }
+        public string BorrowDate { get; set; }
     }
 
     class BookListViewAdapter : BaseAdapter<BookListViewInfo>

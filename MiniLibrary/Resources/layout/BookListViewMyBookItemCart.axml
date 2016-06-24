@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1">
+    <RelativeLayout
+        p1:id="@+id/relativeLayout1"
+        p1:background="@android:color/background_light"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content">
+        <ImageView
+            p1:src="@android:drawable/ic_menu_gallery"
+            p1:layout_width="100dp"
+            p1:layout_height="100dp"
+            p1:id="@+id/MyBookImBook" />
+        <TextView
+            p1:text="图书名称"
+            p1:layout_width="189.0dp"
+            p1:layout_height="60dp"
+            p1:layout_toRightOf="@+id/MyBookImBook"
+            p1:id="@+id/MyBookTextBook"
+            p1:textSize="50px"
+            p1:gravity="center" />
+        <TextView
+            p1:text="作者"
+            p1:layout_width="match_parent"
+            p1:layout_height="60dp"
+            p1:layout_toRightOf="@id/MyBookTextBook"
+            p1:id="@+id/MyBookAuthor"
+            p1:gravity="center" />
+        <TextView
+            p1:text="书号"
+            p1:layout_width="100.0dp"
+            p1:layout_height="40dp"
+            p1:layout_toRightOf="@id/MyBookImBook"
+            p1:id="@+id/MyBookId"
+            p1:layout_below="@id/MyBookTextBook"
+            p1:gravity="center" />
+        <TextView
+            p1:text="时间"
+            p1:layout_width="119.5dp"
+            p1:layout_height="40dp"
+            p1:layout_below="@id/MyBookTextBook"
+            p1:id="@+id/MyBookDate"
+            p1:layout_toRightOf="@id/MyBookId"
+            p1:gravity="center" />
+        <CheckBox
+            p1:layout_width="match_parent"
+            p1:layout_height="40dp"
+            p1:layout_toRightOf="@id/MyBookDate"
+            p1:id="@+id/MyBookCheck"
+            p1:layout_below="@id/MyBookAuthor"
+            p1:focusable="false" />
+    </RelativeLayout>
+</LinearLayout>

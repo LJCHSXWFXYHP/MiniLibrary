@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout4"
+    android:gravity="center_horizontal">
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="49.5dp"
+        android:layout_height="50dp"
         android:id="@+id/linearLayout2"
         android:background="#FF33B5E5"
         android:gravity="right" />
@@ -18,11 +20,12 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="353.0dp"
-        android:id="@+id/linearLayout3">
+        android:id="@+id/linearLayout3"
+        android:gravity="center">
         <ImageView
             android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="383.5dp"
-            android:layout_height="match_parent"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:id="@+id/BarCode" />
     </LinearLayout>
     <TextView
@@ -31,7 +34,7 @@
         android:id="@+id/textView1" />
     <TextView
         android:text="二维码已经生成，经图书管理员扫描成功后即可借阅！"
-        android:layout_width="match_parent"
+        android:layout_width="232.7dp"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
         android:textSize="50px" />

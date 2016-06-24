@@ -93,11 +93,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookListView_MyBook.cs" />
+    <Compile Include="BookListView_type.cs" />
     <Compile Include="BorrowReader.cs" />
     <Compile Include="BookDetails.cs" />
     <Compile Include="ClassBookBasketList.cs" />
     <Compile Include="BookListView.cs" />
     <Compile Include="ClassBookListView.cs" />
+    <Compile Include="ClassBookListView_MyBook.cs" />
     <Compile Include="DataEdit.cs" />
     <Compile Include="FirstAdmin.cs" />
     <Compile Include="Index.cs" />
@@ -179,6 +182,12 @@
     <AndroidResource Include="Resources\layout\RealNameSuccess.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\BookListViewMyBookItemCart.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\BookListViewMyBook.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -206,6 +215,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\IconScan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconMore.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\MoreMenu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
