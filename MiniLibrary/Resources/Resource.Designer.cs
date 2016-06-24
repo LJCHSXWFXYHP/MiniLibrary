@@ -156,8 +156,8 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f05004c
 			public const int TabIndexLayout = 2131034188;
 			
-			// aapt resource value: 0x7f05005b
-			public const int TablayoutPersonSetting = 2131034203;
+			// aapt resource value: 0x7f05005e
+			public const int TablayoutPersonSetting = 2131034206;
 			
 			// aapt resource value: 0x7f05002f
 			public const int Title = 2131034159;
@@ -189,8 +189,8 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f050016
 			public const int collection1 = 2131034134;
 			
-			// aapt resource value: 0x7f05005c
-			public const int contentFrame = 2131034204;
+			// aapt resource value: 0x7f05005f
+			public const int contentFrame = 2131034207;
 			
 			// aapt resource value: 0x7f050019
 			public const int editText1 = 2131034137;
@@ -294,6 +294,15 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f05002d
 			public const int scrollView1 = 2131034157;
 			
+			// aapt resource value: 0x7f050058
+			public const int scrollView2 = 2131034200;
+			
+			// aapt resource value: 0x7f05005a
+			public const int scrollView3 = 2131034202;
+			
+			// aapt resource value: 0x7f05005c
+			public const int scrollView4 = 2131034204;
+			
 			// aapt resource value: 0x7f050029
 			public const int tabHost1 = 2131034153;
 			
@@ -312,17 +321,17 @@ namespace MiniLibrary
 			// aapt resource value: 0x7f05004a
 			public const int textView_BookCatalog = 2131034186;
 			
-			// aapt resource value: 0x7f050058
-			public const int textView_BookClassId = 2131034200;
-			
 			// aapt resource value: 0x7f050057
-			public const int textView_BookClassification = 2131034199;
+			public const int textView_BookClassId = 2131034199;
 			
-			// aapt resource value: 0x7f05005a
-			public const int textView_BookPress = 2131034202;
+			// aapt resource value: 0x7f05005d
+			public const int textView_BookClassification = 2131034205;
 			
 			// aapt resource value: 0x7f050059
-			public const int textView_BookPrice = 2131034201;
+			public const int textView_BookPress = 2131034201;
+			
+			// aapt resource value: 0x7f05005b
+			public const int textView_BookPrice = 2131034203;
 			
 			// aapt resource value: 0x7f05004b
 			public const int textView_BookSummary = 2131034187;

@@ -9,26 +9,48 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="210dp"
+        android:layout_height="52.5dp"
         android:id="@+id/scrollView1">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/textView_BookClassId" />
+    </ScrollView>
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="52.5dp"
+        android:id="@+id/scrollView2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/textView_BookPress" />
+    </ScrollView>
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="52.5dp"
+        android:id="@+id/scrollView3">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/textView_BookPrice" />
+    </ScrollView>
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="52.5dp"
+        android:id="@+id/scrollView4">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:id="@+id/textView_BookClassification" />
     </ScrollView>
-    <TextView
-        android:text="Text"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:id="@+id/textView_BookClassId" />
-    <TextView
-        android:text="Text"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:id="@+id/textView_BookPrice" />
-    <TextView
-        android:text="Text"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:id="@+id/textView_BookPress" />
 </LinearLayout>

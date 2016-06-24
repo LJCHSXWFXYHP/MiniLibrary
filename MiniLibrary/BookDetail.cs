@@ -29,11 +29,11 @@ namespace MiniLibrary
             TabHost tab = FindViewById<TabHost>(Resource.Id.tabHost123);
 
             TextView bookSummary = FindViewById<TextView>(Resource.Id.textView_BookSummary); //内容概要
-            TextView bookCatalog = FindViewById<TextView>(Resource.Id.textView_BookCatalog);
-            //TextView authorSummary = FindViewById<TextView>(Resource.Id.textView_Author);
-            TextView bookId = FindViewById<TextView>(Resource.Id.textView_BookId);
+            TextView bookCatalog = FindViewById<TextView>(Resource.Id.textView_BookCatalog); //本书目录
+            TextView bookClassId = FindViewById<TextView>(Resource.Id.textView_BookClassId);
             TextView bookPrice = FindViewById<TextView>(Resource.Id.textView_BookPrice);
             TextView bookPress = FindViewById<TextView>(Resource.Id.textView_BookPress);
+            TextView bookClassification = FindViewById<TextView>(Resource.Id.textView_BookClassification);
 
             TextView bookAuthor = FindViewById<TextView>(Resource.Id.bookDetailAuthor);
             TextView bookName = FindViewById<TextView>(Resource.Id.bookDetailBookname);
@@ -42,19 +42,16 @@ namespace MiniLibrary
             string result = BookDetailData.Post("http://115.159.145.115/BookDetail.php/", "1");
             var book = JsonConvert.DeserializeObject<BookClass>(result);
 
-            bookSummary.Text = book.BookSummary;//内容概要
-            bookCatalog.Text = book.BookCatalog;//本书目录
-
-
+          
             string bookclassId = book.BookClassId;
             bookAuthor.Text = book.BookAuthor; //标题：作者
             bookName.Text = book.BookName; //标题：书名
-            authorSummary.Text = book.AuthorSummary;//Tab1:内容概要
-            bookSummary.Text = book.BookSummary;//Tab2:本书目录
-            bookCatalog.Text = book.BookCatalog;//Tab3:发行简介
-            bookId.Text = book.BookClassId;
+            bookSummary.Text = book.BookSummary;//Tab1:内容概要
+            bookCatalog.Text = book.BookCatalog;//Tab2:本书目录
+            bookClassId.Text = book.BookClassId;
             bookPrice.Text = book.BookPrice;
             bookPress.Text = book.BookPress;
+            bookClassification.Text = book.BookClassification;
 
             tab.Setup();
 
@@ -92,9 +89,7 @@ namespace MiniLibrary
                     Dialog.SetNeutralButton("确认", delegate
                     {
                         Intent intent = new Intent(this, typeof(BorrowReader));
-                        Bundle bundle = new Bundle();
-                        bundle.PutString("bookclassid", bookclassId);
-                        intent.PutExtra("bundle", bundle);
+                        intent.PutExtra("BookClassId", bookclassId);
                         StartActivity(intent);
                     });
 
