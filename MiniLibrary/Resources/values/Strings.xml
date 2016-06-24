@@ -3,4 +3,5 @@
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">MiniLibrary</string>
     <string name="PrivateCenter">个人中心</string>
+    <string name="ServiceUrl">"http://115.159.145.115/"</string>
 </resources>

@@ -11,23 +11,43 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1">
         <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/linearLayout3"
+            android:background="#FF33B5E5"
+            android:gravity="right">
+            <Button
+                android:text="一键借书"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/BorrowAll"
+                android:background="@null"
+                android:layout_marginRight="12dp" />
+        </LinearLayout>
+        <LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="512.5dp"
             android:id="@+id/linearLayout2">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="5.0dp"
+                android:id="@+id/linearLayout5"
+                android:background="#33000000" />
             <ListView
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="500dp"
                 android:id="@+id/TabBookBasketList" />
         </LinearLayout>
-        <Button
-            android:text="一键借书"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/BookSubmit" />
     </LinearLayout>
 </LinearLayout>

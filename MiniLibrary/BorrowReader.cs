@@ -26,7 +26,8 @@ namespace MiniLibrary
             // Create your application here
             SetContentView(Resource.Layout.BorrowReader);
             ImageView barcode = FindViewById<ImageView>(Resource.Id.BarCode);
-            Bitmap bmp = GeneratorQrImage("232443545454");
+            string BorrowInfo = Intent.GetStringExtra("BorrowInfo");
+            Bitmap bmp = GeneratorQrImage(BorrowInfo);
             barcode.SetImageBitmap(bmp);
 
         }

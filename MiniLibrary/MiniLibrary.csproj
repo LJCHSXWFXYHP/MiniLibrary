@@ -53,6 +53,10 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Square.OkHttp, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Square.OkHttp.2.4.0.0\lib\MonoAndroid\Square.OkHttp.dll</HintPath>
       <Private>True</Private>
@@ -67,6 +71,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -87,25 +93,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookDetail.cs" />
+    <Compile Include="BookListView_MyBook.cs" />
+    <Compile Include="BookListView_type.cs" />
     <Compile Include="BorrowReader.cs" />
+    <Compile Include="BookDetails.cs" />
     <Compile Include="ClassBookBasketList.cs" />
     <Compile Include="BookListView.cs" />
     <Compile Include="ClassBookListView.cs" />
+    <Compile Include="ClassBookListView_MyBook.cs" />
     <Compile Include="DataEdit.cs" />
-    <Compile Include="EditBook.cs" />
-    <Compile Include="FirstADMainF.cs" />
     <Compile Include="FirstAdmin.cs" />
-    <Compile Include="FirstADScanF.cs" />
-    <Compile Include="FirstHomeF.cs" />
-    <Compile Include="FirstReaderInfoQ.cs" />
-    <Compile Include="FirstRenew.cs" />
-    <Compile Include="FirstSetUp.cs" />
     <Compile Include="Index.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PasswordEdit.cs" />
     <Compile Include="PersonalSetting.cs" />
+    <Compile Include="RealName.cs" />
+    <Compile Include="RealNameSuccess.cs" />
     <Compile Include="Register.cs" />
     <Compile Include="RegisterSuccess.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -157,26 +161,33 @@
     <AndroidResource Include="Resources\layout\PasswardEdit.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\BookManage.axml">
+    <AndroidResource Include="Resources\layout\BookDetails.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\EditBook.axml">
+    <AndroidResource Include="Resources\layout\BorrowReader.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\BookDetail.axml" />
-    <AndroidResource Include="Resources\layout\BorrowReader.axml" />
-    <AndroidResource Include="Resources\layout\Briefintroduction.axml" />
-    <AndroidResource Include="Resources\layout\Evaluate.axml" />
-    <AndroidResource Include="Resources\layout\Writer.axml" />
-    <AndroidResource Include="Resources\layout\FirstADcont_frame.axml" />
-    <AndroidResource Include="Resources\layout\FirstADHome.axml" />
-    <AndroidResource Include="Resources\layout\FirstADmin.axml" />
-    <AndroidResource Include="Resources\layout\FirstADScanner.axml" />
-    <AndroidResource Include="Resources\layout\FirstADTabInd.axml" />
-    <AndroidResource Include="Resources\layout\FirstADZxingOl.axml" />
-    <AndroidResource Include="Resources\layout\FirstListItemF.axml" />
-    <AndroidResource Include="Resources\layout\FirstReaderInfoQ.axml" />
-    <AndroidResource Include="Resources\layout\FirstRenew.axml" />
+    <AndroidResource Include="Resources\layout\ViewPager_1.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ViewPager_2.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ViewPager_3.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\RealName.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\RealNameSuccess.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\BookListViewMyBookItemCart.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\BookListViewMyBook.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -200,7 +211,20 @@
     <AndroidResource Include="Resources\drawable\point_background.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\appbar.add.png" />
+    <AndroidResource Include="Resources\drawable\IconSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconScan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconMore.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\MoreMenu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

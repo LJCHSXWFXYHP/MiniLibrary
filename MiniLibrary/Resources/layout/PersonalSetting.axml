@@ -33,18 +33,11 @@
             android:layout_height="75dp"
             android:id="@+id/linearLayout3"
             android:background="#FF33B5E5">
-            <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:id="@+id/imageView1"
-                android:layout_marginLeft="25.0dp"
-                android:layout_marginRight="25dp" />
             <TextView
                 android:text="用户名"
                 android:layout_width="160.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/textView1"
+                android:id="@+id/PersonalSettingTextPhoneNum"
                 android:gravity="center"
                 android:textSize="40px" />
         </LinearLayout>
@@ -62,7 +55,7 @@
             android:layout_height="70.0dp"
             android:id="@+id/SettingDataEdit">
             <TextView
-                android:text="修改资料"
+                android:text="修改手机"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/textView2"
@@ -107,7 +100,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="70.0dp"
-        android:id="@+id/linearLayout4">
+        android:id="@+id/SettingRealNameEdit">
         <TextView
             android:text="实名认证"
             android:layout_width="wrap_content"
