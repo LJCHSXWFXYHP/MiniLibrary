@@ -1,6 +1,6 @@
 <?php
 
-$myPhoneNum='13333333333';//$_POST['PhoneNum'];
+$myPhoneNum=$_POST['KeyWord'];
 if($myPhoneNum==''){exit;}
 $sql="select br.BookId,br.BorrowDate,br.ReturnFlag,bc.BookClassId,bc.BookName,bc.BookAuthor,bc.ImageUrl from BorrowRecode br,BookClass bc,Book b where br.BookId=b.BookId and bc.BookClassId=b.BookclassId and br.BookId in (select BookId from BorrowRecode where PhoneNum = '".$myPhoneNum."')";
 

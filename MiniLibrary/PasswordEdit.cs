@@ -39,6 +39,9 @@ namespace MiniLibrary
             layout = FindViewById<LinearLayout>(Resource.Id.SettingPswLayout);
             PhoneNum = FindViewById<TextView>(Resource.Id.PasswordTextPhoneNum);
 
+            ISharedPreferences LoginSP = GetSharedPreferences("LoginData", FileCreationMode.Private);
+            PhoneNum.Text = LoginSP.GetString("PhoneNum", null);
+
             submit.Click += delegate
             {
                 if ((code.Text == "") || (psw.Text == "") || (confirm.Text == ""))
@@ -56,8 +59,7 @@ namespace MiniLibrary
                 }
                 else
                 {
-                    ISharedPreferences LoginSP = GetSharedPreferences("LoginData", FileCreationMode.Private);
-                    PhoneNum.Text = LoginSP.GetString("PhoneNum", null);
+                    
                     string res = PasswordEditData.Post("http://115.159.145.115/PasswordEdit.php", psw.Text, PhoneNum.Text);
                     if (res == "Success")
                     {

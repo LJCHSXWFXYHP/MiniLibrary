@@ -285,14 +285,17 @@ namespace MiniLibrary
                 if (res == "Success")
                 {
                     List<BorrowList> borrowList = new List<BorrowList>();
-                    foreach(BookBasketListInfo b in BookInfo)
+                    if (borrowList.Count != 0)
                     {
-                        borrowList.Add(new BorrowList { BookId = b.BookId, PhoneNum = LoginSP.GetString("PhoneNum", "") });
+                        foreach (BookBasketListInfo b in BookInfo)
+                        {
+                            borrowList.Add(new BorrowList { BookId = b.BookId, PhoneNum = LoginSP.GetString("PhoneNum", "") });
+                        }
+                        var BorrowJson = JsonConvert.SerializeObject(borrowList);
+                        Intent ActBorrowReader = new Intent(this, typeof(BorrowReader));
+                        ActBorrowReader.PutExtra("BorrowInfo", BorrowJson);
+                        StartActivity(ActBorrowReader);
                     }
-                    var BorrowJson= JsonConvert.SerializeObject(borrowList);
-                    Intent ActBorrowReader = new Intent(this, typeof(BorrowReader));
-                    ActBorrowReader.PutExtra("BorrowInfo", BorrowJson);
-                    StartActivity(ActBorrowReader);
                 }
                 else if (res == "Fail")
                 {

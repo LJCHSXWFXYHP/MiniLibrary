@@ -61,15 +61,20 @@ namespace MiniLibrary
             }
             ReturnAll.Click += delegate
             {
+                
                 List<ReturnList> returnList = new List<ReturnList>();
-                foreach (MyBookListViewInfo b in BookInfo)
+                if (returnList.Count != 0)
                 {
-                    if (b.selected == true) {
-                        returnList.Add(new ReturnList { BookId = b.BookId, PhoneNum = LoginSP.GetString("PhoneNum", ""), BorrowDate = b.BorrowDate });
+                    foreach (MyBookListViewInfo b in BookInfo)
+                    {
+                        if (b.selected == true)
+                        {
+                            returnList.Add(new ReturnList { BookId = b.BookId, PhoneNum = LoginSP.GetString("PhoneNum", ""), BorrowDate = b.BorrowDate });
+                        }
                     }
+                    var BorrowJson = JsonConvert.SerializeObject(returnList);
+                    Toast.MakeText(this, BorrowJson, ToastLength.Long).Show();
                 }
-                var BorrowJson = JsonConvert.SerializeObject(returnList);
-                Toast.MakeText(this, BorrowJson, ToastLength.Long).Show();
             };
             
 

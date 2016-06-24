@@ -73,5 +73,16 @@ namespace MiniLibrary
 
             }
         }
+
+        public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
+        {
+
+            if (keyCode == Keycode.Back)
+            {
+                Finish();
+                return true;
+            }
+            return base.OnKeyDown(keyCode, e);
+        }
     }
 }

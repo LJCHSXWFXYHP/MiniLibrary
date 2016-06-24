@@ -18,15 +18,7 @@
             android:layout_height="49.5dp"
             android:id="@+id/linearLayout2"
             android:background="#FF33B5E5"
-            android:gravity="right">
-            <Button
-                android:text="设置"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/button1"
-                android:background="@null"
-                android:layout_marginRight="12.0dp" />
-        </LinearLayout>
+            android:gravity="right" />
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
