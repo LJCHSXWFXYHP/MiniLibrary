@@ -20,10 +20,10 @@
             android:background="#FF33B5E5"
             android:gravity="right">
             <Button
-                android:text="一键借书"
+                android:text="一键还书"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/BorrowAll"
+                android:id="@+id/ReturnAll"
                 android:background="@null"
                 android:layout_marginRight="12dp" />
         </LinearLayout>
@@ -32,7 +32,7 @@
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="512.5dp"
+            android:layout_height="match_parent"
             android:id="@+id/linearLayout2">
             <LinearLayout
                 android:orientation="horizontal"
@@ -46,7 +46,7 @@
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="match_parent"
                 android:id="@+id/TabBookBasketList" />
         </LinearLayout>
     </LinearLayout>

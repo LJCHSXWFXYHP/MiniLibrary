@@ -12,13 +12,10 @@ using Android.Widget;
 using BookListView;
 using Newtonsoft.Json;
 
-
-
 namespace MiniLibrary
 {
-    [Activity(Label = "BookListView", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-
-    public class BookListView : Activity
+    [Activity(Label = "BookListView_type", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class BookListView_type : Activity
     {
         private class BookClass
         {
@@ -46,13 +43,12 @@ namespace MiniLibrary
             Scan.SetImageResource(Resource.Drawable.IconScan);
             Search.SetImageResource(Resource.Drawable.IconSearch);
 
-
-            string SearchInfo = Intent.GetStringExtra("SearchInfo");
+            string SearchType = Intent.GetStringExtra("SearchType");
 
             BookInfo = new List<BookListViewInfo>();
-            if (SearchInfo!="")
+            if (SearchType != "")
             {
-               SearchMethod("http://115.159.145.115/SearchByKeyWord.php", SearchInfo);
+                SearchMethod("http://115.159.145.115/SearchByType.php", SearchType);
             }
 
             Search.Click += delegate
@@ -70,7 +66,7 @@ namespace MiniLibrary
 
         }
 
-        private void SearchMethod(string url,string keyword)
+        private void SearchMethod(string url, string keyword)
         {
             string SearchResult = SearchData.Post(url, keyword);
             var ResultList = JsonConvert.DeserializeObject<List<BookClass>>(SearchResult);
@@ -79,15 +75,7 @@ namespace MiniLibrary
                 BookInfo.Add(new BookListViewInfo { Title = b.BookName, Image = b.ImageUrl, Author = b.BookAuthor, BookClassId = b.BookClassId });
             }
             BookList.Adapter = new BookListViewAdapter(this, BookInfo);
-
             BookList.ItemClick += BookList_ItemClick;
-        }
-
-        private void BookList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            Intent ActBookDetail = new Intent(this, typeof(BookDetails));
-            ActBookDetail.PutExtra("BookClassId", BookInfo[e.Position].BookClassId);
-            StartActivity(ActBookDetail);
         }
 
         public class SearchData
@@ -105,6 +93,14 @@ namespace MiniLibrary
 
             }
         }
+
+        private void BookList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Intent ActBookDetail = new Intent(this, typeof(BookDetails));
+            ActBookDetail.PutExtra("BookClassId", BookInfo[e.Position].BookClassId);
+            StartActivity(ActBookDetail);
+        }
+
         public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
         {
 
@@ -118,4 +114,3 @@ namespace MiniLibrary
         }
     }
 }
-

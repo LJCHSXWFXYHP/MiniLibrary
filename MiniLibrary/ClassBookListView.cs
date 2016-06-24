@@ -4,8 +4,8 @@ using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using Android.App;
-using System;
 using MiniLibrary;
+using Square.Picasso;
 
 namespace BookListView
 {
@@ -13,7 +13,11 @@ namespace BookListView
     {
         public string Image { get; set; }
         public string Title { get; set; }
-        public string BookNumber { get; set; }
+        public string Author { get; set; }
+        public string BookClassId { get; set; }
+        public string BookId { get; set; }
+        public string ReturnFlag { get; set; }
+        public string BorrowDate { get; set; }
     }
 
     class BookListViewAdapter : BaseAdapter<BookListViewInfo>
@@ -57,24 +61,9 @@ namespace BookListView
                 view = context.LayoutInflater.Inflate(Resource.Layout.BookListViewItemCart, null);
             }
             view.FindViewById<TextView>(Resource.Id.BklistTextBook).Text = item.Title;
-            view.FindViewById<TextView>(Resource.Id.BklistBookNumber).Text = item.BookNumber;
-            var imageBitmap = GetImageBitmapFromUrl(item.Image);
-            view.FindViewById<ImageView>(Resource.Id.BklistImBook).SetImageBitmap(GetImageBitmapFromUrl(item.Image));
+            view.FindViewById<TextView>(Resource.Id.BklistAuthor).Text = item.Author;
+            Picasso.With(context).Load(item.Image).Into(view.FindViewById<ImageView>(Resource.Id.BklistImBook));
             return view;
-        }
-        private Bitmap GetImageBitmapFromUrl(string url)
-        {
-            Bitmap imageBitmap = null;
-
-            using (var webClient = new WebClient())
-            {
-                var imageBytes = webClient.DownloadData(url);
-                if (imageBitmap != null && imageBytes.Length > 0)
-                {
-                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
-                }
-                return imageBitmap;
-            }
         }
     }
 }

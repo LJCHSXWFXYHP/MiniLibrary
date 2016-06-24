@@ -3,22 +3,30 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/TabIndexLayout">
+    android:id="@+id/TabIndexLayout"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout5">
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout5"
+        android:background="#FF33B5E5">
         <ImageView
             android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:id="@+id/imageView1" />
+            android:id="@+id/TabIndeximScan" />
         <EditText
             android:inputType="text"
-            android:layout_width="347.5dp"
+            android:layout_width="260.0dp"
             android:layout_height="match_parent"
             android:id="@+id/TabIndexEditSearch" />
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/TabIndeximSearch" />
     </LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
@@ -29,7 +37,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#33000000"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/linearLayout6">
         <TextView
             android:id="@+id/tv_image_description"
             android:layout_width="wrap_content"
@@ -56,14 +65,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/linearLayout2">
-            <ImageButton
+            <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:id="@+id/type1"
                 android:layout_marginRight="50dp" />
             <TextView
-                android:text="图书分类1"
+                android:text="计算机"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
@@ -74,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/linearLayout3">
-            <ImageButton
+            <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
@@ -85,20 +94,20 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
                 android:gravity="center"
-                android:text="图书分类2" />
+                android:text="文学" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/linearLayout4">
-            <ImageButton
+            <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:id="@+id/type3" />
             <TextView
-                android:text="图书分类3"
+                android:text="社会科学"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
@@ -116,14 +125,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/linearLayout2">
-            <ImageButton
+            <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:id="@+id/type4"
                 android:layout_marginRight="50dp" />
             <TextView
-                android:text="图书分类4"
+                android:text="历史/传记"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
@@ -134,7 +143,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/linearLayout3">
-            <ImageButton
+            <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
@@ -145,20 +154,80 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
                 android:gravity="center"
-                android:text="图书分类5" />
+                android:text="文化/艺术" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/linearLayout4">
-            <ImageButton
+            <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:id="@+id/type6" />
             <TextView
-                android:text="图书分类6"
+                android:text="教材"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:gravity="center">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:id="@+id/type7"
+                android:layout_marginRight="50dp" />
+            <TextView
+                android:text="科普"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout3">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:id="@+id/type8"
+                android:layout_marginRight="50dp" />
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:gravity="center"
+                android:text="经济/管理" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout4">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:id="@+id/type9" />
+            <TextView
+                android:text="其他"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
