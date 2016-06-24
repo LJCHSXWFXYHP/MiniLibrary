@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:id="@+id/scrollView1">
+        <TextView
+            android:text="一个家族百年反复浮现的竟然就那么几个名字，加西亚真的很残酷。一代又一代人就像被推上命运轮盘赌后不断开出的绝望点数，以致于在最后血脉断绝的一刻，我们感到的不是同情而是如释重负。然而家族可以终结，孤独却是无视时空的永恒存在。它从洪荒流淌至今，还将延绵万世，就像南美大陆奔腾壮丽的亚马逊河，碾碎一切人事物。"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1" />
+    </ScrollView>
+</LinearLayout>
