@@ -29,7 +29,7 @@ namespace MiniLibrary
             // Create your application here
             //tent intent =
             Bundle bundle = Intent.GetBundleExtra("bundle");
-            string bookClassid = bundle.GetString("bookclassid");
+            string bookClassid = bundle.GetString("BookClassId");
             SetContentView(Resource.Layout.BorrowReader);
             ImageView barcode = FindViewById<ImageView>(Resource.Id.BarCode);
 
