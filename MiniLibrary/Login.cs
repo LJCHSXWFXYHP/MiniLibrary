@@ -29,6 +29,9 @@ namespace MiniLibrary
             EditText number = FindViewById<EditText>(Resource.Id.logEditNumber);
             EditText psw = FindViewById<EditText>(Resource.Id.logEditPassword);
             LinearLayout mainLayout = FindViewById<LinearLayout>(Resource.Id.logLayout);
+            ImageView title = FindViewById<ImageView>(Resource.Id.Title);
+
+            title.SetImageResource(Resource.Drawable.Cover);
 
             register.Click += delegate
             {

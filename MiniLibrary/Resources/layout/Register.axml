@@ -24,7 +24,7 @@
                 p1:src="@android:drawable/ic_menu_gallery"
                 p1:layout_width="match_parent"
                 p1:layout_height="291.3dp"
-                p1:id="@+id/imageView1"
+                p1:id="@+id/TitleReg"
                 p1:focusable="true"
                 p1:focusableInTouchMode="true" />
         </LinearLayout>

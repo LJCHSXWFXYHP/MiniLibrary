@@ -114,6 +114,7 @@
     <Compile Include="RegisterSuccess.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scanning.cs" />
     <Compile Include="SecondAdmin.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +189,9 @@
     <AndroidResource Include="Resources\layout\BookListViewMyBook.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\ScanningFragement.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -222,7 +226,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\IconMore.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Cover.png" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\MoreMenu.xml" />
   </ItemGroup>

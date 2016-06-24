@@ -10,7 +10,9 @@
         p1:layout_height="wrap_content"
         p1:id="@+id/linearLayout2"
         p1:minWidth="25px"
-        p1:minHeight="25px">
+        p1:minHeight="25px"
+        p1:focusable="true"
+        p1:focusableInTouchMode="true">
         <LinearLayout
             p1:orientation="horizontal"
             p1:id="@+id/linearLayout5"
