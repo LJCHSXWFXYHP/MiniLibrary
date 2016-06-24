@@ -25,6 +25,7 @@ namespace MiniLibrary
         private EditText psw;
         private EditText confirm;
         private LinearLayout regLayout;
+        private ImageView title;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -39,6 +40,9 @@ namespace MiniLibrary
             psw = FindViewById<EditText>(Resource.Id.regEditPassword);
             confirm = FindViewById<EditText>(Resource.Id.regEditConfirm);
             regLayout = FindViewById<LinearLayout>(Resource.Id.regLayout);
+            title = FindViewById<ImageView>(Resource.Id.TitleReg);
+
+            title.SetImageResource(Resource.Drawable.Cover);
 
             register.Click += delegate
             {

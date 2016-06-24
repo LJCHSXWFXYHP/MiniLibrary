@@ -1,8 +1,8 @@
 <?php
 
-$myKeyWord=$_POST['KeyWord'];
+$myBookClassId='9787113210472';//$_POST['KeyWord'];
 if($myKeyWord==''){exit;}
-$sql="select BookClassId,BookName,BookAuthor,ImageUrl from BookClass where BookName LIKE '%".$myKeyWord."%' or BookClassId='".$myKeyWord."'";
+$sql="select BookClassId,BookName,BookAuthor,ImageUrl from BookClass where BookClassId='".$myBookClassId."'";
 
 $db_host   = 'localhost';  //数据库主机名称，一般都为localhost   
 $db_user   = 'root';        //数据库用户帐号，根据个人情况而定   

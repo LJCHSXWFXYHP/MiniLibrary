@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net;
+using System.Text.RegularExpressions;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -11,7 +12,7 @@ using Android.Views;
 using Android.Widget;
 using BookListView;
 using Newtonsoft.Json;
-
+using ZXing.Mobile;
 
 
 namespace MiniLibrary
@@ -32,6 +33,8 @@ namespace MiniLibrary
         private EditText SearchEdit;
         private List<BookListViewInfo> BookInfo;
         private ListView BookList;
+        private MobileBarcodeScanner scanner;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -50,10 +53,28 @@ namespace MiniLibrary
             string SearchInfo = Intent.GetStringExtra("SearchInfo");
 
             BookInfo = new List<BookListViewInfo>();
-            if (SearchInfo!="")
+            if(SearchInfo!="")
             {
-               SearchMethod("http://115.159.145.115/SearchByKeyWord.php", SearchInfo);
+
+                SearchMethod("http://115.159.145.115/SearchByKeyWord.php", SearchInfo);
             }
+
+            MobileBarcodeScanner.Initialize(Application);
+            scanner = new MobileBarcodeScanner();
+            Scan.Click += async delegate {
+
+                //Tell our scanner to use the default overlay
+                scanner.UseCustomOverlay = false;
+
+                //We can customize the top and bottom text of the default overlay
+                scanner.TopText = "请保持条形码与手机镜头15厘米";
+                scanner.BottomText = "扫描书本条形码快速搜索";
+
+                //Start scanning
+                var result = await scanner.Scan();
+
+                HandleScanResult(result);
+            };
 
             Search.Click += delegate
             {
@@ -64,7 +85,6 @@ namespace MiniLibrary
                     ActBookList.PutExtra("SearchInfo", SearchEdit.Text);
                     ActBookList.PutExtras(bundle);
                     StartActivity(ActBookList);
-
                 }
             };
 
@@ -105,6 +125,7 @@ namespace MiniLibrary
 
             }
         }
+
         public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
         {
 
@@ -115,6 +136,15 @@ namespace MiniLibrary
                 return true;
             }
             return base.OnKeyDown(keyCode, e);
+        }
+
+        void HandleScanResult(ZXing.Result result)
+        {
+            RunOnUiThread(() => {
+                Intent ActBookList = new Intent(this, typeof(BookListView));
+                ActBookList.PutExtra("SearchInfo", result.Text);
+                StartActivity(ActBookList);
+            });
         }
     }
 }

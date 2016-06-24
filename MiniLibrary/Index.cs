@@ -12,7 +12,7 @@ using Android.Widget;
 using Android.Support.V4.View;
 using BookBasketList;
 using Newtonsoft.Json;
-
+using ZXing.Mobile;
 namespace MiniLibrary
 {
     [Activity(Label = "Index", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -47,6 +47,7 @@ namespace MiniLibrary
         private ImageView Type9;
         private LinearLayout TabIndexLayout;
         private EditText searchEdit;
+        private MobileBarcodeScanner scanner;
 
         private List<BookBasketListInfo> BookInfo;
         private ListView BookList;
@@ -127,6 +128,22 @@ namespace MiniLibrary
             AdvpAdapter = new ViewPagerAdapter(viewList);
             Advp.Adapter = AdvpAdapter;
 
+            MobileBarcodeScanner.Initialize(Application);
+            scanner = new MobileBarcodeScanner();
+            Scan.Click += async delegate {
+
+                //Tell our scanner to use the default overlay
+                scanner.UseCustomOverlay = false;
+
+                //We can customize the top and bottom text of the default overlay
+                scanner.TopText = "请保持条形码与手机镜头15厘米";
+                scanner.BottomText = "扫描书本条形码快速搜索";
+
+                //Start scanning
+                var result = await scanner.Scan();
+
+                HandleScanResult(result);
+            };
             Search.Click += delegate
             {
                 if (searchEdit.Text != "")
@@ -220,6 +237,30 @@ namespace MiniLibrary
             };
         }
 
+        void HandleScanResult(ZXing.Result result)
+        {
+            string msg = "";
+
+            if (result != null && !string.IsNullOrEmpty(result.Text))
+                msg = result.Text;
+            else
+                msg = "-1";
+
+
+            RunOnUiThread(() =>
+            {
+                if (msg != "-1")
+                {
+                    Intent ActBookList = new Intent(this, typeof(BookListView));
+                    ActBookList.PutExtra("SearchInfo", msg);
+                    StartActivity(ActBookList);
+                }
+                else
+                {
+                    Toast.MakeText(this, "扫描取消", ToastLength.Short).Show();
+                }
+            });
+        }
 
         private void TabBookBasket()
         {
