@@ -35,17 +35,17 @@
                 android:layout_height="match_parent"
                 android:id="@+id/linearLayout5">
                 <TextView
-                    android:text="百年孤独"
+                    android:text="bookname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView1"
+                    android:id="@+id/bookDetailBookname"
                     android:layout_marginBottom="33.5dp"
                     android:layout_marginTop="60.5dp" />
                 <TextView
-                    android:text="加西亚·马尔克斯"
+                    android:text="author"
                     android:layout_width="match_parent"
                     android:layout_height="22.0dp"
-                    android:id="@+id/textView2"
+                    android:id="@+id/bookDetailAuthor"
                     android:layout_marginBottom="0.0dp" />
             </LinearLayout>
         </LinearLayout>
@@ -72,25 +72,25 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/layoutWriter"
+                    android:id="@+id/layoutBookSummary"
                     android:minWidth="25px"
                     android:minHeight="25px">
                     <include
-                        layout="@layout/Writer" />
+                        layout="@layout/TabBookSummary" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layoutBookCatalog">
+                    <include
+                        layout="@layout/TabBookCatalog" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/layoutIntroduction">
                     <include
-                        layout="@layout/Briefintroduction" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/layoutEvaluate">
-                    <include
-                        layout="@layout/Evaluate" />
+                        layout="@layout/TabIntroduction" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

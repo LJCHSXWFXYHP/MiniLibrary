@@ -12,6 +12,9 @@ using Android.OS;
 using Android.Graphics;
 using ZXing;
 using ZXing.Common;
+using System.IO;
+using System.Net;
+using Newtonsoft.Json;
 
 
 
@@ -24,9 +27,26 @@ namespace MiniLibrary
         {
             base.OnCreate(savedInstanceState);
             // Create your application here
+            //tent intent =
+            Bundle bundle = Intent.GetBundleExtra("bundle");
+            string bookClassid = bundle.GetString("bookclassid");
             SetContentView(Resource.Layout.BorrowReader);
             ImageView barcode = FindViewById<ImageView>(Resource.Id.BarCode);
-            Bitmap bmp = GeneratorQrImage("232443545454");
+
+            string result = BarCodeData.Post("http://115.159.145.115/BookDetail.php/", "1");
+            var book = JsonConvert.DeserializeObject<BookRecord>(result);
+
+            string bookid = book.BookId;
+            string borrowdate = book.BorrowDate;
+            string returnflag = book.ReturnFlag;
+            string phonenum = book.PhoneNum;
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            sb.Append(bookid);
+            sb.Append(borrowdate);
+            sb.Append(returnflag);
+            sb.Append(phonenum);
+            string str = sb.ToString();
+            Bitmap bmp = GeneratorQrImage(str);
             barcode.SetImageBitmap(bmp);
 
         }
@@ -54,6 +74,37 @@ namespace MiniLibrary
             //通过像素数组生成bitmap,具体参考api  
             bitmap.SetPixels(pixels, 0, width, 0, 0, width, height);
             return bitmap;
+        }
+        class BookRecord
+        {
+            public string BookId { get; set; }
+            public string BorrowDate { get; set; }
+            public string ReturnFlag { get; set; }
+            public string PhoneNum { get; set; }
+        }
+        class BarCodeData
+        {
+            public static string Post(string url, string BookClassId)
+            {
+                string para = "BookClassId=" + BookClassId;
+                HttpWebRequest httpWeb = (HttpWebRequest)WebRequest.Create(url);
+                httpWeb.Timeout = 20000;
+                httpWeb.Method = "POST";
+                httpWeb.ContentType = "application/x-www-form-urlencoded";
+                byte[] bytePara = Encoding.ASCII.GetBytes(para);
+                using (Stream reqStream = httpWeb.GetRequestStream())
+                {
+                    reqStream.Write(bytePara, 0, para.Length);
+                }
+                HttpWebResponse httpWebResponse = (HttpWebResponse)httpWeb.GetResponse();
+                Stream stream = httpWebResponse.GetResponseStream();
+                StreamReader streamReader = new StreamReader(stream, Encoding.GetEncoding("utf-8"));
+                string result = streamReader.ReadToEnd();
+                stream.Close();
+
+                return result;
+
+            }
         }
     }
 }

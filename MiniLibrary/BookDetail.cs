@@ -9,6 +9,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.IO;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace MiniLibrary
 {
@@ -24,19 +27,48 @@ namespace MiniLibrary
             Button reserveButton = FindViewById<Button>(Resource.Id.reserve1);
             Button collectionButton = FindViewById<Button>(Resource.Id.collection1);
             TabHost tab = FindViewById<TabHost>(Resource.Id.tabHost123);
+
+            TextView bookSummary = FindViewById<TextView>(Resource.Id.textView_BookSummary); //内容概要
+            TextView bookCatalog = FindViewById<TextView>(Resource.Id.textView_BookCatalog);
+            //TextView authorSummary = FindViewById<TextView>(Resource.Id.textView_Author);
+            TextView bookId = FindViewById<TextView>(Resource.Id.textView_BookId);
+            TextView bookPrice = FindViewById<TextView>(Resource.Id.textView_BookPrice);
+            TextView bookPress = FindViewById<TextView>(Resource.Id.textView_BookPress);
+
+            TextView bookAuthor = FindViewById<TextView>(Resource.Id.bookDetailAuthor);
+            TextView bookName = FindViewById<TextView>(Resource.Id.bookDetailBookname);
+
+            //这个“1”即为ID号
+            string result = BookDetailData.Post("http://115.159.145.115/BookDetail.php/", "1");
+            var book = JsonConvert.DeserializeObject<BookClass>(result);
+
+            bookSummary.Text = book.BookSummary;//内容概要
+            bookCatalog.Text = book.BookCatalog;//本书目录
+
+
+            string bookclassId = book.BookClassId;
+            bookAuthor.Text = book.BookAuthor; //标题：作者
+            bookName.Text = book.BookName; //标题：书名
+            authorSummary.Text = book.AuthorSummary;//Tab1:内容概要
+            bookSummary.Text = book.BookSummary;//Tab2:本书目录
+            bookCatalog.Text = book.BookCatalog;//Tab3:发行简介
+            bookId.Text = book.BookClassId;
+            bookPrice.Text = book.BookPrice;
+            bookPress.Text = book.BookPress;
+
             tab.Setup();
 
             TabHost.TabSpec spec1 = tab.NewTabSpec("tab1");
-            spec1.SetContent(Resource.Id.layoutWriter);
-            spec1.SetIndicator("作者介绍");
+            spec1.SetContent(Resource.Id.layoutBookSummary);
+            spec1.SetIndicator("内容概要");
 
             TabHost.TabSpec spec2 = tab.NewTabSpec("tab2");
-            spec2.SetContent(Resource.Id.layoutIntroduction);
-            spec2.SetIndicator("书本介绍");
+            spec2.SetContent(Resource.Id.layoutBookCatalog);
+            spec2.SetIndicator("本书目录");
 
             TabHost.TabSpec spec3 = tab.NewTabSpec("tab3");
-            spec3.SetContent(Resource.Id.layoutEvaluate);
-            spec3.SetIndicator("本书简评");
+            spec3.SetContent(Resource.Id.layoutIntroduction);
+            spec3.SetIndicator("发行简介");
 
            tab.AddTab(spec1);
            tab.AddTab(spec2);
@@ -59,8 +91,11 @@ namespace MiniLibrary
                     //确认按钮
                     Dialog.SetNeutralButton("确认", delegate
                     {
-                        Intent ActLogin = new Intent(this, typeof(BorrowReader));
-                        StartActivity(ActLogin);
+                        Intent intent = new Intent(this, typeof(BorrowReader));
+                        Bundle bundle = new Bundle();
+                        bundle.PutString("bookclassid", bookclassId);
+                        intent.PutExtra("bundle", bundle);
+                        StartActivity(intent);
                     });
 
                     //取消按钮
@@ -104,7 +139,7 @@ namespace MiniLibrary
                 //对话框内容
                 Dialog.SetMessage("确认将此书加入书栏？");
 
-                //拨打按钮
+                //确认按钮
                 Dialog.SetNeutralButton("确认", delegate
                 {
                     Toast.MakeText(this, "成功加入书栏！", ToastLength.Short).Show();
@@ -140,6 +175,50 @@ namespace MiniLibrary
             };
 
 
+            
+
+
+
         }
+
+        class BookClass
+        {
+            public string BookClassId { get; set; }
+            public string BookAuthor { get; set; }
+            public string BookName { get; set; }
+            public string BookPress { get; set; }
+            public string BookPrice { get; set; }
+            public string BookSummary { get; set; }
+            public string BookCatalog { get; set; }
+            public string BookClassification { get; set; }
+
+
+        }
+
+        class BookDetailData
+        {
+            public static string Post(string url, string BookClassId)
+            {
+                string para = "BookClassId=" + BookClassId;
+                HttpWebRequest httpWeb = (HttpWebRequest)WebRequest.Create(url);
+                httpWeb.Timeout = 20000;
+                httpWeb.Method = "POST";
+                httpWeb.ContentType = "application/x-www-form-urlencoded";
+                byte[] bytePara = Encoding.ASCII.GetBytes(para);
+                using (Stream reqStream = httpWeb.GetRequestStream())
+                {
+                    reqStream.Write(bytePara, 0, para.Length);
+                }
+                HttpWebResponse httpWebResponse = (HttpWebResponse)httpWeb.GetResponse();
+                Stream stream = httpWebResponse.GetResponseStream();
+                StreamReader streamReader = new StreamReader(stream, Encoding.GetEncoding("utf-8"));
+                string result = streamReader.ReadToEnd();
+                stream.Close();
+
+                return result;
+
+            }
+        }
+
     }
 }

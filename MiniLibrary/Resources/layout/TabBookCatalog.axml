@@ -12,9 +12,8 @@
         android:layout_height="270dp"
         android:id="@+id/scrollView1">
         <TextView
-            android:text="加西亚•马尔克斯（Gabriel García Márquez）1927年出生于哥伦比亚马格达莱纳海滨小镇阿拉卡塔卡。童年与外祖父母一起生活。1936年随父母迁居苏克雷。1947年考入波哥大国立大学。1948年因内战辍学，进入报界。五十年代开始发表文学作品。六十年代初移居墨西哥。1967年出版《百年孤独》。1982年获诺贝尔文学奖。"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/textView1" />
+            android:id="@+id/textView_BookCatalog" />
     </ScrollView>
 </LinearLayout>
