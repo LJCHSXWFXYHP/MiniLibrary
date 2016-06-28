@@ -17,8 +17,16 @@ namespace Manager
             InitializeComponent();
         }
 
+        public ManageWindow(string userName)
+        {
+            InitializeComponent();
+            UserNameLbl.Text = "当前用户： " + userName;
+        }
+
+
         private void ManageForm_Load(object sender, EventArgs e)
         {
+
         }
     }
 }
