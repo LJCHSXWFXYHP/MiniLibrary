@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:background="@android:color/background_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/BklistImBook" />
+        <TextView
+            android:text="图书名称"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@+id/BklistImBook"
+            android:id="@+id/BklistTextBook"
+            android:textSize="50px"
+            android:gravity="center" />
+        <TextView
+            android:text="作者"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/BklistImBook"
+            android:id="@+id/BklistAuthor"
+            android:layout_below="@+id/BklistTextBook"
+            android:gravity="center" />
+        <TextView
+            android:text="库存"
+            android:layout_width="125.0dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/BklistAuthor"
+            android:id="@+id/count"
+            android:layout_below="@id/BklistTextBook"
+            android:gravity="center" />
+    </RelativeLayout>
+</LinearLayout>

@@ -57,6 +57,10 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sino.Droid.SlidePager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sino.Droid.SlidePager.1.0.0.1\lib\MonoAndroid403\Sino.Droid.SlidePager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Square.OkHttp, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Square.OkHttp.2.4.0.0\lib\MonoAndroid\Square.OkHttp.dll</HintPath>
       <Private>True</Private>
@@ -93,16 +97,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookDetail.cs" />
+    <Compile Include="BookListViewAdmin.cs" />
     <Compile Include="BookListView_MyBook.cs" />
     <Compile Include="BookListView_type.cs" />
     <Compile Include="BorrowReader.cs" />
-    <Compile Include="BookDetails.cs" />
-    <Compile Include="ClassBookBasketList.cs" />
+    <Compile Include="class\ClassBookBasketList.cs" />
     <Compile Include="BookListView.cs" />
-    <Compile Include="ClassBookListView.cs" />
-    <Compile Include="ClassBookListView_MyBook.cs" />
+    <Compile Include="class\ClassBookListViewAdmin.cs" />
+    <Compile Include="class\ClassBookListView.cs" />
+    <Compile Include="class\ClassBookListView_MyBook.cs" />
     <Compile Include="DataEdit.cs" />
-    <Compile Include="FirstAdmin.cs" />
+    <Compile Include="Admin.cs" />
     <Compile Include="Index.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainActivity.cs" />
@@ -114,8 +120,7 @@
     <Compile Include="RegisterSuccess.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scanning.cs" />
-    <Compile Include="SecondAdmin.cs" />
+    <Compile Include="ReturnReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
@@ -162,9 +167,6 @@
     <AndroidResource Include="Resources\layout\PasswardEdit.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\BorrowReader.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\ViewPager_1.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
@@ -186,10 +188,23 @@
     <AndroidResource Include="Resources\layout\BookListViewMyBook.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\ScanningFragement.axml">
+    <AndroidResource Include="Resources\layout\Scanning.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\BookDetails.axml" />
+    <AndroidResource Include="Resources\layout\Admin.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\BookDetail.axml" />
+    <AndroidResource Include="Resources\layout\BorrowReader.axml" />
+    <AndroidResource Include="Resources\layout\TabBookCatalog.axml" />
+    <AndroidResource Include="Resources\layout\TabBookSummary.axml" />
+    <AndroidResource Include="Resources\layout\TabIntroduction.axml" />
+    <AndroidResource Include="Resources\layout\ReturnReader.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\BookListViewAdminCart.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -202,15 +217,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\point_bg_enable.xml.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\point_bg_normal.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\point_background.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\IconSearch.png" />
@@ -229,6 +235,41 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\MoreMenu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IndexIcon_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IndexIcon_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IndexIcon_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IndexIcon_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IndexIcon_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IndexIcon_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IndexIcon_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IndexIcon_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IndexIcon_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\boder.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Start.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

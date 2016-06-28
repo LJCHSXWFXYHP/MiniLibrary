@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using BookListView;
 using Newtonsoft.Json;
+using ZXing.Mobile;
 
 namespace MiniLibrary
 {
@@ -29,6 +30,7 @@ namespace MiniLibrary
         private EditText SearchEdit;
         private List<BookListViewInfo> BookInfo;
         private ListView BookList;
+        private MobileBarcodeScanner scanner;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -44,21 +46,44 @@ namespace MiniLibrary
             Search.SetImageResource(Resource.Drawable.IconSearch);
 
             string SearchType = Intent.GetStringExtra("SearchType");
+            string SearchInfo = Intent.GetStringExtra("SearchInfo");
 
             BookInfo = new List<BookListViewInfo>();
             if (SearchType != "")
             {
-                SearchMethod("http://115.159.145.115/SearchByType.php", SearchType);
+                SearchMethod("http://115.159.145.115/SearchByType.php", SearchInfo,SearchType);
             }
+
+            MobileBarcodeScanner.Initialize(Application);
+            Button flashButton;
+            View zxingOverlay;
+            scanner = new MobileBarcodeScanner();
+            Scan.Click += async delegate {
+                scanner.UseCustomOverlay = true;
+
+                //Inflate our custom overlay from a resource layout
+                zxingOverlay = LayoutInflater.FromContext(this).Inflate(Resource.Layout.Scanning, null);
+
+                //Find the button from our resource layout and wire up the click event
+                flashButton = zxingOverlay.FindViewById<Button>(Resource.Id.buttonZxingFlash);
+                flashButton.Click += (sender, e) => scanner.ToggleTorch();
+
+                //Set our custom overlay
+                scanner.CustomOverlay = zxingOverlay;
+
+                //Start scanning!
+                var result = await scanner.Scan();
+
+                HandleScanResult(result);
+            };
 
             Search.Click += delegate
             {
                 if (SearchEdit.Text != "")
                 {
-                    Intent ActBookList = new Intent(this, typeof(BookListView));
-                    Bundle bundle = new Bundle();
+                    Intent ActBookList = new Intent(this, typeof(BookListView_type));
                     ActBookList.PutExtra("SearchInfo", SearchEdit.Text);
-                    ActBookList.PutExtras(bundle);
+                    ActBookList.PutExtra("SearchType", SearchType);
                     StartActivity(ActBookList);
 
                 }
@@ -66,9 +91,9 @@ namespace MiniLibrary
 
         }
 
-        private void SearchMethod(string url, string keyword)
+        private void SearchMethod(string url, string keyword,string type)
         {
-            string SearchResult = SearchData.Post(url, keyword);
+            string SearchResult = SearchData.Post(url, keyword, type);
             var ResultList = JsonConvert.DeserializeObject<List<BookClass>>(SearchResult);
             foreach (BookClass b in ResultList)
             {
@@ -80,9 +105,9 @@ namespace MiniLibrary
 
         public class SearchData
         {
-            public static string Post(string url, string KeyWord)
+            public static string Post(string url, string KeyWord, string type)
             {
-                string postString = "KeyWord=" + KeyWord;
+                string postString = "KeyWord=" + KeyWord + "&type=" + type;
                 byte[] postData = Encoding.UTF8.GetBytes(postString);
                 WebClient webClient = new WebClient();
                 webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
@@ -96,9 +121,42 @@ namespace MiniLibrary
 
         private void BookList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Intent ActBookDetail = new Intent(this, typeof(BookDetails));
-            ActBookDetail.PutExtra("BookClassId", BookInfo[e.Position].BookClassId);
-            StartActivity(ActBookDetail);
+            ISharedPreferences LoginSP = GetSharedPreferences("LoginData", FileCreationMode.Private);
+            if (LoginSP.GetString("RealName", "") != "")
+            {
+                Intent ActBookDetail = new Intent(this, typeof(BookDetail));
+                ActBookDetail.PutExtra("BookClassId", BookInfo[e.Position].BookClassId);
+                StartActivity(ActBookDetail);
+            }
+            else
+            {
+                Toast.MakeText(this, "请先去个人中心实名认证哦！", ToastLength.Short).Show();
+            }
+        }
+
+        void HandleScanResult(ZXing.Result result)
+        {
+            string msg = "";
+
+            if (result != null && !string.IsNullOrEmpty(result.Text))
+                msg = result.Text;
+            else
+                msg = "-1";
+
+
+            RunOnUiThread(() =>
+            {
+                if (msg != "-1")
+                {
+                    Intent ActBookList = new Intent(this, typeof(BookListView));
+                    ActBookList.PutExtra("SearchInfo", msg);
+                    StartActivity(ActBookList);
+                }
+                else
+                {
+                    Toast.MakeText(this, "扫描取消", ToastLength.Short).Show();
+                }
+            });
         }
 
         public override bool OnKeyDown(Keycode keyCode, KeyEvent e)

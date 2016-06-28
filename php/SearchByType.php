@@ -1,8 +1,8 @@
 <?php
 
 $myKeyWord=$_POST['KeyWord'];
-if($myKeyWord==''){exit;}
-$sql="select BookClassId,BookName,BookAuthor,ImageUrl from BookClass where BookClassification = '".$myKeyWord."'";
+$myType=$_POST['type'];
+$sql="select BookClassId,BookName,BookAuthor,ImageUrl from BookClass where BookClassification = '".$myType."' and BookName LIKE '%".$myKeyWord."%'";
 
 $db_host   = 'localhost';  //数据库主机名称，一般都为localhost   
 $db_user   = 'root';        //数据库用户帐号，根据个人情况而定   
@@ -30,7 +30,6 @@ $result = mysqli_query($conn,$sql) or die('-3'.mysql_error());
 //提示操作成功信息，注意：$result存在于conn.php文件中，被调用出来 
 if($result) 
 { 
-	
 	$res=array();
 
     while($row=mysqli_fetch_assoc($result)){

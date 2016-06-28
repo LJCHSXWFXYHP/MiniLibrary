@@ -2,11 +2,6 @@
 //error_reporting(~E_ALL);
 
 $myBookId=$_POST['BookClassId'];
-$myBookAuthor=$_POST['BookAuthor'];
-$myBookName=$_POST['BookName'];
-$myBookPrice=$_POST['BookPrice'];
-$myBookPress=$_POST['BookPress'];
-$myBookSummary=$_POST['BookSummary'];
 $sql="select * from BookClass where BookClassId='".$myBookId."'";
 
 $db_host   = 'localhost';  //数据库主机名称，一般都为localhost   

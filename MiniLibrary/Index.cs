@@ -9,10 +9,13 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V4.App;
 using Android.Support.V4.View;
 using BookBasketList;
 using Newtonsoft.Json;
 using ZXing.Mobile;
+using Square.Picasso;
+
 namespace MiniLibrary
 {
     [Activity(Label = "Index", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -26,7 +29,11 @@ namespace MiniLibrary
             public string BookAuthor { get; set; }
             public string ImageUrl { get; set; }
         }
-
+        private class Book
+        {
+            public string BookId { get; set; }
+            public string ReturnFlag { get; set; }
+        }
         private class BorrowList
         {
             public string BookId { get; set; }
@@ -34,6 +41,9 @@ namespace MiniLibrary
         }
 
         private ViewPager Advp;
+        private ImageView ad1;
+        private ImageView ad2;
+        private ImageView ad3;
         private ImageView Scan;
         private ImageView Search;
         private ImageView Type1;
@@ -90,13 +100,16 @@ namespace MiniLibrary
             TabIndex();
             TabPrivate();
 
+            
 
 
         }
 
         private void TabIndex()
         {
+
             Advp = FindViewById<ViewPager>(Resource.Id.viewpager);
+            
             Scan = FindViewById<ImageView>(Resource.Id.TabIndeximScan);
             Search = FindViewById<ImageView>(Resource.Id.TabIndeximSearch);
             Type1 = FindViewById<ImageView>(Resource.Id.type1);
@@ -110,9 +123,19 @@ namespace MiniLibrary
             Type9 = FindViewById<ImageView>(Resource.Id.type9);
             TabIndexLayout = FindViewById<LinearLayout>(Resource.Id.TabIndexLayout);
             searchEdit = FindViewById<EditText>(Resource.Id.TabIndexEditSearch);
-            
+
             Scan.SetImageResource(Resource.Drawable.IconScan);
             Search.SetImageResource(Resource.Drawable.IconSearch);
+
+            Type1.SetImageResource(Resource.Drawable.IndexIcon_1);
+            Type2.SetImageResource(Resource.Drawable.IndexIcon_8);
+            Type3.SetImageResource(Resource.Drawable.IndexIcon_7);
+            Type4.SetImageResource(Resource.Drawable.IndexIcon_5);
+            Type5.SetImageResource(Resource.Drawable.IndexIcon_9);
+            Type6.SetImageResource(Resource.Drawable.IndexIcon_2);
+            Type7.SetImageResource(Resource.Drawable.IndexIcon_4);
+            Type8.SetImageResource(Resource.Drawable.IndexIcon_3);
+            Type9.SetImageResource(Resource.Drawable.IndexIcon_6);
 
             View v1, v2, v3;
             List<View> viewList;
@@ -125,21 +148,34 @@ namespace MiniLibrary
             viewList.Add(v1);
             viewList.Add(v2);
             viewList.Add(v3);
+            ad1 = v1.FindViewById<ImageView>(Resource.Id.Vpimage_1);
+            ad2 = v2.FindViewById<ImageView>(Resource.Id.Vpimage_2);
+            ad3 = v3.FindViewById<ImageView>(Resource.Id.Vpimage_3);
+            Picasso.With(this).Load("http://115.159.145.115/ads/ad1.png").Into(ad1);
+            Picasso.With(this).Load("http://115.159.145.115/ads/ad2.png").Into(ad2);
+            Picasso.With(this).Load("http://115.159.145.115/ads/ad3.png").Into(ad3);
             AdvpAdapter = new ViewPagerAdapter(viewList);
             Advp.Adapter = AdvpAdapter;
 
             MobileBarcodeScanner.Initialize(Application);
             scanner = new MobileBarcodeScanner();
+
+            Button flashButton;
+            View zxingOverlay;
             Scan.Click += async delegate {
+                scanner.UseCustomOverlay = true;
 
-                //Tell our scanner to use the default overlay
-                scanner.UseCustomOverlay = false;
+                //Inflate our custom overlay from a resource layout
+                zxingOverlay = LayoutInflater.FromContext(this).Inflate(Resource.Layout.Scanning, null);
 
-                //We can customize the top and bottom text of the default overlay
-                scanner.TopText = "请保持条形码与手机镜头15厘米";
-                scanner.BottomText = "扫描书本条形码快速搜索";
+                //Find the button from our resource layout and wire up the click event
+                flashButton = zxingOverlay.FindViewById<Button>(Resource.Id.buttonZxingFlash);
+                flashButton.Click += (sender, e) => scanner.ToggleTorch();
 
-                //Start scanning
+                //Set our custom overlay
+                scanner.CustomOverlay = zxingOverlay;
+
+                //Start scanning!
                 var result = await scanner.Scan();
 
                 HandleScanResult(result);
@@ -162,6 +198,7 @@ namespace MiniLibrary
                 Intent ActList = new Intent(this, typeof(BookListView_type));
                 Bundle bundle = new Bundle();
                 ActList.PutExtra("SearchType", "计算机");
+                ActList.PutExtra("SearchInfo", "");
                 ActList.PutExtras(bundle);
                 StartActivity(ActList);
             };
@@ -170,6 +207,7 @@ namespace MiniLibrary
                 Intent ActList = new Intent(this, typeof(BookListView_type));
                 Bundle bundle = new Bundle();
                 ActList.PutExtra("SearchType", "文学");
+                ActList.PutExtra("SearchInfo", "");
                 ActList.PutExtras(bundle);
                 StartActivity(ActList);
             };
@@ -178,6 +216,7 @@ namespace MiniLibrary
                 Intent ActList = new Intent(this, typeof(BookListView_type));
                 Bundle bundle = new Bundle();
                 ActList.PutExtra("SearchType", "社会科学");
+                ActList.PutExtra("SearchInfo", "");
                 ActList.PutExtras(bundle);
                 StartActivity(ActList);
             };
@@ -186,6 +225,7 @@ namespace MiniLibrary
                 Intent ActList = new Intent(this, typeof(BookListView_type));
                 Bundle bundle = new Bundle();
                 ActList.PutExtra("SearchType", "历史");
+                ActList.PutExtra("SearchInfo", "");
                 ActList.PutExtras(bundle);
                 StartActivity(ActList);
             };
@@ -194,6 +234,7 @@ namespace MiniLibrary
                 Intent ActList = new Intent(this, typeof(BookListView_type));
                 Bundle bundle = new Bundle();
                 ActList.PutExtra("SearchType", "文化");
+                ActList.PutExtra("SearchInfo", "");
                 ActList.PutExtras(bundle);
                 StartActivity(ActList);
             };
@@ -202,6 +243,7 @@ namespace MiniLibrary
                 Intent ActList = new Intent(this, typeof(BookListView_type));
                 Bundle bundle = new Bundle();
                 ActList.PutExtra("SearchType", "教材");
+                ActList.PutExtra("SearchInfo", "");
                 ActList.PutExtras(bundle);
                 StartActivity(ActList);
             };
@@ -210,6 +252,7 @@ namespace MiniLibrary
                 Intent ActList = new Intent(this, typeof(BookListView_type));
                 Bundle bundle = new Bundle();
                 ActList.PutExtra("SearchType", "科普");
+                ActList.PutExtra("SearchInfo", "");
                 ActList.PutExtras(bundle);
                 StartActivity(ActList);
             };
@@ -218,6 +261,7 @@ namespace MiniLibrary
                 Intent ActList = new Intent(this, typeof(BookListView_type));
                 Bundle bundle = new Bundle();
                 ActList.PutExtra("SearchType", "经济");
+                ActList.PutExtra("SearchInfo", "");
                 ActList.PutExtras(bundle);
                 StartActivity(ActList);
             };
@@ -226,6 +270,7 @@ namespace MiniLibrary
                 Intent ActList = new Intent(this, typeof(BookListView_type));
                 Bundle bundle = new Bundle();
                 ActList.PutExtra("SearchType", "其他");
+                ActList.PutExtra("SearchInfo", "");
                 ActList.PutExtras(bundle);
                 StartActivity(ActList);
             };
@@ -262,6 +307,7 @@ namespace MiniLibrary
             });
         }
 
+
         private void TabBookBasket()
         {
             BookList = FindViewById<ListView>(Resource.Id.TabBookBasketList);
@@ -273,7 +319,7 @@ namespace MiniLibrary
             var ResultList = JsonConvert.DeserializeObject<List<BookClass>>(SearchResult);
             foreach (BookClass b in ResultList)
             {
-                BookInfo.Add(new BookBasketListInfo { Title = b.BookName, Image = b.ImageUrl, BookAuthor = b.BookAuthor, BookClassId = b.BookClassId ,PhoneNum= LoginSP.GetString("PhoneNum", ""),BookId=b.BookId });
+                BookInfo.Add(new BookBasketListInfo { Title = b.BookName, Image = b.ImageUrl, BookAuthor = b.BookAuthor, BookClassId = b.BookClassId ,PhoneNum= LoginSP.GetString("PhoneNum", "") });
             }
             BookList.Adapter = new BookBasketListAdapter(this, BookInfo);
 
@@ -285,12 +331,23 @@ namespace MiniLibrary
                 if (res == "Success")
                 {
                     List<BorrowList> borrowList = new List<BorrowList>();
+                    foreach (BookBasketListInfo b in BookInfo)
+                    {
+                        string AllocResult = BorrowData.Post("http://115.159.145.115/AllocateBookId.php/", b.BookClassId);
+                        var AllocResultList = JsonConvert.DeserializeObject<List<Book>>(AllocResult);
+                        foreach(Book c in AllocResultList)
+                        {
+                            if (c.ReturnFlag == null || c.ReturnFlag == "1")
+                            {
+                                borrowList.Add(new BorrowList { BookId = c.BookId, PhoneNum = LoginSP.GetString("PhoneNum", "") });
+                                break;
+                            }
+                        }
+                        
+                    }
+                    
                     if (borrowList.Count != 0)
                     {
-                        foreach (BookBasketListInfo b in BookInfo)
-                        {
-                            borrowList.Add(new BorrowList { BookId = b.BookId, PhoneNum = LoginSP.GetString("PhoneNum", "") });
-                        }
                         var BorrowJson = JsonConvert.SerializeObject(borrowList);
                         Intent ActBorrowReader = new Intent(this, typeof(BorrowReader));
                         ActBorrowReader.PutExtra("BorrowInfo", BorrowJson);
@@ -307,7 +364,7 @@ namespace MiniLibrary
 
         private void BookList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Intent ActBookDetail = new Intent(this, typeof(BookDetails));
+            Intent ActBookDetail = new Intent(this, typeof(BookDetail));
             ActBookDetail.PutExtra("BookClassId", BookInfo[e.Position].BookClassId);
             StartActivity(ActBookDetail);
         }
@@ -345,7 +402,9 @@ namespace MiniLibrary
             };
 
 
+            
             ISharedPreferences LoginSP = GetSharedPreferences("LoginData", FileCreationMode.Private);
+
             PhoneNum.Text = LoginSP.GetString("PhoneNum", "");
             PersonalSetting.Click += delegate
             {
@@ -437,9 +496,21 @@ namespace MiniLibrary
                 return srcString;
 
             }
+
+            public static string Post(string url, string BookCLassId)
+            {
+                string postString = "BookClassId=" + BookCLassId;
+                byte[] postData = Encoding.UTF8.GetBytes(postString);
+                WebClient webClient = new WebClient();
+                webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+                byte[] responseData = webClient.UploadData(url, "POST", postData);
+                string srcString = Encoding.UTF8.GetString(responseData);
+
+                return srcString;
+
+            }
         }
 
-
-
+        
     }
 }

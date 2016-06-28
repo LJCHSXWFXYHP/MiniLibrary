@@ -28,69 +28,57 @@
             android:layout_height="match_parent"
             android:id="@+id/TabIndeximSearch" />
     </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="5.0dp"
+        android:id="@+id/linearLayout5"
+        android:background="#33000000" />
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="fill_parent"
         android:layout_height="200dip" />
     <LinearLayout
-        android:layout_alignBottom="@id/viewpager"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#33000000"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout6">
-        <TextView
-            android:id="@+id/tv_image_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:layout_gravity="center" />
-        <LinearLayout
-            android:id="@+id/ll_point_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dip"
-            android:layout_marginBottom="5dip"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
-    <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="360.0dp"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1"
         android:gravity="center">
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout2">
+            android:id="@+id/linearLayout2"
+            android:gravity="center"
+            android:background="@drawable/boder">
             <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/type1"
-                android:layout_marginRight="50dp" />
+                android:id="@+id/type1" />
             <TextView
                 android:text="计算机"
-                android:layout_width="75dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
                 android:gravity="center" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout3">
+            android:id="@+id/linearLayout3"
+            android:gravity="center"
+            android:background="@drawable/boder">
             <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/type2"
-                android:layout_marginRight="50dp" />
+                android:id="@+id/type2" />
             <TextView
-                android:layout_width="75dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
                 android:gravity="center"
@@ -98,9 +86,11 @@
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout4">
+            android:id="@+id/linearLayout4"
+            android:gravity="center"
+            android:background="@drawable/boder">
             <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
@@ -108,7 +98,7 @@
                 android:id="@+id/type3" />
             <TextView
                 android:text="社会科学"
-                android:layout_width="75dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
                 android:gravity="center" />
@@ -122,15 +112,16 @@
         android:gravity="center">
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout2">
+            android:id="@+id/linearLayout2"
+            android:gravity="center"
+            android:background="@drawable/boder">
             <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/type4"
-                android:layout_marginRight="50dp" />
+                android:id="@+id/type4" />
             <TextView
                 android:text="历史/传记"
                 android:layout_width="75dp"
@@ -140,15 +131,16 @@
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout3">
+            android:id="@+id/linearLayout3"
+            android:gravity="center"
+            android:background="@drawable/boder">
             <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/type5"
-                android:layout_marginRight="50dp" />
+                android:id="@+id/type5" />
             <TextView
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
@@ -158,9 +150,11 @@
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout4">
+            android:id="@+id/linearLayout4"
+            android:gravity="center"
+            android:background="@drawable/boder">
             <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
@@ -182,15 +176,16 @@
         android:gravity="center">
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout2">
+            android:id="@+id/linearLayout2"
+            android:gravity="center"
+            android:background="@drawable/boder">
             <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/type7"
-                android:layout_marginRight="50dp" />
+                android:id="@+id/type7" />
             <TextView
                 android:text="科普"
                 android:layout_width="75dp"
@@ -200,15 +195,16 @@
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout3">
+            android:id="@+id/linearLayout3"
+            android:gravity="center"
+            android:background="@drawable/boder">
             <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/type8"
-                android:layout_marginRight="50dp" />
+                android:id="@+id/type8" />
             <TextView
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
@@ -218,9 +214,11 @@
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout4">
+            android:id="@+id/linearLayout4"
+            android:gravity="center"
+            android:background="@drawable/boder">
             <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:layout_width="75dp"

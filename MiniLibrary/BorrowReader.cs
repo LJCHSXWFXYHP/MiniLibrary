@@ -12,6 +12,9 @@ using Android.OS;
 using Android.Graphics;
 using ZXing;
 using ZXing.Common;
+using System.IO;
+using System.Net;
+using Newtonsoft.Json;
 
 
 
@@ -23,12 +26,14 @@ namespace MiniLibrary
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            // Create your application here
+            
+            string bookBorrowInfo = Intent.GetStringExtra("BorrowInfo");
             SetContentView(Resource.Layout.BorrowReader);
             ImageView barcode = FindViewById<ImageView>(Resource.Id.BarCode);
-            string BorrowInfo = Intent.GetStringExtra("BorrowInfo");
-            Bitmap bmp = GeneratorQrImage(BorrowInfo);
+            Bitmap bmp = GeneratorQrImage("borrow::" + bookBorrowInfo);
             barcode.SetImageBitmap(bmp);
+
+            
 
         }
         private Bitmap GeneratorQrImage(string contents)
@@ -56,6 +61,16 @@ namespace MiniLibrary
             bitmap.SetPixels(pixels, 0, width, 0, 0, width, height);
             return bitmap;
         }
+        public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
+        {
 
+            if (keyCode == Keycode.Back)
+            {
+                Intent ActIndex = new Intent(this, typeof(Index));
+                StartActivity(ActIndex);
+                return true;
+            }
+            return base.OnKeyDown(keyCode, e);
+        }
     }
 }

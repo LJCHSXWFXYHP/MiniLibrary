@@ -1,9 +1,9 @@
 <?php
 
 	$myPhoneNum=$_POST['PhoneNum'];
-	$myBookId=$_POST['BookId'];
+	$myBookClassId=$_POST['BookClassId'];
 	if($myPhoneNum=='') {echo 'null'; exit;}
-	$sql="Delete from BookBasket WHERE PhoneNum='".$myPhoneNum."' and BookId='".$myBookId."'";
+	$sql="Delete from BookBasket WHERE PhoneNum='".$myPhoneNum."' and BookClassId='".$myBookClassId."'";
 
 	$db_host   = 'localhost';  //数据库主机名称，一般都为localhost   
 	$db_user   = 'root';       //数据库用户帐号，根据个人情况而定   

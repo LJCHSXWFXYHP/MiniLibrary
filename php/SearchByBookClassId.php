@@ -1,6 +1,6 @@
 <?php
 
-$myBookClassId='9787113210472';//$_POST['KeyWord'];
+$myBookClassId=$_POST['KeyWord'];
 if($myKeyWord==''){exit;}
 $sql="select BookClassId,BookName,BookAuthor,ImageUrl from BookClass where BookClassId='".$myBookClassId."'";
 

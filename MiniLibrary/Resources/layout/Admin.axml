@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:id="@+id/linearLayout1"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content">
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="50dp"
+            p1:id="@+id/linearLayout2"
+            p1:background="#FF33B5E5"
+            p1:gravity="right">
+            <ImageView
+                p1:src="@android:drawable/ic_menu_gallery"
+                p1:layout_width="50dp"
+                p1:layout_height="match_parent"
+                p1:id="@+id/AdminMore"
+                p1:layout_marginRight="8.5dp" />
+        </LinearLayout>
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:layout_width="match_parent"
+            p1:layout_height="75dp"
+            p1:id="@+id/linearLayout3"
+            p1:background="#FF33B5E5">
+            <TextView
+                p1:text="管理员："
+                p1:layout_width="86.0dp"
+                p1:layout_height="match_parent"
+                p1:id="@+id/textView4"
+                p1:textSize="40px"
+                p1:gravity="center"
+                p1:layout_marginLeft="20.0dp" />
+            <TextView
+                p1:text="用户名"
+                p1:layout_width="160.0dp"
+                p1:layout_height="match_parent"
+                p1:id="@+id/AdminPhoneNum"
+                p1:gravity="center_vertical"
+                p1:textSize="40px" />
+        </LinearLayout>
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="5.0dp"
+            p1:id="@+id/linearLayout5"
+            p1:background="#33000000" />
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:layout_width="match_parent"
+            p1:layout_height="70.0dp"
+            p1:id="@+id/AdminBorrow"
+            p1:background="@drawable/boder">
+            <TextView
+                p1:text="借书扫码"
+                p1:layout_width="wrap_content"
+                p1:layout_height="match_parent"
+                p1:id="@+id/textView2"
+                p1:gravity="center"
+                p1:textSize="50px"
+                p1:layout_marginLeft="15.5dp"
+                p1:layout_marginRight="165.0dp" />
+            <TextView
+                p1:text="扫码完成借书"
+                p1:layout_width="wrap_content"
+                p1:layout_height="match_parent"
+                p1:id="@+id/textView3"
+                p1:gravity="center"
+                p1:textColor="#33000000" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        p1:orientation="horizontal"
+        p1:layout_width="match_parent"
+        p1:layout_height="70.0dp"
+        p1:id="@+id/AdminReturn"
+        p1:background="@drawable/boder">
+        <TextView
+            p1:text="还书扫码"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:id="@+id/textView2"
+            p1:gravity="center"
+            p1:textSize="50px"
+            p1:layout_marginLeft="15.5dp"
+            p1:layout_marginRight="165.0dp" />
+        <TextView
+            p1:text="扫码完成还书"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:id="@+id/textView3"
+            p1:gravity="center"
+            p1:textColor="#33000000" />
+    </LinearLayout>
+    <LinearLayout
+        p1:orientation="horizontal"
+        p1:layout_width="match_parent"
+        p1:layout_height="70.0dp"
+        p1:id="@+id/AdminSearch"
+        p1:background="@drawable/boder">
+        <TextView
+            p1:text="图书查询"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:id="@+id/textView2"
+            p1:gravity="center"
+            p1:textSize="50px"
+            p1:layout_marginLeft="15.5dp"
+            p1:layout_marginRight="165.0dp" />
+        <TextView
+            p1:text="搜索库内图书"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:id="@+id/textView3"
+            p1:gravity="center"
+            p1:textColor="#33000000" />
+    </LinearLayout>
+</LinearLayout>

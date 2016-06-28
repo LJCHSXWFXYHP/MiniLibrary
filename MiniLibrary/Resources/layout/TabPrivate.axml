@@ -29,11 +29,19 @@
         p1:id="@+id/linearLayout3"
         p1:background="#FF33B5E5">
         <TextView
+            p1:text="用户："
+            p1:layout_width="86.0dp"
+            p1:layout_height="match_parent"
+            p1:id="@+id/textView4"
+            p1:textSize="40px"
+            p1:gravity="center"
+            p1:layout_marginLeft="20.0dp" />
+        <TextView
             p1:text="用户名"
             p1:layout_width="160.0dp"
             p1:layout_height="match_parent"
             p1:id="@+id/TabTextPhoneNum"
-            p1:gravity="center"
+            p1:gravity="center_vertical"
             p1:textSize="40px" />
     </LinearLayout>
     <LinearLayout
@@ -48,7 +56,8 @@
         p1:orientation="horizontal"
         p1:layout_width="match_parent"
         p1:layout_height="70.0dp"
-        p1:id="@+id/TablayoutMyBook">
+        p1:id="@+id/TablayoutMyBook"
+        p1:background="@drawable/boder">
         <TextView
             p1:text="待还图书"
             p1:layout_width="wrap_content"
@@ -68,17 +77,10 @@
     </LinearLayout>
     <LinearLayout
         p1:orientation="horizontal"
-        p1:minWidth="25px"
-        p1:minHeight="25px"
-        p1:layout_width="match_parent"
-        p1:layout_height="1dp"
-        p1:id="@+id/linearLayout5"
-        p1:background="#33000000" />
-    <LinearLayout
-        p1:orientation="horizontal"
         p1:layout_width="match_parent"
         p1:layout_height="70.0dp"
-        p1:id="@+id/TablayoutMyBookAll">
+        p1:id="@+id/TablayoutMyBookAll"
+        p1:background="@drawable/boder">
         <TextView
             p1:text="我的图书"
             p1:layout_width="wrap_content"
@@ -98,17 +100,10 @@
     </LinearLayout>
     <LinearLayout
         p1:orientation="horizontal"
-        p1:minWidth="25px"
-        p1:minHeight="25px"
-        p1:layout_width="match_parent"
-        p1:layout_height="1dp"
-        p1:id="@+id/linearLayout5"
-        p1:background="#33000000" />
-    <LinearLayout
-        p1:orientation="horizontal"
         p1:layout_width="match_parent"
         p1:layout_height="70.0dp"
-        p1:id="@+id/TablayoutPersonSetting">
+        p1:id="@+id/TablayoutPersonSetting"
+        p1:background="@drawable/boder">
         <TextView
             p1:text="账户设置"
             p1:layout_width="wrap_content"
@@ -126,12 +121,4 @@
             p1:gravity="center"
             p1:textColor="#33000000" />
     </LinearLayout>
-    <LinearLayout
-        p1:orientation="horizontal"
-        p1:minWidth="25px"
-        p1:minHeight="25px"
-        p1:layout_width="match_parent"
-        p1:layout_height="1dp"
-        p1:id="@+id/linearLayout5"
-        p1:background="#33000000" />
 </LinearLayout>

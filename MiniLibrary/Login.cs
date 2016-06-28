@@ -57,26 +57,25 @@ namespace MiniLibrary
                     if (res == "1")
                     {
                         Intent ActIndex = new Intent(this, typeof(Index));
-                        StartActivity(ActIndex);
                         ISharedPreferences LoginSP = GetSharedPreferences("LoginData", FileCreationMode.Private);
                         ISharedPreferencesEditor editor = LoginSP.Edit();
                         editor.Clear();
-                        //editor.Commit();
                         editor.PutString("PhoneNum", number.Text);
-                        editor.PutString("Password", psw.Text);
+                        editor.PutString("RealName", RealNameCheckData.Post("http://115.159.145.115/RealNameCheck.php", number.Text));
                         editor.Commit();
-
+                        StartActivity(ActIndex);
+                        
 
                     }
                     else if (res == "2")
                     {
-                        Intent ActFirstadm = new Intent(this, typeof(FirstAdmin));
-                        StartActivity(ActFirstadm);
-                    }
-                    else if (res == "3")
-                    {
-                        Intent ActSecondadm = new Intent(this, typeof(SecondAdmin));
-                        StartActivity(ActSecondadm);
+                        Intent Actadm = new Intent(this, typeof(Admin));
+                        ISharedPreferences LoginSP = GetSharedPreferences("LoginData", FileCreationMode.Private);
+                        ISharedPreferencesEditor editor = LoginSP.Edit();
+                        editor.Clear();
+                        editor.PutString("PhoneNum", number.Text);
+                        editor.Commit();
+                        StartActivity(Actadm);
                     }
                     else
                     {
@@ -124,6 +123,21 @@ namespace MiniLibrary
                 return true;
             }
             return false;
+        }
+        public class RealNameCheckData
+        {
+            public static string Post(string url, string PhoneNum)
+            {
+                string postString = "PhoneNum=" + PhoneNum;
+                byte[] postData = Encoding.UTF8.GetBytes(postString);
+                WebClient webClient = new WebClient();
+                webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+                byte[] responseData = webClient.UploadData(url, "POST", postData);
+                string srcString = Encoding.UTF8.GetString(responseData);
+
+                return srcString;
+
+            }
         }
     }
     

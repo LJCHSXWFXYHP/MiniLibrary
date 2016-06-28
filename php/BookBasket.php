@@ -2,7 +2,7 @@
 
 $myPhoneNum=$_POST['PhoneNum'];
 if($myPhoneNum==''){exit;}
-$sql="select b.BookId,bc.BookClassId,bc.BookName,bc.BookAuthor,bc.ImageUrl from BookClass bc,Book b where bc.BookClassId=b.BookclassId and b.BookId in (select BookId from BookBasket where PhoneNum = '".$myPhoneNum."')";
+$sql="select bc.BookClassId,bc.BookName,bc.BookAuthor,bc.ImageUrl from BookClass bc,BookBasket bb where bc.BookClassId=bb.BookClassId and bb.PhoneNum='".$myPhoneNum."'";
 
 $db_host   = 'localhost';  //数据库主机名称，一般都为localhost   
 $db_user   = 'root';        //数据库用户帐号，根据个人情况而定   

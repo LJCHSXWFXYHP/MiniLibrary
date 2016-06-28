@@ -22,7 +22,6 @@ namespace MiniLibrary
         {
             public string BookId { get; set; }
             public string PhoneNum { get; set; }
-            public string BorrowDate { get; set; }
         }
         private class BookClass
         {
@@ -44,7 +43,7 @@ namespace MiniLibrary
             // Create your application here
             SetContentView(Resource.Layout.BookListViewMyBook);
             ReturnAll = FindViewById<Button>(Resource.Id.ReturnAll);
-            BookList = FindViewById<ListView>(Resource.Id.TabBookBasketList);
+            BookList = FindViewById<ListView>(Resource.Id.MyBookList);
 
             ISharedPreferences LoginSP = GetSharedPreferences("LoginData", FileCreationMode.Private);
             var PhoneNum = LoginSP.GetString("PhoneNum", null);
@@ -61,19 +60,22 @@ namespace MiniLibrary
             }
             ReturnAll.Click += delegate
             {
-                
                 List<ReturnList> returnList = new List<ReturnList>();
-                if (returnList.Count != 0)
-                {
+
                     foreach (MyBookListViewInfo b in BookInfo)
                     {
                         if (b.selected == true)
                         {
-                            returnList.Add(new ReturnList { BookId = b.BookId, PhoneNum = LoginSP.GetString("PhoneNum", ""), BorrowDate = b.BorrowDate });
+                            returnList.Add(new ReturnList { BookId = b.BookId, PhoneNum = LoginSP.GetString("PhoneNum", "") });
                         }
                     }
+                if (returnList.Count != 0)
+                {
                     var BorrowJson = JsonConvert.SerializeObject(returnList);
-                    Toast.MakeText(this, BorrowJson, ToastLength.Long).Show();
+                    Intent ActReturn = new Intent(this, typeof(ReturnReader));
+                    ActReturn.PutExtra("ReturnBook", BorrowJson);
+                    StartActivity(ActReturn);
+
                 }
             };
             
@@ -127,8 +129,9 @@ namespace MiniLibrary
 
         private void BookList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Intent ActBookDetail = new Intent(this, typeof(BookDetails));
-            ActBookDetail.PutExtra("z", BookInfo[e.Position].BookClassId);
+            
+            Intent ActBookDetail = new Intent(this, typeof(BookDetail));
+            ActBookDetail.PutExtra("BookClassId", BookInfo[e.Position].BookClassId);
             StartActivity(ActBookDetail);
         }
 

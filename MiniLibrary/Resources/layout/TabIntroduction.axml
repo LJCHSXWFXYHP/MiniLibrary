@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:gravity="center_horizontal">
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="322.0dp"
+        android:layout_height="270dp"
+        android:id="@+id/scrollView1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="320.0dp"
+            android:layout_height="320dp"
+            android:id="@+id/linearLayout1"
+            android:gravity="center">
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/textView_BookClassId"
+                android:text="textView_BookClassId"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:textSize="40px" />
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/textView_BookPress"
+                android:text="extView_BookPress"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:textSize="40px" />
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/textView_BookPrice"
+                android:text="textView_BookPrice"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:textSize="40px" />
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/textView_BookClassification"
+                android:text="textView_BookClassification"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:textSize="40px" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

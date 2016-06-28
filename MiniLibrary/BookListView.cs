@@ -60,17 +60,23 @@ namespace MiniLibrary
             }
 
             MobileBarcodeScanner.Initialize(Application);
+            Button flashButton;
+            View zxingOverlay;
             scanner = new MobileBarcodeScanner();
             Scan.Click += async delegate {
+                scanner.UseCustomOverlay = true;
 
-                //Tell our scanner to use the default overlay
-                scanner.UseCustomOverlay = false;
+                //Inflate our custom overlay from a resource layout
+                zxingOverlay = LayoutInflater.FromContext(this).Inflate(Resource.Layout.Scanning, null);
 
-                //We can customize the top and bottom text of the default overlay
-                scanner.TopText = "请保持条形码与手机镜头15厘米";
-                scanner.BottomText = "扫描书本条形码快速搜索";
+                //Find the button from our resource layout and wire up the click event
+                flashButton = zxingOverlay.FindViewById<Button>(Resource.Id.buttonZxingFlash);
+                flashButton.Click += (sender, e) => scanner.ToggleTorch();
 
-                //Start scanning
+                //Set our custom overlay
+                scanner.CustomOverlay = zxingOverlay;
+
+                //Start scanning!
                 var result = await scanner.Scan();
 
                 HandleScanResult(result);
@@ -105,9 +111,17 @@ namespace MiniLibrary
 
         private void BookList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Intent ActBookDetail = new Intent(this, typeof(BookDetails));
-            ActBookDetail.PutExtra("BookClassId", BookInfo[e.Position].BookClassId);
-            StartActivity(ActBookDetail);
+            ISharedPreferences LoginSP = GetSharedPreferences("LoginData", FileCreationMode.Private);
+            if (LoginSP.GetString("RealName", "") != "")
+            {
+                Intent ActBookDetail = new Intent(this, typeof(BookDetail));
+                ActBookDetail.PutExtra("BookClassId", BookInfo[e.Position].BookClassId);
+                StartActivity(ActBookDetail);
+            }
+            else
+            {
+                Toast.MakeText(this, "请先去个人中心实名认证哦！", ToastLength.Short).Show();
+            }
         }
 
         public class SearchData
@@ -140,10 +154,26 @@ namespace MiniLibrary
 
         void HandleScanResult(ZXing.Result result)
         {
-            RunOnUiThread(() => {
-                Intent ActBookList = new Intent(this, typeof(BookListView));
-                ActBookList.PutExtra("SearchInfo", result.Text);
-                StartActivity(ActBookList);
+            string msg = "";
+
+            if (result != null && !string.IsNullOrEmpty(result.Text))
+                msg = result.Text;
+            else
+                msg = "-1";
+
+
+            RunOnUiThread(() =>
+            {
+                if (msg != "-1")
+                {
+                    Intent ActBookList = new Intent(this, typeof(BookListView));
+                    ActBookList.PutExtra("SearchInfo", msg);
+                    StartActivity(ActBookList);
+                }
+                else
+                {
+                    Toast.MakeText(this, "扫描取消", ToastLength.Short).Show();
+                }
             });
         }
     }
