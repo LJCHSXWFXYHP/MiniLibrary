@@ -69,7 +69,7 @@ namespace BookListView
             view.FindViewById<TextView>(Resource.Id.MyBookTextBook).Text = item.Title;
             view.FindViewById<TextView>(Resource.Id.MyBookAuthor).Text = item.Author;
             Picasso.With(context).Load(item.Image).Into(view.FindViewById<ImageView>(Resource.Id.MyBookImBook));
-            view.FindViewById<TextView>(Resource.Id.MyBookId).Text = item.BookId;
+            view.FindViewById<TextView>(Resource.Id.MyBookId).Text = "书本ID:"+item.BookId;
             view.FindViewById<TextView>(Resource.Id.MyBookDate).Text = item.BorrowDate;
             checkBox = view.FindViewById<CheckBox>(Resource.Id.MyBookCheck);
 

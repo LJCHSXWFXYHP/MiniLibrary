@@ -27,8 +27,7 @@ namespace MiniLibrary
 
             if (keyCode == Keycode.Back)
             {
-                Intent ActSetting = new Intent(this, typeof(PersonalSetting));
-                StartActivity(ActSetting);
+                Finish();
                 return true;
             }
             return base.OnKeyDown(keyCode, e);
