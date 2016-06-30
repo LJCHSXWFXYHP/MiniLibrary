@@ -12,7 +12,7 @@ namespace MiniLibrary
     [Activity(Label = "MiniLibrary", MainLauncher = true, Icon = "@drawable/icon", WindowSoftInputMode = SoftInput.StateHidden | SoftInput.AdjustUnspecified, Theme = "@android:style/Theme.Holo.Light.NoActionBar.Fullscreen", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
-
+        private ImageView start;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -22,7 +22,7 @@ namespace MiniLibrary
 
             // Get our button from the layout resource,
             // and attach an event to it
-            ImageView start = FindViewById<ImageView>(Resource.Id.Start);
+            start = FindViewById<ImageView>(Resource.Id.Start);
             start.SetImageResource(Resource.Drawable.Start);
 
             start.Click += Start_Click;

@@ -100,9 +100,6 @@ namespace MiniLibrary
             TabIndex();
             TabPrivate();
 
-            
-
-
         }
 
         private void TabIndex()
@@ -328,35 +325,43 @@ namespace MiniLibrary
             BorrowAll.Click +=delegate{
 
                 string res = BorrowData.Post("http://115.159.145.115/BorrowCheck.php", LoginSP.GetString("PhoneNum", ""), BookInfo.Count);
-                if (res == "Success")
+                string days = SearchData.Post("http://115.159.145.115/NotRenewDays.php", LoginSP.GetString("PhoneNum", ""));
+                if (int.Parse(days) < 10)
                 {
-                    List<BorrowList> borrowList = new List<BorrowList>();
-                    foreach (BookBasketListInfo b in BookInfo)
+                    if (res == "Success")
                     {
-                        string AllocResult = BorrowData.Post("http://115.159.145.115/AllocateBookId.php/", b.BookClassId);
-                        var AllocResultList = JsonConvert.DeserializeObject<List<Book>>(AllocResult);
-                        foreach(Book c in AllocResultList)
+                        List<BorrowList> borrowList = new List<BorrowList>();
+                        foreach (BookBasketListInfo b in BookInfo)
                         {
-                            if (c.ReturnFlag == null || c.ReturnFlag == "1")
+                            string AllocResult = BorrowData.Post("http://115.159.145.115/AllocateBookId.php/", b.BookClassId);
+                            var AllocResultList = JsonConvert.DeserializeObject<List<Book>>(AllocResult);
+                            foreach (Book c in AllocResultList)
                             {
-                                borrowList.Add(new BorrowList { BookId = c.BookId, PhoneNum = LoginSP.GetString("PhoneNum", "") });
-                                break;
+                                if (c.ReturnFlag == null || c.ReturnFlag == "1")
+                                {
+                                    borrowList.Add(new BorrowList { BookId = c.BookId, PhoneNum = LoginSP.GetString("PhoneNum", "") });
+                                    break;
+                                }
                             }
+
                         }
-                        
+
+                        if (borrowList.Count != 0)
+                        {
+                            var BorrowJson = JsonConvert.SerializeObject(borrowList);
+                            Intent ActBorrowReader = new Intent(this, typeof(BorrowReader));
+                            ActBorrowReader.PutExtra("BorrowInfo", BorrowJson);
+                            StartActivity(ActBorrowReader);
+                        }
                     }
-                    
-                    if (borrowList.Count != 0)
+                    else if (res == "Fail")
                     {
-                        var BorrowJson = JsonConvert.SerializeObject(borrowList);
-                        Intent ActBorrowReader = new Intent(this, typeof(BorrowReader));
-                        ActBorrowReader.PutExtra("BorrowInfo", BorrowJson);
-                        StartActivity(ActBorrowReader);
+                        Toast.MakeText(this, "一个人最多借十本书哦！", ToastLength.Short).Show();
                     }
                 }
-                else if (res == "Fail")
+                else
                 {
-                    Toast.MakeText(this, "一个人最多借十本书哦！", ToastLength.Short).Show();
+                    Toast.MakeText(this, "您有图书超过十天没有归还，请续借或者归还后再借书！", ToastLength.Long).Show();
                 }
             };
 
