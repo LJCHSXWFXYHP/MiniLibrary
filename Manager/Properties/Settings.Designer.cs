@@ -44,5 +44,16 @@ namespace Manager.Properties {
                 return ((string)(this["libraryConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=115.159.145.115;user id=library;password=library;persistsecurityinfo=True;" +
+            "database=MiniLibrary")]
+        public string MiniLibraryConnectionString {
+            get {
+                return ((string)(this["MiniLibraryConnectionString"]));
+            }
+        }
     }
 }
