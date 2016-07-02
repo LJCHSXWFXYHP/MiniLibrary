@@ -42,6 +42,9 @@
             this.UserIdHintLbl = new System.Windows.Forms.Label();
             this.PswdHintLbl = new System.Windows.Forms.Label();
             this.ConfPswdHintLbl = new System.Windows.Forms.Label();
+            this.AdminLevelLbl = new System.Windows.Forms.Label();
+            this.AdminLevel = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.AdminLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // PhoneNumLbl
@@ -131,7 +134,7 @@
             // SubmitBtn
             // 
             this.SubmitBtn.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.SubmitBtn.Location = new System.Drawing.Point(179, 352);
+            this.SubmitBtn.Location = new System.Drawing.Point(179, 406);
             this.SubmitBtn.Name = "SubmitBtn";
             this.SubmitBtn.Size = new System.Drawing.Size(99, 33);
             this.SubmitBtn.TabIndex = 8;
@@ -183,11 +186,45 @@
             this.ConfPswdHintLbl.Text = "请确认两次输入密码相同";
             this.ConfPswdHintLbl.Visible = false;
             // 
+            // AdminLevelLbl
+            // 
+            this.AdminLevelLbl.AutoSize = true;
+            this.AdminLevelLbl.Font = new System.Drawing.Font("微软雅黑", 13F);
+            this.AdminLevelLbl.Location = new System.Drawing.Point(73, 339);
+            this.AdminLevelLbl.Name = "AdminLevelLbl";
+            this.AdminLevelLbl.Size = new System.Drawing.Size(100, 24);
+            this.AdminLevelLbl.TabIndex = 13;
+            this.AdminLevelLbl.Text = "管理级别：";
+            // 
+            // AdminLevel
+            // 
+            this.AdminLevel.Location = new System.Drawing.Point(191, 341);
+            this.AdminLevel.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.AdminLevel.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.AdminLevel.Name = "AdminLevel";
+            this.AdminLevel.Size = new System.Drawing.Size(68, 23);
+            this.AdminLevel.TabIndex = 14;
+            this.AdminLevel.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
             // NewAdminDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 428);
+            this.ClientSize = new System.Drawing.Size(462, 485);
+            this.Controls.Add(this.AdminLevel);
+            this.Controls.Add(this.AdminLevelLbl);
             this.Controls.Add(this.ConfPswdHintLbl);
             this.Controls.Add(this.PswdHintLbl);
             this.Controls.Add(this.UserIdHintLbl);
@@ -208,6 +245,7 @@
             this.MaximizeBox = false;
             this.Name = "NewAdminDia";
             this.Text = "新建管理员";
+            ((System.ComponentModel.ISupportInitialize)(this.AdminLevel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +267,7 @@
         private System.Windows.Forms.Label UserIdHintLbl;
         private System.Windows.Forms.Label PswdHintLbl;
         private System.Windows.Forms.Label ConfPswdHintLbl;
+        private System.Windows.Forms.Label AdminLevelLbl;
+        private System.Windows.Forms.NumericUpDown AdminLevel;
     }
 }

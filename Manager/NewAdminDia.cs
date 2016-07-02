@@ -126,7 +126,8 @@ namespace Manager
                     dbConn.Open();
                     var sql =
                         "INSERT INTO `MiniLibrary`.`UserInformation` (`PhoneNum`, `Type`, `Name`, `Password`) VALUES ('" +
-                        PhoneNumBox.Text + "', '3', '" + NameBox.Text + "', '" + ConfPswdBox.Text + "');";
+                        PhoneNumBox.Text + "', '" + AdminLevel.Value + "', '" + NameBox.Text + "', '" + ConfPswdBox.Text +
+                        "');";
                     var mySqlCommand = new MySqlCommand(sql, dbConn);
                     mySqlCommand.ExecuteNonQuery();
                     MessageBox.Show("管理员用户添加成功！");
