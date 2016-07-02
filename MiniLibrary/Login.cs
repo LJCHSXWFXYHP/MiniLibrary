@@ -26,6 +26,7 @@ namespace MiniLibrary
             Button register = FindViewById<Button>(Resource.Id.logBtnRegister);
             Button login = FindViewById<Button>(Resource.Id.logBtnLogin);
             Button forget = FindViewById<Button>(Resource.Id.logBtnForget);
+            Button QQ = FindViewById<Button>(Resource.Id.logBtnQQLogin);
             EditText number = FindViewById<EditText>(Resource.Id.logEditNumber);
             EditText psw = FindViewById<EditText>(Resource.Id.logEditPassword);
             LinearLayout mainLayout = FindViewById<LinearLayout>(Resource.Id.logLayout);
@@ -83,6 +84,14 @@ namespace MiniLibrary
                     }
                 }
 
+            };
+            forget.Click += delegate
+            {
+                Toast.MakeText(this, "此功能正在开发中", ToastLength.Short).Show();
+            };
+            QQ.Click += delegate
+            {
+                Toast.MakeText(this, "此功能正在开发中", ToastLength.Short).Show();
             };
             mainLayout.Click += delegate
             {
